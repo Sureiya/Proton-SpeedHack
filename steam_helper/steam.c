@@ -1060,8 +1060,6 @@ static void speedhack_setup_env(void) {
     SIGUSR1 is used to update the speed and toggle fields of the speedhack.
 */
 static void speedhack_speed_toggle_signal(int sig, siginfo_t *sip, void *ptr) {
-    WINE_TRACE("Received signal to update speed/toggle settings.\n");
-
     // The structure of this value is two flags packed into one signal
     // Bit 1: Flag to indicate if toggle is being updated
     // Bit 2: Value of toggle if updated
@@ -1076,6 +1074,8 @@ static void speedhack_speed_toggle_signal(int sig, siginfo_t *sip, void *ptr) {
     unsigned int toggle_keys = (sig_value >> 3) & 1;
     unsigned int update_speed = (sig_value >> 4) & 1;
     unsigned int speed_value = (sig_value >> 5);
+
+    WINE_TRACE("Received signal to update speed/toggle settings.\n");
 
     if (update_toggle > 0) {
         WINE_TRACE("Changing Toggle To: %d\n", update_toggle);
@@ -1108,8 +1108,8 @@ static void speedhack_speed_toggle_signal(int sig, siginfo_t *sip, void *ptr) {
     speedhack.
 */
 static void speedhack_key_signal(int sig, siginfo_t *sip, void *ptr) {
-    WINE_TRACE("Received signal to update activation key.\n");
     unsigned int sig_value = sip->si_value.sival_int;
+    WINE_TRACE("Received signal to update activation key.\n");
     speedhack_activation_key = sig_value & 0xFF;
     speedhack_activation_key_2 = (sig_value >> 8) & 0xFF;
     speedhack_activation_key_3 = (sig_value >> 16) & 0xFF;
