@@ -1,0 +1,114 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'proton-speedhack-*'
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Release tag name (e.g. proton-speedhack-10.0)'
+        required: true
+        default: 'proton-speedhack-10.0'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Determine tag name
+        id: tag
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "name=${GITHUB_REF#refs/tags/}" >> "$GITHUB_OUTPUT"
+          else
+            echo "name=${{ github.event.inputs.tag_name }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Cache ccache
+        uses: actions/cache@v4
+        with:
+          path: ~/.ccache
+          key: ccache-${{ steps.tag.outputs.name }}-${{ github.sha }}
+          restore-keys: |
+            ccache-${{ steps.tag.outputs.name }}-
+            ccache-
+
+      - name: Cache Cargo registry
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo
+          key: cargo-${{ steps.tag.outputs.name }}-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            cargo-${{ steps.tag.outputs.name }}-
+            cargo-
+
+      - name: Pull Steam Runtime SDK
+        run: |
+          STEAMRT_IMAGE=$(grep 'STEAMRT_IMAGE ?=' Makefile.in | awk '{print $3}')
+          echo "Pulling $STEAMRT_IMAGE"
+          docker pull "$STEAMRT_IMAGE"
+
+      - name: Configure
+        run: |
+          mkdir -p build
+          cd build
+          ../configure.sh \
+            --build-name "${{ steps.tag.outputs.name }}" \
+            --enable-ccache
+
+      - name: Build
+        run: |
+          cd build
+          make redist -j$(nproc)
+
+      - name: Package release archive
+        run: |
+          TAG="${{ steps.tag.outputs.name }}"
+          cd build/redist
+          # Wrap in a named directory so extracting to compatibilitytools.d/ works directly
+          mkdir -p "/tmp/pkg/$TAG"
+          cp -a . "/tmp/pkg/$TAG/"
+          cd /tmp/pkg
+          tar -czf "/tmp/${TAG}.tar.gz" "$TAG"
+          echo "ARCHIVE=/tmp/${TAG}.tar.gz" >> "$GITHUB_ENV"
+          echo "TAG=$TAG" >> "$GITHUB_ENV"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.name }}
+          name: ${{ steps.tag.outputs.name }}
+          body: |
+            ## Installation
+
+            1. Download `${{ steps.tag.outputs.name }}.tar.gz`
+            2. Extract to your Steam compatibility tools directory:
+               ```
+               tar -xzf ${{ steps.tag.outputs.name }}.tar.gz -C ~/.steam/root/compatibilitytools.d/
+               ```
+            3. Restart Steam and select **${{ steps.tag.outputs.name }}** in the game's compatibility settings.
+
+            ## Configuration
+
+            Place a `speedhack.json` config file at `~/.speedhack/speedhack.json`:
+            ```json
+            {
+              "speed": 2.5,
+              "toggle": 0,
+              "keys": "page_up"
+            }
+            ```
+
+            See the [README](https://github.com/${{ github.repository }}/blob/${{ steps.tag.outputs.name }}/README.md) for full configuration options.
+          files: ${{ env.ARCHIVE }}
+          draft: false
+          prerelease: false
