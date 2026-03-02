@@ -51,6 +51,38 @@
 #include <stdbool.h>
 #include <signal.h>
 
+/* POSIX real-time signal extensions not provided by Wine's Windows headers.
+ * Values and struct layouts match the Linux x86_64 ABI. */
+#ifndef SA_SIGINFO
+#define SIGUSR1      10
+#define SIGUSR2      12
+#define SA_RESTART   0x10000000
+#define SA_SIGINFO   0x00000004
+
+typedef union { int sival_int; void *sival_ptr; } sigval_t;
+
+typedef struct {
+    int      si_signo;
+    int      si_errno;
+    int      si_code;
+    int      _pad0;
+    int      _si_pid;
+    int      _si_uid;
+    sigval_t si_value;
+    int      _pad[24];
+} siginfo_t;
+
+struct sigaction {
+    void          (*sa_sigaction)(int, siginfo_t *, void *);
+    unsigned long   sa_mask[16];   /* 128-byte sigset_t */
+    int             sa_flags;
+    int             _pad;
+    void          (*sa_restorer)(void);
+};
+
+int sigaction(int, const struct sigaction *, struct sigaction *);
+#endif /* SA_SIGINFO */
+
 #include "wine/debug.h"
 
 #include <msi.h>
@@ -983,21 +1015,25 @@ static bool speedhack_toggle = 0;
     SPEEDHACK_KEYS   (int) Up to 4 keycodes that activate/deactivate the hack.
 */
 static void speedhack_setup_env(void) {
+    const char *speed;
+    const char *toggle;
+    const char *keys;
+    unsigned int key_value = 0;
+
     WINE_TRACE("Checking ENV\n");
-    const char *speed = getenv("SPEEDHACK_SPEED");
+    speed = getenv("SPEEDHACK_SPEED");
     if(speed && *speed) {
         WINE_TRACE("SPEEDHACK_SPEED: %s\n", speed);
         speedhack_multiplier = strtod(speed, NULL);
     }
 
-    const char *toggle = getenv("SPEEDHACK_TOGGLE");
+    toggle = getenv("SPEEDHACK_TOGGLE");
     if(toggle && *toggle) {
         WINE_TRACE("SPEEDHACK_TOGGLE: %s\n", toggle);
         speedhack_toggle = (bool)strtol(toggle, NULL, 10);
     }
 
-    const char *keys = getenv("SPEEDHACK_KEYS");
-    unsigned int key_value = 0;
+    keys = getenv("SPEEDHACK_KEYS");
     if(keys && *keys) {
         WINE_TRACE("SPEEDHACK_KEYS: %s\n", keys);
         key_value = (unsigned int)strtol(keys, NULL, 10);
@@ -1081,15 +1117,16 @@ static void speedhack_key_signal(int sig, siginfo_t *sip, void *ptr) {
 }
 
 static void speedhack_setup_signals(void) {
+    struct sigaction speed_toggle_flags;
+    struct sigaction key_flags;
+
     WINE_TRACE("Setting up signal updates.\n");
 
-    struct sigaction speed_toggle_flags;
     memset(&speed_toggle_flags, 0, sizeof (speed_toggle_flags));
     speed_toggle_flags.sa_sigaction = speedhack_speed_toggle_signal;
     speed_toggle_flags.sa_flags = SA_RESTART|SA_SIGINFO;
     sigaction(SIGUSR1, &speed_toggle_flags, NULL);
 
-    struct sigaction key_flags;
     memset(&key_flags, 0, sizeof (key_flags));
     key_flags.sa_sigaction = speedhack_key_signal;
     key_flags.sa_flags = SA_RESTART|SA_SIGINFO;
@@ -1124,14 +1161,13 @@ static bool speedhack_key_pressed(void) {
 
 static DWORD WINAPI speedhack_thread(void *arg)
 {
+    bool key_pressed = false;
+    bool last_key_pressed = false;
 
     WINE_TRACE("Speedhack thread!\n");
 
     speedhack_setup_env();
     speedhack_setup_signals();
-
-    bool key_pressed = false;
-    bool last_key_pressed = false;
 
     do {
         key_pressed = speedhack_key_pressed();
