@@ -1314,8 +1314,12 @@ ifeq ($(CONTAINER_ENGINE),)
 	CONTAINER_ENGINE := docker
 endif
 
+# Strip any host SHELL= (e.g. a Nix store path) from MAKEFLAGS before it enters
+# the container, where it would be re-applied by every recursive sub-make
+# (ffmpeg, wine, etc.) via the MAKEFLAGS environment variable.
+_DOCKER_MAKEFLAGS := $(filter-out SHELL=%,$(MAKEFLAGS))
 DOCKER_BASE = $(CONTAINER_ENGINE) run --rm -v $(SRC):$(SRC)$(CONTAINER_MOUNT_OPTS) -v $(OBJ):$(OBJ)$(CONTAINER_MOUNT_OPTS) \
-                -w $(OBJ) -e MAKEFLAGS \
+                -w $(OBJ) -e "MAKEFLAGS=$(_DOCKER_MAKEFLAGS)" \
                 $(DOCKER_OPTS) $(STEAMRT_IMAGE)
 
 .PHONY: dist deploy redist symstore-tarball
