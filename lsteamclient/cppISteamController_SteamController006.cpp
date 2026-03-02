@@ -1,166 +1,547 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_142/steam_api.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_142
-#include "struct_converters.h"
-#include "cppISteamController_SteamController006.h"
-bool cppISteamController_SteamController006_Init(void *linux_side)
+
+NTSTATUS ISteamController_SteamController006_Init( void *args )
 {
-    return ((ISteamController*)linux_side)->Init();
+    struct ISteamController_SteamController006_Init_params *params = (struct ISteamController_SteamController006_Init_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->Init(  );
+    return 0;
 }
 
-bool cppISteamController_SteamController006_Shutdown(void *linux_side)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_Init( void *args )
 {
-    return ((ISteamController*)linux_side)->Shutdown();
-}
-
-void cppISteamController_SteamController006_RunFrame(void *linux_side)
-{
-    ((ISteamController*)linux_side)->RunFrame();
-}
-
-int cppISteamController_SteamController006_GetConnectedControllers(void *linux_side, ControllerHandle_t * handlesOut)
-{
-    return ((ISteamController*)linux_side)->GetConnectedControllers((ControllerHandle_t *)handlesOut);
-}
-
-bool cppISteamController_SteamController006_ShowBindingPanel(void *linux_side, ControllerHandle_t controllerHandle)
-{
-    return ((ISteamController*)linux_side)->ShowBindingPanel((ControllerHandle_t)controllerHandle);
-}
-
-ControllerActionSetHandle_t cppISteamController_SteamController006_GetActionSetHandle(void *linux_side, const char * pszActionSetName)
-{
-    return ((ISteamController*)linux_side)->GetActionSetHandle((const char *)pszActionSetName);
-}
-
-void cppISteamController_SteamController006_ActivateActionSet(void *linux_side, ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetHandle)
-{
-    ((ISteamController*)linux_side)->ActivateActionSet((ControllerHandle_t)controllerHandle, (ControllerActionSetHandle_t)actionSetHandle);
-}
-
-ControllerActionSetHandle_t cppISteamController_SteamController006_GetCurrentActionSet(void *linux_side, ControllerHandle_t controllerHandle)
-{
-    return ((ISteamController*)linux_side)->GetCurrentActionSet((ControllerHandle_t)controllerHandle);
-}
-
-void cppISteamController_SteamController006_ActivateActionSetLayer(void *linux_side, ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetLayerHandle)
-{
-    ((ISteamController*)linux_side)->ActivateActionSetLayer((ControllerHandle_t)controllerHandle, (ControllerActionSetHandle_t)actionSetLayerHandle);
-}
-
-void cppISteamController_SteamController006_DeactivateActionSetLayer(void *linux_side, ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetLayerHandle)
-{
-    ((ISteamController*)linux_side)->DeactivateActionSetLayer((ControllerHandle_t)controllerHandle, (ControllerActionSetHandle_t)actionSetLayerHandle);
-}
-
-void cppISteamController_SteamController006_DeactivateAllActionSetLayers(void *linux_side, ControllerHandle_t controllerHandle)
-{
-    ((ISteamController*)linux_side)->DeactivateAllActionSetLayers((ControllerHandle_t)controllerHandle);
-}
-
-int cppISteamController_SteamController006_GetActiveActionSetLayers(void *linux_side, ControllerHandle_t controllerHandle, ControllerActionSetHandle_t * handlesOut)
-{
-    return ((ISteamController*)linux_side)->GetActiveActionSetLayers((ControllerHandle_t)controllerHandle, (ControllerActionSetHandle_t *)handlesOut);
-}
-
-ControllerDigitalActionHandle_t cppISteamController_SteamController006_GetDigitalActionHandle(void *linux_side, const char * pszActionName)
-{
-    return ((ISteamController*)linux_side)->GetDigitalActionHandle((const char *)pszActionName);
-}
-
-ControllerDigitalActionData_t cppISteamController_SteamController006_GetDigitalActionData(void *linux_side, ControllerHandle_t controllerHandle, ControllerDigitalActionHandle_t digitalActionHandle)
-{
-    return ((ISteamController*)linux_side)->GetDigitalActionData((ControllerHandle_t)controllerHandle, (ControllerDigitalActionHandle_t)digitalActionHandle);
-}
-
-int cppISteamController_SteamController006_GetDigitalActionOrigins(void *linux_side, ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetHandle, ControllerDigitalActionHandle_t digitalActionHandle, EControllerActionOrigin * originsOut)
-{
-    return ((ISteamController*)linux_side)->GetDigitalActionOrigins((ControllerHandle_t)controllerHandle, (ControllerActionSetHandle_t)actionSetHandle, (ControllerDigitalActionHandle_t)digitalActionHandle, (EControllerActionOrigin *)originsOut);
-}
-
-ControllerAnalogActionHandle_t cppISteamController_SteamController006_GetAnalogActionHandle(void *linux_side, const char * pszActionName)
-{
-    return ((ISteamController*)linux_side)->GetAnalogActionHandle((const char *)pszActionName);
-}
-
-ControllerAnalogActionData_t cppISteamController_SteamController006_GetAnalogActionData(void *linux_side, ControllerHandle_t controllerHandle, ControllerAnalogActionHandle_t analogActionHandle)
-{
-    return ((ISteamController*)linux_side)->GetAnalogActionData((ControllerHandle_t)controllerHandle, (ControllerAnalogActionHandle_t)analogActionHandle);
-}
-
-int cppISteamController_SteamController006_GetAnalogActionOrigins(void *linux_side, ControllerHandle_t controllerHandle, ControllerActionSetHandle_t actionSetHandle, ControllerAnalogActionHandle_t analogActionHandle, EControllerActionOrigin * originsOut)
-{
-    return ((ISteamController*)linux_side)->GetAnalogActionOrigins((ControllerHandle_t)controllerHandle, (ControllerActionSetHandle_t)actionSetHandle, (ControllerAnalogActionHandle_t)analogActionHandle, (EControllerActionOrigin *)originsOut);
-}
-
-void cppISteamController_SteamController006_StopAnalogActionMomentum(void *linux_side, ControllerHandle_t controllerHandle, ControllerAnalogActionHandle_t eAction)
-{
-    ((ISteamController*)linux_side)->StopAnalogActionMomentum((ControllerHandle_t)controllerHandle, (ControllerAnalogActionHandle_t)eAction);
-}
-
-void cppISteamController_SteamController006_TriggerHapticPulse(void *linux_side, ControllerHandle_t controllerHandle, ESteamControllerPad eTargetPad, unsigned short usDurationMicroSec)
-{
-    ((ISteamController*)linux_side)->TriggerHapticPulse((ControllerHandle_t)controllerHandle, (ESteamControllerPad)eTargetPad, (unsigned short)usDurationMicroSec);
-}
-
-void cppISteamController_SteamController006_TriggerRepeatedHapticPulse(void *linux_side, ControllerHandle_t controllerHandle, ESteamControllerPad eTargetPad, unsigned short usDurationMicroSec, unsigned short usOffMicroSec, unsigned short unRepeat, unsigned int nFlags)
-{
-    ((ISteamController*)linux_side)->TriggerRepeatedHapticPulse((ControllerHandle_t)controllerHandle, (ESteamControllerPad)eTargetPad, (unsigned short)usDurationMicroSec, (unsigned short)usOffMicroSec, (unsigned short)unRepeat, (unsigned int)nFlags);
-}
-
-void cppISteamController_SteamController006_TriggerVibration(void *linux_side, ControllerHandle_t controllerHandle, unsigned short usLeftSpeed, unsigned short usRightSpeed)
-{
-    ((ISteamController*)linux_side)->TriggerVibration((ControllerHandle_t)controllerHandle, (unsigned short)usLeftSpeed, (unsigned short)usRightSpeed);
-}
-
-void cppISteamController_SteamController006_SetLEDColor(void *linux_side, ControllerHandle_t controllerHandle, uint8 nColorR, uint8 nColorG, uint8 nColorB, unsigned int nFlags)
-{
-    ((ISteamController*)linux_side)->SetLEDColor((ControllerHandle_t)controllerHandle, (uint8)nColorR, (uint8)nColorG, (uint8)nColorB, (unsigned int)nFlags);
-}
-
-int cppISteamController_SteamController006_GetGamepadIndexForController(void *linux_side, ControllerHandle_t ulControllerHandle)
-{
-    return ((ISteamController*)linux_side)->GetGamepadIndexForController((ControllerHandle_t)ulControllerHandle);
-}
-
-ControllerHandle_t cppISteamController_SteamController006_GetControllerForGamepadIndex(void *linux_side, int nIndex)
-{
-    return ((ISteamController*)linux_side)->GetControllerForGamepadIndex((int)nIndex);
-}
-
-ControllerMotionData_t cppISteamController_SteamController006_GetMotionData(void *linux_side, ControllerHandle_t controllerHandle)
-{
-    return ((ISteamController*)linux_side)->GetMotionData((ControllerHandle_t)controllerHandle);
-}
-
-bool cppISteamController_SteamController006_ShowDigitalActionOrigins(void *linux_side, ControllerHandle_t controllerHandle, ControllerDigitalActionHandle_t digitalActionHandle, float flScale, float flXPosition, float flYPosition)
-{
-    return ((ISteamController*)linux_side)->ShowDigitalActionOrigins((ControllerHandle_t)controllerHandle, (ControllerDigitalActionHandle_t)digitalActionHandle, (float)flScale, (float)flXPosition, (float)flYPosition);
-}
-
-bool cppISteamController_SteamController006_ShowAnalogActionOrigins(void *linux_side, ControllerHandle_t controllerHandle, ControllerAnalogActionHandle_t analogActionHandle, float flScale, float flXPosition, float flYPosition)
-{
-    return ((ISteamController*)linux_side)->ShowAnalogActionOrigins((ControllerHandle_t)controllerHandle, (ControllerAnalogActionHandle_t)analogActionHandle, (float)flScale, (float)flXPosition, (float)flYPosition);
-}
-
-const char * cppISteamController_SteamController006_GetStringForActionOrigin(void *linux_side, EControllerActionOrigin eOrigin)
-{
-    return ((ISteamController*)linux_side)->GetStringForActionOrigin((EControllerActionOrigin)eOrigin);
-}
-
-ESteamInputType cppISteamController_SteamController006_GetInputTypeForHandle(void *linux_side, ControllerHandle_t controllerHandle)
-{
-    return ((ISteamController*)linux_side)->GetInputTypeForHandle((ControllerHandle_t)controllerHandle);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamController_SteamController006_Init_params *params = (struct wow64_ISteamController_SteamController006_Init_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->Init(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamController_SteamController006_Shutdown( void *args )
+{
+    struct ISteamController_SteamController006_Shutdown_params *params = (struct ISteamController_SteamController006_Shutdown_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->Shutdown(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_Shutdown( void *args )
+{
+    struct wow64_ISteamController_SteamController006_Shutdown_params *params = (struct wow64_ISteamController_SteamController006_Shutdown_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->Shutdown(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_RunFrame( void *args )
+{
+    struct ISteamController_SteamController006_RunFrame_params *params = (struct ISteamController_SteamController006_RunFrame_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->RunFrame(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_RunFrame( void *args )
+{
+    struct wow64_ISteamController_SteamController006_RunFrame_params *params = (struct wow64_ISteamController_SteamController006_RunFrame_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->RunFrame(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetConnectedControllers( void *args )
+{
+    struct ISteamController_SteamController006_GetConnectedControllers_params *params = (struct ISteamController_SteamController006_GetConnectedControllers_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetConnectedControllers( params->handlesOut );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetConnectedControllers( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetConnectedControllers_params *params = (struct wow64_ISteamController_SteamController006_GetConnectedControllers_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetConnectedControllers( params->handlesOut );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_ShowBindingPanel( void *args )
+{
+    struct ISteamController_SteamController006_ShowBindingPanel_params *params = (struct ISteamController_SteamController006_ShowBindingPanel_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->ShowBindingPanel( params->controllerHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_ShowBindingPanel( void *args )
+{
+    struct wow64_ISteamController_SteamController006_ShowBindingPanel_params *params = (struct wow64_ISteamController_SteamController006_ShowBindingPanel_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->ShowBindingPanel( params->controllerHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetActionSetHandle( void *args )
+{
+    struct ISteamController_SteamController006_GetActionSetHandle_params *params = (struct ISteamController_SteamController006_GetActionSetHandle_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetActionSetHandle( params->pszActionSetName );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetActionSetHandle( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetActionSetHandle_params *params = (struct wow64_ISteamController_SteamController006_GetActionSetHandle_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetActionSetHandle( params->pszActionSetName );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_ActivateActionSet( void *args )
+{
+    struct ISteamController_SteamController006_ActivateActionSet_params *params = (struct ISteamController_SteamController006_ActivateActionSet_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->ActivateActionSet( params->controllerHandle, params->actionSetHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_ActivateActionSet( void *args )
+{
+    struct wow64_ISteamController_SteamController006_ActivateActionSet_params *params = (struct wow64_ISteamController_SteamController006_ActivateActionSet_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->ActivateActionSet( params->controllerHandle, params->actionSetHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetCurrentActionSet( void *args )
+{
+    struct ISteamController_SteamController006_GetCurrentActionSet_params *params = (struct ISteamController_SteamController006_GetCurrentActionSet_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetCurrentActionSet( params->controllerHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetCurrentActionSet( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetCurrentActionSet_params *params = (struct wow64_ISteamController_SteamController006_GetCurrentActionSet_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetCurrentActionSet( params->controllerHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_ActivateActionSetLayer( void *args )
+{
+    struct ISteamController_SteamController006_ActivateActionSetLayer_params *params = (struct ISteamController_SteamController006_ActivateActionSetLayer_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->ActivateActionSetLayer( params->controllerHandle, params->actionSetLayerHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_ActivateActionSetLayer( void *args )
+{
+    struct wow64_ISteamController_SteamController006_ActivateActionSetLayer_params *params = (struct wow64_ISteamController_SteamController006_ActivateActionSetLayer_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->ActivateActionSetLayer( params->controllerHandle, params->actionSetLayerHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_DeactivateActionSetLayer( void *args )
+{
+    struct ISteamController_SteamController006_DeactivateActionSetLayer_params *params = (struct ISteamController_SteamController006_DeactivateActionSetLayer_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->DeactivateActionSetLayer( params->controllerHandle, params->actionSetLayerHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_DeactivateActionSetLayer( void *args )
+{
+    struct wow64_ISteamController_SteamController006_DeactivateActionSetLayer_params *params = (struct wow64_ISteamController_SteamController006_DeactivateActionSetLayer_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->DeactivateActionSetLayer( params->controllerHandle, params->actionSetLayerHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_DeactivateAllActionSetLayers( void *args )
+{
+    struct ISteamController_SteamController006_DeactivateAllActionSetLayers_params *params = (struct ISteamController_SteamController006_DeactivateAllActionSetLayers_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->DeactivateAllActionSetLayers( params->controllerHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_DeactivateAllActionSetLayers( void *args )
+{
+    struct wow64_ISteamController_SteamController006_DeactivateAllActionSetLayers_params *params = (struct wow64_ISteamController_SteamController006_DeactivateAllActionSetLayers_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->DeactivateAllActionSetLayers( params->controllerHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetActiveActionSetLayers( void *args )
+{
+    struct ISteamController_SteamController006_GetActiveActionSetLayers_params *params = (struct ISteamController_SteamController006_GetActiveActionSetLayers_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetActiveActionSetLayers( params->controllerHandle, params->handlesOut );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetActiveActionSetLayers( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetActiveActionSetLayers_params *params = (struct wow64_ISteamController_SteamController006_GetActiveActionSetLayers_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetActiveActionSetLayers( params->controllerHandle, params->handlesOut );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetDigitalActionHandle( void *args )
+{
+    struct ISteamController_SteamController006_GetDigitalActionHandle_params *params = (struct ISteamController_SteamController006_GetDigitalActionHandle_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetDigitalActionHandle( params->pszActionName );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetDigitalActionHandle( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetDigitalActionHandle_params *params = (struct wow64_ISteamController_SteamController006_GetDigitalActionHandle_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetDigitalActionHandle( params->pszActionName );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetDigitalActionData( void *args )
+{
+    struct ISteamController_SteamController006_GetDigitalActionData_params *params = (struct ISteamController_SteamController006_GetDigitalActionData_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    *params->_ret = iface->GetDigitalActionData( params->controllerHandle, params->digitalActionHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetDigitalActionData( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetDigitalActionData_params *params = (struct wow64_ISteamController_SteamController006_GetDigitalActionData_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    *params->_ret = iface->GetDigitalActionData( params->controllerHandle, params->digitalActionHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetDigitalActionOrigins( void *args )
+{
+    struct ISteamController_SteamController006_GetDigitalActionOrigins_params *params = (struct ISteamController_SteamController006_GetDigitalActionOrigins_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetDigitalActionOrigins( params->controllerHandle, params->actionSetHandle, params->digitalActionHandle, params->originsOut );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetDigitalActionOrigins( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetDigitalActionOrigins_params *params = (struct wow64_ISteamController_SteamController006_GetDigitalActionOrigins_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetDigitalActionOrigins( params->controllerHandle, params->actionSetHandle, params->digitalActionHandle, params->originsOut );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetAnalogActionHandle( void *args )
+{
+    struct ISteamController_SteamController006_GetAnalogActionHandle_params *params = (struct ISteamController_SteamController006_GetAnalogActionHandle_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetAnalogActionHandle( params->pszActionName );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetAnalogActionHandle( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetAnalogActionHandle_params *params = (struct wow64_ISteamController_SteamController006_GetAnalogActionHandle_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetAnalogActionHandle( params->pszActionName );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetAnalogActionData( void *args )
+{
+    struct ISteamController_SteamController006_GetAnalogActionData_params *params = (struct ISteamController_SteamController006_GetAnalogActionData_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    *params->_ret = iface->GetAnalogActionData( params->controllerHandle, params->analogActionHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetAnalogActionData( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetAnalogActionData_params *params = (struct wow64_ISteamController_SteamController006_GetAnalogActionData_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    *params->_ret = iface->GetAnalogActionData( params->controllerHandle, params->analogActionHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetAnalogActionOrigins( void *args )
+{
+    struct ISteamController_SteamController006_GetAnalogActionOrigins_params *params = (struct ISteamController_SteamController006_GetAnalogActionOrigins_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetAnalogActionOrigins( params->controllerHandle, params->actionSetHandle, params->analogActionHandle, params->originsOut );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetAnalogActionOrigins( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetAnalogActionOrigins_params *params = (struct wow64_ISteamController_SteamController006_GetAnalogActionOrigins_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetAnalogActionOrigins( params->controllerHandle, params->actionSetHandle, params->analogActionHandle, params->originsOut );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_StopAnalogActionMomentum( void *args )
+{
+    struct ISteamController_SteamController006_StopAnalogActionMomentum_params *params = (struct ISteamController_SteamController006_StopAnalogActionMomentum_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->StopAnalogActionMomentum( params->controllerHandle, params->eAction );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_StopAnalogActionMomentum( void *args )
+{
+    struct wow64_ISteamController_SteamController006_StopAnalogActionMomentum_params *params = (struct wow64_ISteamController_SteamController006_StopAnalogActionMomentum_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->StopAnalogActionMomentum( params->controllerHandle, params->eAction );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_TriggerHapticPulse( void *args )
+{
+    struct ISteamController_SteamController006_TriggerHapticPulse_params *params = (struct ISteamController_SteamController006_TriggerHapticPulse_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->TriggerHapticPulse( params->controllerHandle, params->eTargetPad, params->usDurationMicroSec );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_TriggerHapticPulse( void *args )
+{
+    struct wow64_ISteamController_SteamController006_TriggerHapticPulse_params *params = (struct wow64_ISteamController_SteamController006_TriggerHapticPulse_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->TriggerHapticPulse( params->controllerHandle, params->eTargetPad, params->usDurationMicroSec );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_TriggerRepeatedHapticPulse( void *args )
+{
+    struct ISteamController_SteamController006_TriggerRepeatedHapticPulse_params *params = (struct ISteamController_SteamController006_TriggerRepeatedHapticPulse_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->TriggerRepeatedHapticPulse( params->controllerHandle, params->eTargetPad, params->usDurationMicroSec, params->usOffMicroSec, params->unRepeat, params->nFlags );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_TriggerRepeatedHapticPulse( void *args )
+{
+    struct wow64_ISteamController_SteamController006_TriggerRepeatedHapticPulse_params *params = (struct wow64_ISteamController_SteamController006_TriggerRepeatedHapticPulse_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->TriggerRepeatedHapticPulse( params->controllerHandle, params->eTargetPad, params->usDurationMicroSec, params->usOffMicroSec, params->unRepeat, params->nFlags );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_TriggerVibration( void *args )
+{
+    struct ISteamController_SteamController006_TriggerVibration_params *params = (struct ISteamController_SteamController006_TriggerVibration_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->TriggerVibration( params->controllerHandle, params->usLeftSpeed, params->usRightSpeed );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_TriggerVibration( void *args )
+{
+    struct wow64_ISteamController_SteamController006_TriggerVibration_params *params = (struct wow64_ISteamController_SteamController006_TriggerVibration_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->TriggerVibration( params->controllerHandle, params->usLeftSpeed, params->usRightSpeed );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_SetLEDColor( void *args )
+{
+    struct ISteamController_SteamController006_SetLEDColor_params *params = (struct ISteamController_SteamController006_SetLEDColor_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->SetLEDColor( params->controllerHandle, params->nColorR, params->nColorG, params->nColorB, params->nFlags );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_SetLEDColor( void *args )
+{
+    struct wow64_ISteamController_SteamController006_SetLEDColor_params *params = (struct wow64_ISteamController_SteamController006_SetLEDColor_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    iface->SetLEDColor( params->controllerHandle, params->nColorR, params->nColorG, params->nColorB, params->nFlags );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetGamepadIndexForController( void *args )
+{
+    struct ISteamController_SteamController006_GetGamepadIndexForController_params *params = (struct ISteamController_SteamController006_GetGamepadIndexForController_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetGamepadIndexForController( params->ulControllerHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetGamepadIndexForController( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetGamepadIndexForController_params *params = (struct wow64_ISteamController_SteamController006_GetGamepadIndexForController_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetGamepadIndexForController( params->ulControllerHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetControllerForGamepadIndex( void *args )
+{
+    struct ISteamController_SteamController006_GetControllerForGamepadIndex_params *params = (struct ISteamController_SteamController006_GetControllerForGamepadIndex_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetControllerForGamepadIndex( params->nIndex );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetControllerForGamepadIndex( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetControllerForGamepadIndex_params *params = (struct wow64_ISteamController_SteamController006_GetControllerForGamepadIndex_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetControllerForGamepadIndex( params->nIndex );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetMotionData( void *args )
+{
+    struct ISteamController_SteamController006_GetMotionData_params *params = (struct ISteamController_SteamController006_GetMotionData_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    *params->_ret = iface->GetMotionData( params->controllerHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetMotionData( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetMotionData_params *params = (struct wow64_ISteamController_SteamController006_GetMotionData_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    *params->_ret = iface->GetMotionData( params->controllerHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_ShowDigitalActionOrigins( void *args )
+{
+    struct ISteamController_SteamController006_ShowDigitalActionOrigins_params *params = (struct ISteamController_SteamController006_ShowDigitalActionOrigins_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->ShowDigitalActionOrigins( params->controllerHandle, params->digitalActionHandle, params->flScale, params->flXPosition, params->flYPosition );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_ShowDigitalActionOrigins( void *args )
+{
+    struct wow64_ISteamController_SteamController006_ShowDigitalActionOrigins_params *params = (struct wow64_ISteamController_SteamController006_ShowDigitalActionOrigins_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->ShowDigitalActionOrigins( params->controllerHandle, params->digitalActionHandle, params->flScale, params->flXPosition, params->flYPosition );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_ShowAnalogActionOrigins( void *args )
+{
+    struct ISteamController_SteamController006_ShowAnalogActionOrigins_params *params = (struct ISteamController_SteamController006_ShowAnalogActionOrigins_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->ShowAnalogActionOrigins( params->controllerHandle, params->analogActionHandle, params->flScale, params->flXPosition, params->flYPosition );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_ShowAnalogActionOrigins( void *args )
+{
+    struct wow64_ISteamController_SteamController006_ShowAnalogActionOrigins_params *params = (struct wow64_ISteamController_SteamController006_ShowAnalogActionOrigins_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->ShowAnalogActionOrigins( params->controllerHandle, params->analogActionHandle, params->flScale, params->flXPosition, params->flYPosition );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetStringForActionOrigin( void *args )
+{
+    struct ISteamController_SteamController006_GetStringForActionOrigin_params *params = (struct ISteamController_SteamController006_GetStringForActionOrigin_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetStringForActionOrigin( params->eOrigin );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetStringForActionOrigin( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetStringForActionOrigin_params *params = (struct wow64_ISteamController_SteamController006_GetStringForActionOrigin_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetStringForActionOrigin( params->eOrigin );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_SteamController006_GetInputTypeForHandle( void *args )
+{
+    struct ISteamController_SteamController006_GetInputTypeForHandle_params *params = (struct ISteamController_SteamController006_GetInputTypeForHandle_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetInputTypeForHandle( params->controllerHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_SteamController006_GetInputTypeForHandle( void *args )
+{
+    struct wow64_ISteamController_SteamController006_GetInputTypeForHandle_params *params = (struct wow64_ISteamController_SteamController006_GetInputTypeForHandle_params *)args;
+    struct u_ISteamController_SteamController006 *iface = (struct u_ISteamController_SteamController006 *)params->u_iface;
+    params->_ret = iface->GetInputTypeForHandle( params->controllerHandle );
+    return 0;
+}
+#endif
+

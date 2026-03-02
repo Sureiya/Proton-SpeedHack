@@ -64,6 +64,9 @@ check_container_engine() {
     if [[ $inner_uid == *"Permission denied"* ]]; then
         err "The container cannot access files. Are you using SELinux?"
         die "Please read README.md and check your $1 setup works."
+    elif [[ $inner_uid == *"Emulate Docker CLI"* ]]; then
+        err "Detected podman-docker in use without the warning being silenced."
+        die "Please create /etc/containers/nodocker or specify --container-engine=podman."
     elif [ "$inner_uid" -eq 0 ]; then
         # namespace maps the user as root or the build is performed as host's root
         ROOTLESS_CONTAINER=1
@@ -118,6 +121,12 @@ function configure() {
     info "No build name specified, using default: $build_name"
   fi
 
+  if [[ ${build_name,,} == *proton* ]]; then
+    internal_tool_name=${build_name}
+  else
+    internal_tool_name=${build_name}-proton
+  fi
+
   dependency_command make "GNU Make"
 
   if [ "$MISSING_DEPENDENCIES" -ne 0 ]; then
@@ -153,6 +162,7 @@ function configure() {
     echo ""
     echo "SRCDIR     := $(escape_for_make "$srcdir")"
     echo "BUILD_NAME := $(escape_for_make "$build_name")"
+    echo "INTERNAL_TOOL_NAME := $(escape_for_make "$internal_tool_name")"
 
     # SteamRT was specified, baking it into the Makefile
     if [[ -n $arg_protonsdk_image ]]; then

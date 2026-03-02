@@ -1,42 +1,99 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_158/steam_api.h"
-#include "steamworks_sdk_158/steamnetworkingtypes.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_158
-#include "struct_converters.h"
-#include "cppISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001.h"
-uint32 cppISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetNumInstalledApps(void *linux_side)
+
+NTSTATUS ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetNumInstalledApps( void *args )
 {
-    return ((ISteamAppList*)linux_side)->GetNumInstalledApps();
+    struct ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetNumInstalledApps_params *params = (struct ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetNumInstalledApps_params *)args;
+    struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *iface = (struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetNumInstalledApps(  );
+    return 0;
 }
 
-uint32 cppISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetInstalledApps(void *linux_side, AppId_t * pvecAppID, uint32 unMaxAppIDs)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetNumInstalledApps( void *args )
 {
-    return ((ISteamAppList*)linux_side)->GetInstalledApps((AppId_t *)pvecAppID, (uint32)unMaxAppIDs);
-}
-
-int cppISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppName(void *linux_side, AppId_t nAppID, char * pchName, int cchNameMax)
-{
-    return ((ISteamAppList*)linux_side)->GetAppName((AppId_t)nAppID, (char *)pchName, (int)cchNameMax);
-}
-
-int cppISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppInstallDir(void *linux_side, AppId_t nAppID, char * pchDirectory, int cchNameMax)
-{
-    return ((ISteamAppList*)linux_side)->GetAppInstallDir((AppId_t)nAppID, (char *)pchDirectory, (int)cchNameMax);
-}
-
-int cppISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppBuildId(void *linux_side, AppId_t nAppID)
-{
-    return ((ISteamAppList*)linux_side)->GetAppBuildId((AppId_t)nAppID);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetNumInstalledApps_params *params = (struct wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetNumInstalledApps_params *)args;
+    struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *iface = (struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetNumInstalledApps(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetInstalledApps( void *args )
+{
+    struct ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetInstalledApps_params *params = (struct ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetInstalledApps_params *)args;
+    struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *iface = (struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetInstalledApps( params->pvecAppID, params->unMaxAppIDs );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetInstalledApps( void *args )
+{
+    struct wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetInstalledApps_params *params = (struct wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetInstalledApps_params *)args;
+    struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *iface = (struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetInstalledApps( params->pvecAppID, params->unMaxAppIDs );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppName( void *args )
+{
+    struct ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppName_params *params = (struct ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppName_params *)args;
+    struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *iface = (struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetAppName( params->nAppID, params->pchName, params->cchNameMax );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppName( void *args )
+{
+    struct wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppName_params *params = (struct wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppName_params *)args;
+    struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *iface = (struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetAppName( params->nAppID, params->pchName, params->cchNameMax );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppInstallDir( void *args )
+{
+    struct ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppInstallDir_params *params = (struct ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppInstallDir_params *)args;
+    struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *iface = (struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetAppInstallDir( params->nAppID, params->pchDirectory, params->cchNameMax );
+    params->_ret = steamclient_unix_path_to_dos_path( params->_ret, params->pchDirectory, params->pchDirectory, params->cchNameMax, 0 );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppInstallDir( void *args )
+{
+    struct wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppInstallDir_params *params = (struct wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppInstallDir_params *)args;
+    struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *iface = (struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetAppInstallDir( params->nAppID, params->pchDirectory, params->cchNameMax );
+    params->_ret = steamclient_unix_path_to_dos_path( params->_ret, params->pchDirectory, params->pchDirectory, params->cchNameMax, 0 );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppBuildId( void *args )
+{
+    struct ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppBuildId_params *params = (struct ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppBuildId_params *)args;
+    struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *iface = (struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetAppBuildId( params->nAppID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppBuildId( void *args )
+{
+    struct wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppBuildId_params *params = (struct wow64_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001_GetAppBuildId_params *)args;
+    struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *iface = (struct u_ISteamAppList_STEAMAPPLIST_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetAppBuildId( params->nAppID );
+    return 0;
+}
+#endif
+

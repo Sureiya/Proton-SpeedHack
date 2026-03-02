@@ -1,101 +1,313 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_103/steam_api.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_103
-#include "struct_converters.h"
-#include "cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004.h"
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestCurrentStats(void *linux_side)
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestCurrentStats( void *args )
 {
-    return ((ISteamUserStats*)linux_side)->RequestCurrentStats();
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestCurrentStats_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestCurrentStats_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->RequestCurrentStats(  );
+    return 0;
 }
 
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat(void *linux_side, const char * pchName, int32 * pData)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestCurrentStats( void *args )
 {
-    return ((ISteamUserStats*)linux_side)->GetStat((const char *)pchName, (int32 *)pData);
-}
-
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat_2(void *linux_side, const char * pchName, float * pData)
-{
-    return ((ISteamUserStats*)linux_side)->GetStat((const char *)pchName, (float *)pData);
-}
-
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat(void *linux_side, const char * pchName, int32 nData)
-{
-    return ((ISteamUserStats*)linux_side)->SetStat((const char *)pchName, (int32)nData);
-}
-
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat_2(void *linux_side, const char * pchName, float fData)
-{
-    return ((ISteamUserStats*)linux_side)->SetStat((const char *)pchName, (float)fData);
-}
-
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_UpdateAvgRateStat(void *linux_side, const char * pchName, float flCountThisSession, double dSessionLength)
-{
-    return ((ISteamUserStats*)linux_side)->UpdateAvgRateStat((const char *)pchName, (float)flCountThisSession, (double)dSessionLength);
-}
-
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievement(void *linux_side, const char * pchName, bool * pbAchieved)
-{
-    return ((ISteamUserStats*)linux_side)->GetAchievement((const char *)pchName, (bool *)pbAchieved);
-}
-
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetAchievement(void *linux_side, const char * pchName)
-{
-    return ((ISteamUserStats*)linux_side)->SetAchievement((const char *)pchName);
-}
-
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_ClearAchievement(void *linux_side, const char * pchName)
-{
-    return ((ISteamUserStats*)linux_side)->ClearAchievement((const char *)pchName);
-}
-
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_StoreStats(void *linux_side)
-{
-    return ((ISteamUserStats*)linux_side)->StoreStats();
-}
-
-int cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementIcon(void *linux_side, const char * pchName)
-{
-    return ((ISteamUserStats*)linux_side)->GetAchievementIcon((const char *)pchName);
-}
-
-const char * cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementDisplayAttribute(void *linux_side, const char * pchName, const char * pchKey)
-{
-    return ((ISteamUserStats*)linux_side)->GetAchievementDisplayAttribute((const char *)pchName, (const char *)pchKey);
-}
-
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_IndicateAchievementProgress(void *linux_side, const char * pchName, uint32 nCurProgress, uint32 nMaxProgress)
-{
-    return ((ISteamUserStats*)linux_side)->IndicateAchievementProgress((const char *)pchName, (uint32)nCurProgress, (uint32)nMaxProgress);
-}
-
-SteamAPICall_t cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestUserStats(void *linux_side, CSteamID steamIDUser)
-{
-    return ((ISteamUserStats*)linux_side)->RequestUserStats((CSteamID)steamIDUser);
-}
-
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat(void *linux_side, CSteamID steamIDUser, const char * pchName, int32 * pData)
-{
-    return ((ISteamUserStats*)linux_side)->GetUserStat((CSteamID)steamIDUser, (const char *)pchName, (int32 *)pData);
-}
-
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat_2(void *linux_side, CSteamID steamIDUser, const char * pchName, float * pData)
-{
-    return ((ISteamUserStats*)linux_side)->GetUserStat((CSteamID)steamIDUser, (const char *)pchName, (float *)pData);
-}
-
-bool cppISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserAchievement(void *linux_side, CSteamID steamIDUser, const char * pchName, bool * pbAchieved)
-{
-    return ((ISteamUserStats*)linux_side)->GetUserAchievement((CSteamID)steamIDUser, (const char *)pchName, (bool *)pbAchieved);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestCurrentStats_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestCurrentStats_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->RequestCurrentStats(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetStat( params->pchName, params->pData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetStat( params->pchName, params->pData );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat_2( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat_2_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat_2_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetStat( params->pchName, params->pData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat_2( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat_2_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetStat_2_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetStat( params->pchName, params->pData );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->SetStat( params->pchName, params->nData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->SetStat( params->pchName, params->nData );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat_2( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat_2_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat_2_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->SetStat( params->pchName, params->fData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat_2( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat_2_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetStat_2_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->SetStat( params->pchName, params->fData );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_UpdateAvgRateStat( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_UpdateAvgRateStat_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_UpdateAvgRateStat_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->UpdateAvgRateStat( params->pchName, params->flCountThisSession, params->dSessionLength );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_UpdateAvgRateStat( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_UpdateAvgRateStat_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_UpdateAvgRateStat_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->UpdateAvgRateStat( params->pchName, params->flCountThisSession, params->dSessionLength );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievement( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievement_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievement_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetAchievement( params->pchName, params->pbAchieved );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievement( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievement_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievement_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetAchievement( params->pchName, params->pbAchieved );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetAchievement( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetAchievement_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetAchievement_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->SetAchievement( params->pchName );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetAchievement( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetAchievement_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_SetAchievement_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->SetAchievement( params->pchName );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_ClearAchievement( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_ClearAchievement_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_ClearAchievement_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->ClearAchievement( params->pchName );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_ClearAchievement( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_ClearAchievement_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_ClearAchievement_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->ClearAchievement( params->pchName );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_StoreStats( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_StoreStats_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_StoreStats_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->StoreStats(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_StoreStats( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_StoreStats_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_StoreStats_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->StoreStats(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementIcon( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementIcon_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementIcon_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetAchievementIcon( params->pchName );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementIcon( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementIcon_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementIcon_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetAchievementIcon( params->pchName );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementDisplayAttribute( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementDisplayAttribute_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementDisplayAttribute_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetAchievementDisplayAttribute( params->pchName, params->pchKey );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementDisplayAttribute( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementDisplayAttribute_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetAchievementDisplayAttribute_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetAchievementDisplayAttribute( params->pchName, params->pchKey );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_IndicateAchievementProgress( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_IndicateAchievementProgress_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_IndicateAchievementProgress_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->IndicateAchievementProgress( params->pchName, params->nCurProgress, params->nMaxProgress );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_IndicateAchievementProgress( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_IndicateAchievementProgress_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_IndicateAchievementProgress_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->IndicateAchievementProgress( params->pchName, params->nCurProgress, params->nMaxProgress );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestUserStats( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestUserStats_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestUserStats_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->RequestUserStats( params->steamIDUser );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestUserStats( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestUserStats_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_RequestUserStats_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->RequestUserStats( params->steamIDUser );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetUserStat( params->steamIDUser, params->pchName, params->pData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetUserStat( params->steamIDUser, params->pchName, params->pData );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat_2( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat_2_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat_2_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetUserStat( params->steamIDUser, params->pchName, params->pData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat_2( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat_2_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserStat_2_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetUserStat( params->steamIDUser, params->pchName, params->pData );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserAchievement( void *args )
+{
+    struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserAchievement_params *params = (struct ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserAchievement_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetUserAchievement( params->steamIDUser, params->pchName, params->pbAchieved );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserAchievement( void *args )
+{
+    struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserAchievement_params *params = (struct wow64_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004_GetUserAchievement_params *)args;
+    struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *iface = (struct u_ISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION004 *)params->u_iface;
+    params->_ret = iface->GetUserAchievement( params->steamIDUser, params->pchName, params->pbAchieved );
+    return 0;
+}
+#endif
+

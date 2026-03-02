@@ -1,51 +1,133 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_103/steam_api.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_103
-#include "struct_converters.h"
-#include "cppISteamApps_STEAMAPPS_INTERFACE_VERSION002.h"
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribed(void *linux_side)
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribed( void *args )
 {
-    return ((ISteamApps*)linux_side)->BIsSubscribed();
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribed_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribed_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BIsSubscribed(  );
+    return 0;
 }
 
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsLowViolence(void *linux_side)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribed( void *args )
 {
-    return ((ISteamApps*)linux_side)->BIsLowViolence();
-}
-
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsCybercafe(void *linux_side)
-{
-    return ((ISteamApps*)linux_side)->BIsCybercafe();
-}
-
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsVACBanned(void *linux_side)
-{
-    return ((ISteamApps*)linux_side)->BIsVACBanned();
-}
-
-const char * cppISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetCurrentGameLanguage(void *linux_side)
-{
-    return ((ISteamApps*)linux_side)->GetCurrentGameLanguage();
-}
-
-const char * cppISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetAvailableGameLanguages(void *linux_side)
-{
-    return ((ISteamApps*)linux_side)->GetAvailableGameLanguages();
-}
-
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribedApp(void *linux_side, AppId_t appID)
-{
-    return ((ISteamApps*)linux_side)->BIsSubscribedApp((AppId_t)appID);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribed_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribed_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BIsSubscribed(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsLowViolence( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsLowViolence_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsLowViolence_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BIsLowViolence(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsLowViolence( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsLowViolence_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsLowViolence_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BIsLowViolence(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsCybercafe( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsCybercafe_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsCybercafe_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BIsCybercafe(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsCybercafe( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsCybercafe_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsCybercafe_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BIsCybercafe(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsVACBanned( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsVACBanned_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsVACBanned_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BIsVACBanned(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsVACBanned( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsVACBanned_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsVACBanned_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BIsVACBanned(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetCurrentGameLanguage( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetCurrentGameLanguage_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetCurrentGameLanguage_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->GetCurrentGameLanguage(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetCurrentGameLanguage( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetCurrentGameLanguage_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetCurrentGameLanguage_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->GetCurrentGameLanguage(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetAvailableGameLanguages( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetAvailableGameLanguages_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetAvailableGameLanguages_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->GetAvailableGameLanguages(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetAvailableGameLanguages( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetAvailableGameLanguages_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_GetAvailableGameLanguages_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->GetAvailableGameLanguages(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribedApp( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribedApp_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribedApp_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BIsSubscribedApp( params->appID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribedApp( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribedApp_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION002_BIsSubscribedApp_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BIsSubscribedApp( params->appID );
+    return 0;
+}
+#endif
+

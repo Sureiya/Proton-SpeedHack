@@ -1,376 +1,1307 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_142/steam_api.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_142
-#include "struct_converters.h"
-#include "cppISteamFriends_SteamFriends015.h"
-const char * cppISteamFriends_SteamFriends015_GetPersonaName(void *linux_side)
-{
-    return ((ISteamFriends*)linux_side)->GetPersonaName();
-}
-
-SteamAPICall_t cppISteamFriends_SteamFriends015_SetPersonaName(void *linux_side, const char * pchPersonaName)
-{
-    return ((ISteamFriends*)linux_side)->SetPersonaName((const char *)pchPersonaName);
-}
-
-EPersonaState cppISteamFriends_SteamFriends015_GetPersonaState(void *linux_side)
-{
-    return ((ISteamFriends*)linux_side)->GetPersonaState();
-}
-
-int cppISteamFriends_SteamFriends015_GetFriendCount(void *linux_side, int iFriendFlags)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendCount((int)iFriendFlags);
-}
-
-CSteamID cppISteamFriends_SteamFriends015_GetFriendByIndex(void *linux_side, int iFriend, int iFriendFlags)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendByIndex((int)iFriend, (int)iFriendFlags);
-}
-
-EFriendRelationship cppISteamFriends_SteamFriends015_GetFriendRelationship(void *linux_side, CSteamID steamIDFriend)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendRelationship((CSteamID)steamIDFriend);
-}
-
-EPersonaState cppISteamFriends_SteamFriends015_GetFriendPersonaState(void *linux_side, CSteamID steamIDFriend)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendPersonaState((CSteamID)steamIDFriend);
-}
-
-const char * cppISteamFriends_SteamFriends015_GetFriendPersonaName(void *linux_side, CSteamID steamIDFriend)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendPersonaName((CSteamID)steamIDFriend);
-}
-
-bool cppISteamFriends_SteamFriends015_GetFriendGamePlayed(void *linux_side, CSteamID steamIDFriend, FriendGameInfo_t * pFriendGameInfo)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendGamePlayed((CSteamID)steamIDFriend, (FriendGameInfo_t *)pFriendGameInfo);
-}
-
-const char * cppISteamFriends_SteamFriends015_GetFriendPersonaNameHistory(void *linux_side, CSteamID steamIDFriend, int iPersonaName)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendPersonaNameHistory((CSteamID)steamIDFriend, (int)iPersonaName);
-}
-
-int cppISteamFriends_SteamFriends015_GetFriendSteamLevel(void *linux_side, CSteamID steamIDFriend)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendSteamLevel((CSteamID)steamIDFriend);
-}
-
-const char * cppISteamFriends_SteamFriends015_GetPlayerNickname(void *linux_side, CSteamID steamIDPlayer)
-{
-    return ((ISteamFriends*)linux_side)->GetPlayerNickname((CSteamID)steamIDPlayer);
-}
-
-int cppISteamFriends_SteamFriends015_GetFriendsGroupCount(void *linux_side)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendsGroupCount();
-}
-
-FriendsGroupID_t cppISteamFriends_SteamFriends015_GetFriendsGroupIDByIndex(void *linux_side, int iFG)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendsGroupIDByIndex((int)iFG);
-}
-
-const char * cppISteamFriends_SteamFriends015_GetFriendsGroupName(void *linux_side, FriendsGroupID_t friendsGroupID)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendsGroupName((FriendsGroupID_t)friendsGroupID);
-}
-
-int cppISteamFriends_SteamFriends015_GetFriendsGroupMembersCount(void *linux_side, FriendsGroupID_t friendsGroupID)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendsGroupMembersCount((FriendsGroupID_t)friendsGroupID);
-}
-
-void cppISteamFriends_SteamFriends015_GetFriendsGroupMembersList(void *linux_side, FriendsGroupID_t friendsGroupID, CSteamID * pOutSteamIDMembers, int nMembersCount)
-{
-    ((ISteamFriends*)linux_side)->GetFriendsGroupMembersList((FriendsGroupID_t)friendsGroupID, (CSteamID *)pOutSteamIDMembers, (int)nMembersCount);
-}
-
-bool cppISteamFriends_SteamFriends015_HasFriend(void *linux_side, CSteamID steamIDFriend, int iFriendFlags)
-{
-    return ((ISteamFriends*)linux_side)->HasFriend((CSteamID)steamIDFriend, (int)iFriendFlags);
-}
-
-int cppISteamFriends_SteamFriends015_GetClanCount(void *linux_side)
-{
-    return ((ISteamFriends*)linux_side)->GetClanCount();
-}
-
-CSteamID cppISteamFriends_SteamFriends015_GetClanByIndex(void *linux_side, int iClan)
-{
-    return ((ISteamFriends*)linux_side)->GetClanByIndex((int)iClan);
-}
-
-const char * cppISteamFriends_SteamFriends015_GetClanName(void *linux_side, CSteamID steamIDClan)
-{
-    return ((ISteamFriends*)linux_side)->GetClanName((CSteamID)steamIDClan);
-}
-
-const char * cppISteamFriends_SteamFriends015_GetClanTag(void *linux_side, CSteamID steamIDClan)
-{
-    return ((ISteamFriends*)linux_side)->GetClanTag((CSteamID)steamIDClan);
-}
-
-bool cppISteamFriends_SteamFriends015_GetClanActivityCounts(void *linux_side, CSteamID steamIDClan, int * pnOnline, int * pnInGame, int * pnChatting)
-{
-    return ((ISteamFriends*)linux_side)->GetClanActivityCounts((CSteamID)steamIDClan, (int *)pnOnline, (int *)pnInGame, (int *)pnChatting);
-}
-
-SteamAPICall_t cppISteamFriends_SteamFriends015_DownloadClanActivityCounts(void *linux_side, CSteamID * psteamIDClans, int cClansToRequest)
-{
-    return ((ISteamFriends*)linux_side)->DownloadClanActivityCounts((CSteamID *)psteamIDClans, (int)cClansToRequest);
-}
-
-int cppISteamFriends_SteamFriends015_GetFriendCountFromSource(void *linux_side, CSteamID steamIDSource)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendCountFromSource((CSteamID)steamIDSource);
-}
-
-CSteamID cppISteamFriends_SteamFriends015_GetFriendFromSourceByIndex(void *linux_side, CSteamID steamIDSource, int iFriend)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendFromSourceByIndex((CSteamID)steamIDSource, (int)iFriend);
-}
-
-bool cppISteamFriends_SteamFriends015_IsUserInSource(void *linux_side, CSteamID steamIDUser, CSteamID steamIDSource)
-{
-    return ((ISteamFriends*)linux_side)->IsUserInSource((CSteamID)steamIDUser, (CSteamID)steamIDSource);
-}
-
-void cppISteamFriends_SteamFriends015_SetInGameVoiceSpeaking(void *linux_side, CSteamID steamIDUser, bool bSpeaking)
-{
-    ((ISteamFriends*)linux_side)->SetInGameVoiceSpeaking((CSteamID)steamIDUser, (bool)bSpeaking);
-}
-
-void cppISteamFriends_SteamFriends015_ActivateGameOverlay(void *linux_side, const char * pchDialog)
-{
-    ((ISteamFriends*)linux_side)->ActivateGameOverlay((const char *)pchDialog);
-}
-
-void cppISteamFriends_SteamFriends015_ActivateGameOverlayToUser(void *linux_side, const char * pchDialog, CSteamID steamID)
-{
-    ((ISteamFriends*)linux_side)->ActivateGameOverlayToUser((const char *)pchDialog, (CSteamID)steamID);
-}
-
-void cppISteamFriends_SteamFriends015_ActivateGameOverlayToWebPage(void *linux_side, const char * pchURL)
-{
-    ((ISteamFriends*)linux_side)->ActivateGameOverlayToWebPage((const char *)pchURL);
-}
-
-void cppISteamFriends_SteamFriends015_ActivateGameOverlayToStore(void *linux_side, AppId_t nAppID, EOverlayToStoreFlag eFlag)
-{
-    ((ISteamFriends*)linux_side)->ActivateGameOverlayToStore((AppId_t)nAppID, (EOverlayToStoreFlag)eFlag);
-}
-
-void cppISteamFriends_SteamFriends015_SetPlayedWith(void *linux_side, CSteamID steamIDUserPlayedWith)
-{
-    ((ISteamFriends*)linux_side)->SetPlayedWith((CSteamID)steamIDUserPlayedWith);
-}
-
-void cppISteamFriends_SteamFriends015_ActivateGameOverlayInviteDialog(void *linux_side, CSteamID steamIDLobby)
-{
-    ((ISteamFriends*)linux_side)->ActivateGameOverlayInviteDialog((CSteamID)steamIDLobby);
-}
-
-int cppISteamFriends_SteamFriends015_GetSmallFriendAvatar(void *linux_side, CSteamID steamIDFriend)
-{
-    return ((ISteamFriends*)linux_side)->GetSmallFriendAvatar((CSteamID)steamIDFriend);
-}
-
-int cppISteamFriends_SteamFriends015_GetMediumFriendAvatar(void *linux_side, CSteamID steamIDFriend)
-{
-    return ((ISteamFriends*)linux_side)->GetMediumFriendAvatar((CSteamID)steamIDFriend);
-}
-
-int cppISteamFriends_SteamFriends015_GetLargeFriendAvatar(void *linux_side, CSteamID steamIDFriend)
-{
-    return ((ISteamFriends*)linux_side)->GetLargeFriendAvatar((CSteamID)steamIDFriend);
-}
-
-bool cppISteamFriends_SteamFriends015_RequestUserInformation(void *linux_side, CSteamID steamIDUser, bool bRequireNameOnly)
-{
-    return ((ISteamFriends*)linux_side)->RequestUserInformation((CSteamID)steamIDUser, (bool)bRequireNameOnly);
-}
-
-SteamAPICall_t cppISteamFriends_SteamFriends015_RequestClanOfficerList(void *linux_side, CSteamID steamIDClan)
-{
-    return ((ISteamFriends*)linux_side)->RequestClanOfficerList((CSteamID)steamIDClan);
-}
-
-CSteamID cppISteamFriends_SteamFriends015_GetClanOwner(void *linux_side, CSteamID steamIDClan)
-{
-    return ((ISteamFriends*)linux_side)->GetClanOwner((CSteamID)steamIDClan);
-}
-
-int cppISteamFriends_SteamFriends015_GetClanOfficerCount(void *linux_side, CSteamID steamIDClan)
-{
-    return ((ISteamFriends*)linux_side)->GetClanOfficerCount((CSteamID)steamIDClan);
-}
-
-CSteamID cppISteamFriends_SteamFriends015_GetClanOfficerByIndex(void *linux_side, CSteamID steamIDClan, int iOfficer)
-{
-    return ((ISteamFriends*)linux_side)->GetClanOfficerByIndex((CSteamID)steamIDClan, (int)iOfficer);
-}
-
-uint32 cppISteamFriends_SteamFriends015_GetUserRestrictions(void *linux_side)
-{
-    return ((ISteamFriends*)linux_side)->GetUserRestrictions();
-}
-
-bool cppISteamFriends_SteamFriends015_SetRichPresence(void *linux_side, const char * pchKey, const char * pchValue)
-{
-    return ((ISteamFriends*)linux_side)->SetRichPresence((const char *)pchKey, (const char *)pchValue);
-}
-
-void cppISteamFriends_SteamFriends015_ClearRichPresence(void *linux_side)
-{
-    ((ISteamFriends*)linux_side)->ClearRichPresence();
-}
-
-const char * cppISteamFriends_SteamFriends015_GetFriendRichPresence(void *linux_side, CSteamID steamIDFriend, const char * pchKey)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendRichPresence((CSteamID)steamIDFriend, (const char *)pchKey);
-}
-
-int cppISteamFriends_SteamFriends015_GetFriendRichPresenceKeyCount(void *linux_side, CSteamID steamIDFriend)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendRichPresenceKeyCount((CSteamID)steamIDFriend);
-}
-
-const char * cppISteamFriends_SteamFriends015_GetFriendRichPresenceKeyByIndex(void *linux_side, CSteamID steamIDFriend, int iKey)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendRichPresenceKeyByIndex((CSteamID)steamIDFriend, (int)iKey);
-}
-
-void cppISteamFriends_SteamFriends015_RequestFriendRichPresence(void *linux_side, CSteamID steamIDFriend)
-{
-    ((ISteamFriends*)linux_side)->RequestFriendRichPresence((CSteamID)steamIDFriend);
-}
-
-bool cppISteamFriends_SteamFriends015_InviteUserToGame(void *linux_side, CSteamID steamIDFriend, const char * pchConnectString)
-{
-    return ((ISteamFriends*)linux_side)->InviteUserToGame((CSteamID)steamIDFriend, (const char *)pchConnectString);
-}
-
-int cppISteamFriends_SteamFriends015_GetCoplayFriendCount(void *linux_side)
-{
-    return ((ISteamFriends*)linux_side)->GetCoplayFriendCount();
-}
-
-CSteamID cppISteamFriends_SteamFriends015_GetCoplayFriend(void *linux_side, int iCoplayFriend)
-{
-    return ((ISteamFriends*)linux_side)->GetCoplayFriend((int)iCoplayFriend);
-}
-
-int cppISteamFriends_SteamFriends015_GetFriendCoplayTime(void *linux_side, CSteamID steamIDFriend)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendCoplayTime((CSteamID)steamIDFriend);
-}
 
-AppId_t cppISteamFriends_SteamFriends015_GetFriendCoplayGame(void *linux_side, CSteamID steamIDFriend)
+NTSTATUS ISteamFriends_SteamFriends015_GetPersonaName( void *args )
 {
-    return ((ISteamFriends*)linux_side)->GetFriendCoplayGame((CSteamID)steamIDFriend);
+    struct ISteamFriends_SteamFriends015_GetPersonaName_params *params = (struct ISteamFriends_SteamFriends015_GetPersonaName_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetPersonaName(  );
+    return 0;
 }
 
-SteamAPICall_t cppISteamFriends_SteamFriends015_JoinClanChatRoom(void *linux_side, CSteamID steamIDClan)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetPersonaName( void *args )
 {
-    return ((ISteamFriends*)linux_side)->JoinClanChatRoom((CSteamID)steamIDClan);
-}
-
-bool cppISteamFriends_SteamFriends015_LeaveClanChatRoom(void *linux_side, CSteamID steamIDClan)
-{
-    return ((ISteamFriends*)linux_side)->LeaveClanChatRoom((CSteamID)steamIDClan);
-}
-
-int cppISteamFriends_SteamFriends015_GetClanChatMemberCount(void *linux_side, CSteamID steamIDClan)
-{
-    return ((ISteamFriends*)linux_side)->GetClanChatMemberCount((CSteamID)steamIDClan);
-}
-
-CSteamID cppISteamFriends_SteamFriends015_GetChatMemberByIndex(void *linux_side, CSteamID steamIDClan, int iUser)
-{
-    return ((ISteamFriends*)linux_side)->GetChatMemberByIndex((CSteamID)steamIDClan, (int)iUser);
-}
-
-bool cppISteamFriends_SteamFriends015_SendClanChatMessage(void *linux_side, CSteamID steamIDClanChat, const char * pchText)
-{
-    return ((ISteamFriends*)linux_side)->SendClanChatMessage((CSteamID)steamIDClanChat, (const char *)pchText);
-}
-
-int cppISteamFriends_SteamFriends015_GetClanChatMessage(void *linux_side, CSteamID steamIDClanChat, int iMessage, void * prgchText, int cchTextMax, EChatEntryType * peChatEntryType, CSteamID * psteamidChatter)
-{
-    return ((ISteamFriends*)linux_side)->GetClanChatMessage((CSteamID)steamIDClanChat, (int)iMessage, (void *)prgchText, (int)cchTextMax, (EChatEntryType *)peChatEntryType, (CSteamID *)psteamidChatter);
-}
-
-bool cppISteamFriends_SteamFriends015_IsClanChatAdmin(void *linux_side, CSteamID steamIDClanChat, CSteamID steamIDUser)
-{
-    return ((ISteamFriends*)linux_side)->IsClanChatAdmin((CSteamID)steamIDClanChat, (CSteamID)steamIDUser);
-}
-
-bool cppISteamFriends_SteamFriends015_IsClanChatWindowOpenInSteam(void *linux_side, CSteamID steamIDClanChat)
-{
-    return ((ISteamFriends*)linux_side)->IsClanChatWindowOpenInSteam((CSteamID)steamIDClanChat);
-}
-
-bool cppISteamFriends_SteamFriends015_OpenClanChatWindowInSteam(void *linux_side, CSteamID steamIDClanChat)
-{
-    return ((ISteamFriends*)linux_side)->OpenClanChatWindowInSteam((CSteamID)steamIDClanChat);
-}
-
-bool cppISteamFriends_SteamFriends015_CloseClanChatWindowInSteam(void *linux_side, CSteamID steamIDClanChat)
-{
-    return ((ISteamFriends*)linux_side)->CloseClanChatWindowInSteam((CSteamID)steamIDClanChat);
-}
-
-bool cppISteamFriends_SteamFriends015_SetListenForFriendsMessages(void *linux_side, bool bInterceptEnabled)
-{
-    return ((ISteamFriends*)linux_side)->SetListenForFriendsMessages((bool)bInterceptEnabled);
-}
-
-bool cppISteamFriends_SteamFriends015_ReplyToFriendMessage(void *linux_side, CSteamID steamIDFriend, const char * pchMsgToSend)
-{
-    return ((ISteamFriends*)linux_side)->ReplyToFriendMessage((CSteamID)steamIDFriend, (const char *)pchMsgToSend);
-}
-
-int cppISteamFriends_SteamFriends015_GetFriendMessage(void *linux_side, CSteamID steamIDFriend, int iMessageID, void * pvData, int cubData, EChatEntryType * peChatEntryType)
-{
-    return ((ISteamFriends*)linux_side)->GetFriendMessage((CSteamID)steamIDFriend, (int)iMessageID, (void *)pvData, (int)cubData, (EChatEntryType *)peChatEntryType);
-}
-
-SteamAPICall_t cppISteamFriends_SteamFriends015_GetFollowerCount(void *linux_side, CSteamID steamID)
-{
-    return ((ISteamFriends*)linux_side)->GetFollowerCount((CSteamID)steamID);
-}
-
-SteamAPICall_t cppISteamFriends_SteamFriends015_IsFollowing(void *linux_side, CSteamID steamID)
-{
-    return ((ISteamFriends*)linux_side)->IsFollowing((CSteamID)steamID);
-}
-
-SteamAPICall_t cppISteamFriends_SteamFriends015_EnumerateFollowingList(void *linux_side, uint32 unStartIndex)
-{
-    return ((ISteamFriends*)linux_side)->EnumerateFollowingList((uint32)unStartIndex);
-}
-
-bool cppISteamFriends_SteamFriends015_IsClanPublic(void *linux_side, CSteamID steamIDClan)
-{
-    return ((ISteamFriends*)linux_side)->IsClanPublic((CSteamID)steamIDClan);
-}
-
-bool cppISteamFriends_SteamFriends015_IsClanOfficialGameGroup(void *linux_side, CSteamID steamIDClan)
-{
-    return ((ISteamFriends*)linux_side)->IsClanOfficialGameGroup((CSteamID)steamIDClan);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamFriends_SteamFriends015_GetPersonaName_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetPersonaName_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetPersonaName(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamFriends_SteamFriends015_SetPersonaName( void *args )
+{
+    struct ISteamFriends_SteamFriends015_SetPersonaName_params *params = (struct ISteamFriends_SteamFriends015_SetPersonaName_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->SetPersonaName( params->pchPersonaName );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_SetPersonaName( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_SetPersonaName_params *params = (struct wow64_ISteamFriends_SteamFriends015_SetPersonaName_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->SetPersonaName( params->pchPersonaName );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetPersonaState( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetPersonaState_params *params = (struct ISteamFriends_SteamFriends015_GetPersonaState_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetPersonaState(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetPersonaState( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetPersonaState_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetPersonaState_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetPersonaState(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendCount( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendCount_params *params = (struct ISteamFriends_SteamFriends015_GetFriendCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendCount( params->iFriendFlags );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendCount( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendCount_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendCount( params->iFriendFlags );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendByIndex( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendByIndex_params *params = (struct ISteamFriends_SteamFriends015_GetFriendByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetFriendByIndex( params->iFriend, params->iFriendFlags );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendByIndex( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendByIndex_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetFriendByIndex( params->iFriend, params->iFriendFlags );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendRelationship( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendRelationship_params *params = (struct ISteamFriends_SteamFriends015_GetFriendRelationship_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendRelationship( params->steamIDFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendRelationship( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendRelationship_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendRelationship_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendRelationship( params->steamIDFriend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendPersonaState( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendPersonaState_params *params = (struct ISteamFriends_SteamFriends015_GetFriendPersonaState_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendPersonaState( params->steamIDFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendPersonaState( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendPersonaState_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendPersonaState_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendPersonaState( params->steamIDFriend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendPersonaName( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendPersonaName_params *params = (struct ISteamFriends_SteamFriends015_GetFriendPersonaName_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendPersonaName( params->steamIDFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendPersonaName( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendPersonaName_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendPersonaName_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendPersonaName( params->steamIDFriend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendGamePlayed( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendGamePlayed_params *params = (struct ISteamFriends_SteamFriends015_GetFriendGamePlayed_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendGamePlayed( params->steamIDFriend, params->pFriendGameInfo );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendGamePlayed( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendGamePlayed_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendGamePlayed_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendGamePlayed( params->steamIDFriend, params->pFriendGameInfo );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendPersonaNameHistory( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendPersonaNameHistory_params *params = (struct ISteamFriends_SteamFriends015_GetFriendPersonaNameHistory_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendPersonaNameHistory( params->steamIDFriend, params->iPersonaName );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendPersonaNameHistory( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendPersonaNameHistory_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendPersonaNameHistory_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendPersonaNameHistory( params->steamIDFriend, params->iPersonaName );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendSteamLevel( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendSteamLevel_params *params = (struct ISteamFriends_SteamFriends015_GetFriendSteamLevel_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendSteamLevel( params->steamIDFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendSteamLevel( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendSteamLevel_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendSteamLevel_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendSteamLevel( params->steamIDFriend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetPlayerNickname( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetPlayerNickname_params *params = (struct ISteamFriends_SteamFriends015_GetPlayerNickname_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetPlayerNickname( params->steamIDPlayer );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetPlayerNickname( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetPlayerNickname_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetPlayerNickname_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetPlayerNickname( params->steamIDPlayer );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendsGroupCount( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendsGroupCount_params *params = (struct ISteamFriends_SteamFriends015_GetFriendsGroupCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendsGroupCount(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendsGroupCount( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendsGroupCount_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendsGroupCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendsGroupCount(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendsGroupIDByIndex( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendsGroupIDByIndex_params *params = (struct ISteamFriends_SteamFriends015_GetFriendsGroupIDByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendsGroupIDByIndex( params->iFG );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendsGroupIDByIndex( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendsGroupIDByIndex_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendsGroupIDByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendsGroupIDByIndex( params->iFG );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendsGroupName( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendsGroupName_params *params = (struct ISteamFriends_SteamFriends015_GetFriendsGroupName_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendsGroupName( params->friendsGroupID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendsGroupName( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendsGroupName_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendsGroupName_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendsGroupName( params->friendsGroupID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendsGroupMembersCount( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendsGroupMembersCount_params *params = (struct ISteamFriends_SteamFriends015_GetFriendsGroupMembersCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendsGroupMembersCount( params->friendsGroupID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendsGroupMembersCount( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendsGroupMembersCount_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendsGroupMembersCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendsGroupMembersCount( params->friendsGroupID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendsGroupMembersList( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendsGroupMembersList_params *params = (struct ISteamFriends_SteamFriends015_GetFriendsGroupMembersList_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->GetFriendsGroupMembersList( params->friendsGroupID, params->pOutSteamIDMembers, params->nMembersCount );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendsGroupMembersList( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendsGroupMembersList_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendsGroupMembersList_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->GetFriendsGroupMembersList( params->friendsGroupID, params->pOutSteamIDMembers, params->nMembersCount );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_HasFriend( void *args )
+{
+    struct ISteamFriends_SteamFriends015_HasFriend_params *params = (struct ISteamFriends_SteamFriends015_HasFriend_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->HasFriend( params->steamIDFriend, params->iFriendFlags );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_HasFriend( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_HasFriend_params *params = (struct wow64_ISteamFriends_SteamFriends015_HasFriend_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->HasFriend( params->steamIDFriend, params->iFriendFlags );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetClanCount( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetClanCount_params *params = (struct ISteamFriends_SteamFriends015_GetClanCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanCount(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetClanCount( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetClanCount_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetClanCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanCount(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetClanByIndex( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetClanByIndex_params *params = (struct ISteamFriends_SteamFriends015_GetClanByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetClanByIndex( params->iClan );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetClanByIndex( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetClanByIndex_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetClanByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetClanByIndex( params->iClan );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetClanName( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetClanName_params *params = (struct ISteamFriends_SteamFriends015_GetClanName_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanName( params->steamIDClan );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetClanName( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetClanName_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetClanName_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanName( params->steamIDClan );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetClanTag( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetClanTag_params *params = (struct ISteamFriends_SteamFriends015_GetClanTag_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanTag( params->steamIDClan );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetClanTag( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetClanTag_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetClanTag_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanTag( params->steamIDClan );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetClanActivityCounts( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetClanActivityCounts_params *params = (struct ISteamFriends_SteamFriends015_GetClanActivityCounts_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanActivityCounts( params->steamIDClan, params->pnOnline, params->pnInGame, params->pnChatting );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetClanActivityCounts( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetClanActivityCounts_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetClanActivityCounts_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanActivityCounts( params->steamIDClan, params->pnOnline, params->pnInGame, params->pnChatting );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_DownloadClanActivityCounts( void *args )
+{
+    struct ISteamFriends_SteamFriends015_DownloadClanActivityCounts_params *params = (struct ISteamFriends_SteamFriends015_DownloadClanActivityCounts_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->DownloadClanActivityCounts( params->psteamIDClans, params->cClansToRequest );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_DownloadClanActivityCounts( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_DownloadClanActivityCounts_params *params = (struct wow64_ISteamFriends_SteamFriends015_DownloadClanActivityCounts_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->DownloadClanActivityCounts( params->psteamIDClans, params->cClansToRequest );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendCountFromSource( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendCountFromSource_params *params = (struct ISteamFriends_SteamFriends015_GetFriendCountFromSource_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendCountFromSource( params->steamIDSource );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendCountFromSource( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendCountFromSource_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendCountFromSource_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendCountFromSource( params->steamIDSource );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendFromSourceByIndex( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendFromSourceByIndex_params *params = (struct ISteamFriends_SteamFriends015_GetFriendFromSourceByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetFriendFromSourceByIndex( params->steamIDSource, params->iFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendFromSourceByIndex( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendFromSourceByIndex_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendFromSourceByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetFriendFromSourceByIndex( params->steamIDSource, params->iFriend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_IsUserInSource( void *args )
+{
+    struct ISteamFriends_SteamFriends015_IsUserInSource_params *params = (struct ISteamFriends_SteamFriends015_IsUserInSource_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->IsUserInSource( params->steamIDUser, params->steamIDSource );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_IsUserInSource( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_IsUserInSource_params *params = (struct wow64_ISteamFriends_SteamFriends015_IsUserInSource_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->IsUserInSource( params->steamIDUser, params->steamIDSource );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_SetInGameVoiceSpeaking( void *args )
+{
+    struct ISteamFriends_SteamFriends015_SetInGameVoiceSpeaking_params *params = (struct ISteamFriends_SteamFriends015_SetInGameVoiceSpeaking_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->SetInGameVoiceSpeaking( params->steamIDUser, params->bSpeaking );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_SetInGameVoiceSpeaking( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_SetInGameVoiceSpeaking_params *params = (struct wow64_ISteamFriends_SteamFriends015_SetInGameVoiceSpeaking_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->SetInGameVoiceSpeaking( params->steamIDUser, params->bSpeaking );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_ActivateGameOverlay( void *args )
+{
+    struct ISteamFriends_SteamFriends015_ActivateGameOverlay_params *params = (struct ISteamFriends_SteamFriends015_ActivateGameOverlay_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->ActivateGameOverlay( params->pchDialog );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_ActivateGameOverlay( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_ActivateGameOverlay_params *params = (struct wow64_ISteamFriends_SteamFriends015_ActivateGameOverlay_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->ActivateGameOverlay( params->pchDialog );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_ActivateGameOverlayToUser( void *args )
+{
+    struct ISteamFriends_SteamFriends015_ActivateGameOverlayToUser_params *params = (struct ISteamFriends_SteamFriends015_ActivateGameOverlayToUser_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->ActivateGameOverlayToUser( params->pchDialog, params->steamID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_ActivateGameOverlayToUser( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_ActivateGameOverlayToUser_params *params = (struct wow64_ISteamFriends_SteamFriends015_ActivateGameOverlayToUser_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->ActivateGameOverlayToUser( params->pchDialog, params->steamID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_ActivateGameOverlayToWebPage( void *args )
+{
+    struct ISteamFriends_SteamFriends015_ActivateGameOverlayToWebPage_params *params = (struct ISteamFriends_SteamFriends015_ActivateGameOverlayToWebPage_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    char *u_pchURL = steamclient_dos_to_unix_path( params->pchURL, 1 );
+    iface->ActivateGameOverlayToWebPage( u_pchURL );
+    steamclient_free_path( u_pchURL );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_ActivateGameOverlayToWebPage( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_ActivateGameOverlayToWebPage_params *params = (struct wow64_ISteamFriends_SteamFriends015_ActivateGameOverlayToWebPage_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    char *u_pchURL = steamclient_dos_to_unix_path( params->pchURL, 1 );
+    iface->ActivateGameOverlayToWebPage( u_pchURL );
+    steamclient_free_path( u_pchURL );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_ActivateGameOverlayToStore( void *args )
+{
+    struct ISteamFriends_SteamFriends015_ActivateGameOverlayToStore_params *params = (struct ISteamFriends_SteamFriends015_ActivateGameOverlayToStore_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->ActivateGameOverlayToStore( params->nAppID, params->eFlag );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_ActivateGameOverlayToStore( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_ActivateGameOverlayToStore_params *params = (struct wow64_ISteamFriends_SteamFriends015_ActivateGameOverlayToStore_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->ActivateGameOverlayToStore( params->nAppID, params->eFlag );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_SetPlayedWith( void *args )
+{
+    struct ISteamFriends_SteamFriends015_SetPlayedWith_params *params = (struct ISteamFriends_SteamFriends015_SetPlayedWith_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->SetPlayedWith( params->steamIDUserPlayedWith );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_SetPlayedWith( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_SetPlayedWith_params *params = (struct wow64_ISteamFriends_SteamFriends015_SetPlayedWith_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->SetPlayedWith( params->steamIDUserPlayedWith );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_ActivateGameOverlayInviteDialog( void *args )
+{
+    struct ISteamFriends_SteamFriends015_ActivateGameOverlayInviteDialog_params *params = (struct ISteamFriends_SteamFriends015_ActivateGameOverlayInviteDialog_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->ActivateGameOverlayInviteDialog( params->steamIDLobby );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_ActivateGameOverlayInviteDialog( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_ActivateGameOverlayInviteDialog_params *params = (struct wow64_ISteamFriends_SteamFriends015_ActivateGameOverlayInviteDialog_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->ActivateGameOverlayInviteDialog( params->steamIDLobby );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetSmallFriendAvatar( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetSmallFriendAvatar_params *params = (struct ISteamFriends_SteamFriends015_GetSmallFriendAvatar_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetSmallFriendAvatar( params->steamIDFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetSmallFriendAvatar( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetSmallFriendAvatar_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetSmallFriendAvatar_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetSmallFriendAvatar( params->steamIDFriend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetMediumFriendAvatar( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetMediumFriendAvatar_params *params = (struct ISteamFriends_SteamFriends015_GetMediumFriendAvatar_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetMediumFriendAvatar( params->steamIDFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetMediumFriendAvatar( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetMediumFriendAvatar_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetMediumFriendAvatar_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetMediumFriendAvatar( params->steamIDFriend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetLargeFriendAvatar( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetLargeFriendAvatar_params *params = (struct ISteamFriends_SteamFriends015_GetLargeFriendAvatar_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetLargeFriendAvatar( params->steamIDFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetLargeFriendAvatar( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetLargeFriendAvatar_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetLargeFriendAvatar_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetLargeFriendAvatar( params->steamIDFriend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_RequestUserInformation( void *args )
+{
+    struct ISteamFriends_SteamFriends015_RequestUserInformation_params *params = (struct ISteamFriends_SteamFriends015_RequestUserInformation_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->RequestUserInformation( params->steamIDUser, params->bRequireNameOnly );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_RequestUserInformation( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_RequestUserInformation_params *params = (struct wow64_ISteamFriends_SteamFriends015_RequestUserInformation_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->RequestUserInformation( params->steamIDUser, params->bRequireNameOnly );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_RequestClanOfficerList( void *args )
+{
+    struct ISteamFriends_SteamFriends015_RequestClanOfficerList_params *params = (struct ISteamFriends_SteamFriends015_RequestClanOfficerList_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->RequestClanOfficerList( params->steamIDClan );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_RequestClanOfficerList( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_RequestClanOfficerList_params *params = (struct wow64_ISteamFriends_SteamFriends015_RequestClanOfficerList_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->RequestClanOfficerList( params->steamIDClan );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetClanOwner( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetClanOwner_params *params = (struct ISteamFriends_SteamFriends015_GetClanOwner_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetClanOwner( params->steamIDClan );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetClanOwner( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetClanOwner_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetClanOwner_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetClanOwner( params->steamIDClan );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetClanOfficerCount( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetClanOfficerCount_params *params = (struct ISteamFriends_SteamFriends015_GetClanOfficerCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanOfficerCount( params->steamIDClan );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetClanOfficerCount( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetClanOfficerCount_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetClanOfficerCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanOfficerCount( params->steamIDClan );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetClanOfficerByIndex( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetClanOfficerByIndex_params *params = (struct ISteamFriends_SteamFriends015_GetClanOfficerByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetClanOfficerByIndex( params->steamIDClan, params->iOfficer );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetClanOfficerByIndex( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetClanOfficerByIndex_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetClanOfficerByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetClanOfficerByIndex( params->steamIDClan, params->iOfficer );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetUserRestrictions( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetUserRestrictions_params *params = (struct ISteamFriends_SteamFriends015_GetUserRestrictions_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetUserRestrictions(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetUserRestrictions( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetUserRestrictions_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetUserRestrictions_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetUserRestrictions(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_SetRichPresence( void *args )
+{
+    struct ISteamFriends_SteamFriends015_SetRichPresence_params *params = (struct ISteamFriends_SteamFriends015_SetRichPresence_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->SetRichPresence( params->pchKey, params->pchValue );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_SetRichPresence( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_SetRichPresence_params *params = (struct wow64_ISteamFriends_SteamFriends015_SetRichPresence_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->SetRichPresence( params->pchKey, params->pchValue );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_ClearRichPresence( void *args )
+{
+    struct ISteamFriends_SteamFriends015_ClearRichPresence_params *params = (struct ISteamFriends_SteamFriends015_ClearRichPresence_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->ClearRichPresence(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_ClearRichPresence( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_ClearRichPresence_params *params = (struct wow64_ISteamFriends_SteamFriends015_ClearRichPresence_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->ClearRichPresence(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendRichPresence( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendRichPresence_params *params = (struct ISteamFriends_SteamFriends015_GetFriendRichPresence_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendRichPresence( params->steamIDFriend, params->pchKey );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendRichPresence( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendRichPresence_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendRichPresence_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendRichPresence( params->steamIDFriend, params->pchKey );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendRichPresenceKeyCount( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendRichPresenceKeyCount_params *params = (struct ISteamFriends_SteamFriends015_GetFriendRichPresenceKeyCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendRichPresenceKeyCount( params->steamIDFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendRichPresenceKeyCount( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendRichPresenceKeyCount_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendRichPresenceKeyCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendRichPresenceKeyCount( params->steamIDFriend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendRichPresenceKeyByIndex( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendRichPresenceKeyByIndex_params *params = (struct ISteamFriends_SteamFriends015_GetFriendRichPresenceKeyByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendRichPresenceKeyByIndex( params->steamIDFriend, params->iKey );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendRichPresenceKeyByIndex( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendRichPresenceKeyByIndex_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendRichPresenceKeyByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendRichPresenceKeyByIndex( params->steamIDFriend, params->iKey );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_RequestFriendRichPresence( void *args )
+{
+    struct ISteamFriends_SteamFriends015_RequestFriendRichPresence_params *params = (struct ISteamFriends_SteamFriends015_RequestFriendRichPresence_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->RequestFriendRichPresence( params->steamIDFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_RequestFriendRichPresence( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_RequestFriendRichPresence_params *params = (struct wow64_ISteamFriends_SteamFriends015_RequestFriendRichPresence_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    iface->RequestFriendRichPresence( params->steamIDFriend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_InviteUserToGame( void *args )
+{
+    struct ISteamFriends_SteamFriends015_InviteUserToGame_params *params = (struct ISteamFriends_SteamFriends015_InviteUserToGame_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->InviteUserToGame( params->steamIDFriend, params->pchConnectString );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_InviteUserToGame( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_InviteUserToGame_params *params = (struct wow64_ISteamFriends_SteamFriends015_InviteUserToGame_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->InviteUserToGame( params->steamIDFriend, params->pchConnectString );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetCoplayFriendCount( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetCoplayFriendCount_params *params = (struct ISteamFriends_SteamFriends015_GetCoplayFriendCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetCoplayFriendCount(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetCoplayFriendCount( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetCoplayFriendCount_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetCoplayFriendCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetCoplayFriendCount(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetCoplayFriend( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetCoplayFriend_params *params = (struct ISteamFriends_SteamFriends015_GetCoplayFriend_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetCoplayFriend( params->iCoplayFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetCoplayFriend( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetCoplayFriend_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetCoplayFriend_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetCoplayFriend( params->iCoplayFriend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendCoplayTime( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendCoplayTime_params *params = (struct ISteamFriends_SteamFriends015_GetFriendCoplayTime_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendCoplayTime( params->steamIDFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendCoplayTime( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendCoplayTime_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendCoplayTime_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendCoplayTime( params->steamIDFriend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendCoplayGame( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendCoplayGame_params *params = (struct ISteamFriends_SteamFriends015_GetFriendCoplayGame_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendCoplayGame( params->steamIDFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendCoplayGame( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendCoplayGame_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendCoplayGame_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendCoplayGame( params->steamIDFriend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_JoinClanChatRoom( void *args )
+{
+    struct ISteamFriends_SteamFriends015_JoinClanChatRoom_params *params = (struct ISteamFriends_SteamFriends015_JoinClanChatRoom_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->JoinClanChatRoom( params->steamIDClan );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_JoinClanChatRoom( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_JoinClanChatRoom_params *params = (struct wow64_ISteamFriends_SteamFriends015_JoinClanChatRoom_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->JoinClanChatRoom( params->steamIDClan );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_LeaveClanChatRoom( void *args )
+{
+    struct ISteamFriends_SteamFriends015_LeaveClanChatRoom_params *params = (struct ISteamFriends_SteamFriends015_LeaveClanChatRoom_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->LeaveClanChatRoom( params->steamIDClan );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_LeaveClanChatRoom( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_LeaveClanChatRoom_params *params = (struct wow64_ISteamFriends_SteamFriends015_LeaveClanChatRoom_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->LeaveClanChatRoom( params->steamIDClan );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetClanChatMemberCount( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetClanChatMemberCount_params *params = (struct ISteamFriends_SteamFriends015_GetClanChatMemberCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanChatMemberCount( params->steamIDClan );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetClanChatMemberCount( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetClanChatMemberCount_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetClanChatMemberCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanChatMemberCount( params->steamIDClan );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetChatMemberByIndex( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetChatMemberByIndex_params *params = (struct ISteamFriends_SteamFriends015_GetChatMemberByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetChatMemberByIndex( params->steamIDClan, params->iUser );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetChatMemberByIndex( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetChatMemberByIndex_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetChatMemberByIndex_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    *params->_ret = iface->GetChatMemberByIndex( params->steamIDClan, params->iUser );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_SendClanChatMessage( void *args )
+{
+    struct ISteamFriends_SteamFriends015_SendClanChatMessage_params *params = (struct ISteamFriends_SteamFriends015_SendClanChatMessage_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->SendClanChatMessage( params->steamIDClanChat, params->pchText );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_SendClanChatMessage( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_SendClanChatMessage_params *params = (struct wow64_ISteamFriends_SteamFriends015_SendClanChatMessage_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->SendClanChatMessage( params->steamIDClanChat, params->pchText );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetClanChatMessage( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetClanChatMessage_params *params = (struct ISteamFriends_SteamFriends015_GetClanChatMessage_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanChatMessage( params->steamIDClanChat, params->iMessage, params->prgchText, params->cchTextMax, params->peChatEntryType, params->psteamidChatter );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetClanChatMessage( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetClanChatMessage_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetClanChatMessage_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetClanChatMessage( params->steamIDClanChat, params->iMessage, params->prgchText, params->cchTextMax, params->peChatEntryType, params->psteamidChatter );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_IsClanChatAdmin( void *args )
+{
+    struct ISteamFriends_SteamFriends015_IsClanChatAdmin_params *params = (struct ISteamFriends_SteamFriends015_IsClanChatAdmin_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->IsClanChatAdmin( params->steamIDClanChat, params->steamIDUser );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_IsClanChatAdmin( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_IsClanChatAdmin_params *params = (struct wow64_ISteamFriends_SteamFriends015_IsClanChatAdmin_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->IsClanChatAdmin( params->steamIDClanChat, params->steamIDUser );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_IsClanChatWindowOpenInSteam( void *args )
+{
+    struct ISteamFriends_SteamFriends015_IsClanChatWindowOpenInSteam_params *params = (struct ISteamFriends_SteamFriends015_IsClanChatWindowOpenInSteam_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->IsClanChatWindowOpenInSteam( params->steamIDClanChat );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_IsClanChatWindowOpenInSteam( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_IsClanChatWindowOpenInSteam_params *params = (struct wow64_ISteamFriends_SteamFriends015_IsClanChatWindowOpenInSteam_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->IsClanChatWindowOpenInSteam( params->steamIDClanChat );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_OpenClanChatWindowInSteam( void *args )
+{
+    struct ISteamFriends_SteamFriends015_OpenClanChatWindowInSteam_params *params = (struct ISteamFriends_SteamFriends015_OpenClanChatWindowInSteam_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->OpenClanChatWindowInSteam( params->steamIDClanChat );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_OpenClanChatWindowInSteam( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_OpenClanChatWindowInSteam_params *params = (struct wow64_ISteamFriends_SteamFriends015_OpenClanChatWindowInSteam_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->OpenClanChatWindowInSteam( params->steamIDClanChat );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_CloseClanChatWindowInSteam( void *args )
+{
+    struct ISteamFriends_SteamFriends015_CloseClanChatWindowInSteam_params *params = (struct ISteamFriends_SteamFriends015_CloseClanChatWindowInSteam_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->CloseClanChatWindowInSteam( params->steamIDClanChat );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_CloseClanChatWindowInSteam( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_CloseClanChatWindowInSteam_params *params = (struct wow64_ISteamFriends_SteamFriends015_CloseClanChatWindowInSteam_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->CloseClanChatWindowInSteam( params->steamIDClanChat );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_SetListenForFriendsMessages( void *args )
+{
+    struct ISteamFriends_SteamFriends015_SetListenForFriendsMessages_params *params = (struct ISteamFriends_SteamFriends015_SetListenForFriendsMessages_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->SetListenForFriendsMessages( params->bInterceptEnabled );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_SetListenForFriendsMessages( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_SetListenForFriendsMessages_params *params = (struct wow64_ISteamFriends_SteamFriends015_SetListenForFriendsMessages_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->SetListenForFriendsMessages( params->bInterceptEnabled );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_ReplyToFriendMessage( void *args )
+{
+    struct ISteamFriends_SteamFriends015_ReplyToFriendMessage_params *params = (struct ISteamFriends_SteamFriends015_ReplyToFriendMessage_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->ReplyToFriendMessage( params->steamIDFriend, params->pchMsgToSend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_ReplyToFriendMessage( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_ReplyToFriendMessage_params *params = (struct wow64_ISteamFriends_SteamFriends015_ReplyToFriendMessage_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->ReplyToFriendMessage( params->steamIDFriend, params->pchMsgToSend );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFriendMessage( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFriendMessage_params *params = (struct ISteamFriends_SteamFriends015_GetFriendMessage_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendMessage( params->steamIDFriend, params->iMessageID, params->pvData, params->cubData, params->peChatEntryType );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFriendMessage( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFriendMessage_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFriendMessage_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFriendMessage( params->steamIDFriend, params->iMessageID, params->pvData, params->cubData, params->peChatEntryType );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_GetFollowerCount( void *args )
+{
+    struct ISteamFriends_SteamFriends015_GetFollowerCount_params *params = (struct ISteamFriends_SteamFriends015_GetFollowerCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFollowerCount( params->steamID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_GetFollowerCount( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_GetFollowerCount_params *params = (struct wow64_ISteamFriends_SteamFriends015_GetFollowerCount_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->GetFollowerCount( params->steamID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_IsFollowing( void *args )
+{
+    struct ISteamFriends_SteamFriends015_IsFollowing_params *params = (struct ISteamFriends_SteamFriends015_IsFollowing_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->IsFollowing( params->steamID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_IsFollowing( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_IsFollowing_params *params = (struct wow64_ISteamFriends_SteamFriends015_IsFollowing_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->IsFollowing( params->steamID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_EnumerateFollowingList( void *args )
+{
+    struct ISteamFriends_SteamFriends015_EnumerateFollowingList_params *params = (struct ISteamFriends_SteamFriends015_EnumerateFollowingList_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->EnumerateFollowingList( params->unStartIndex );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_EnumerateFollowingList( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_EnumerateFollowingList_params *params = (struct wow64_ISteamFriends_SteamFriends015_EnumerateFollowingList_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->EnumerateFollowingList( params->unStartIndex );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_IsClanPublic( void *args )
+{
+    struct ISteamFriends_SteamFriends015_IsClanPublic_params *params = (struct ISteamFriends_SteamFriends015_IsClanPublic_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->IsClanPublic( params->steamIDClan );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_IsClanPublic( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_IsClanPublic_params *params = (struct wow64_ISteamFriends_SteamFriends015_IsClanPublic_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->IsClanPublic( params->steamIDClan );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamFriends_SteamFriends015_IsClanOfficialGameGroup( void *args )
+{
+    struct ISteamFriends_SteamFriends015_IsClanOfficialGameGroup_params *params = (struct ISteamFriends_SteamFriends015_IsClanOfficialGameGroup_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->IsClanOfficialGameGroup( params->steamIDClan );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamFriends_SteamFriends015_IsClanOfficialGameGroup( void *args )
+{
+    struct wow64_ISteamFriends_SteamFriends015_IsClanOfficialGameGroup_params *params = (struct wow64_ISteamFriends_SteamFriends015_IsClanOfficialGameGroup_params *)args;
+    struct u_ISteamFriends_SteamFriends015 *iface = (struct u_ISteamFriends_SteamFriends015 *)params->u_iface;
+    params->_ret = iface->IsClanOfficialGameGroup( params->steamIDClan );
+    return 0;
+}
+#endif
+

@@ -1,46 +1,119 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_134/steam_api.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_134
-#include "struct_converters.h"
-#include "cppISteamController_STEAMCONTROLLER_INTERFACE_VERSION.h"
-bool cppISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Init(void *linux_side, const char * pchAbsolutePathToControllerConfigVDF)
+
+NTSTATUS ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Init( void *args )
 {
-    return ((ISteamController*)linux_side)->Init((const char *)pchAbsolutePathToControllerConfigVDF);
+    struct ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Init_params *params = (struct ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Init_params *)args;
+    struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *iface = (struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *)params->u_iface;
+    char *u_pchAbsolutePathToControllerConfigVDF = steamclient_dos_to_unix_path( params->pchAbsolutePathToControllerConfigVDF, 0 );
+    params->_ret = iface->Init( u_pchAbsolutePathToControllerConfigVDF );
+    steamclient_free_path( u_pchAbsolutePathToControllerConfigVDF );
+    return 0;
 }
 
-bool cppISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Shutdown(void *linux_side)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Init( void *args )
 {
-    return ((ISteamController*)linux_side)->Shutdown();
-}
-
-void cppISteamController_STEAMCONTROLLER_INTERFACE_VERSION_RunFrame(void *linux_side)
-{
-    ((ISteamController*)linux_side)->RunFrame();
-}
-
-bool cppISteamController_STEAMCONTROLLER_INTERFACE_VERSION_GetControllerState(void *linux_side, uint32 unControllerIndex, SteamControllerState001_t * pState)
-{
-    return ((ISteamController*)linux_side)->GetControllerState((uint32)unControllerIndex, (SteamControllerState001_t *)pState);
-}
-
-void cppISteamController_STEAMCONTROLLER_INTERFACE_VERSION_TriggerHapticPulse(void *linux_side, uint32 unControllerIndex, ESteamControllerPad eTargetPad, unsigned short usDurationMicroSec)
-{
-    ((ISteamController*)linux_side)->TriggerHapticPulse((uint32)unControllerIndex, (ESteamControllerPad)eTargetPad, (unsigned short)usDurationMicroSec);
-}
-
-void cppISteamController_STEAMCONTROLLER_INTERFACE_VERSION_SetOverrideMode(void *linux_side, const char * pchMode)
-{
-    ((ISteamController*)linux_side)->SetOverrideMode((const char *)pchMode);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Init_params *params = (struct wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Init_params *)args;
+    struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *iface = (struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *)params->u_iface;
+    char *u_pchAbsolutePathToControllerConfigVDF = steamclient_dos_to_unix_path( params->pchAbsolutePathToControllerConfigVDF, 0 );
+    params->_ret = iface->Init( u_pchAbsolutePathToControllerConfigVDF );
+    steamclient_free_path( u_pchAbsolutePathToControllerConfigVDF );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Shutdown( void *args )
+{
+    struct ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Shutdown_params *params = (struct ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Shutdown_params *)args;
+    struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *iface = (struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *)params->u_iface;
+    params->_ret = iface->Shutdown(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Shutdown( void *args )
+{
+    struct wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Shutdown_params *params = (struct wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_Shutdown_params *)args;
+    struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *iface = (struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *)params->u_iface;
+    params->_ret = iface->Shutdown(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_RunFrame( void *args )
+{
+    struct ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_RunFrame_params *params = (struct ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_RunFrame_params *)args;
+    struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *iface = (struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *)params->u_iface;
+    iface->RunFrame(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_RunFrame( void *args )
+{
+    struct wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_RunFrame_params *params = (struct wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_RunFrame_params *)args;
+    struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *iface = (struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *)params->u_iface;
+    iface->RunFrame(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_GetControllerState( void *args )
+{
+    struct ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_GetControllerState_params *params = (struct ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_GetControllerState_params *)args;
+    struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *iface = (struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *)params->u_iface;
+    params->_ret = iface->GetControllerState( params->unControllerIndex, params->pState );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_GetControllerState( void *args )
+{
+    struct wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_GetControllerState_params *params = (struct wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_GetControllerState_params *)args;
+    struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *iface = (struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *)params->u_iface;
+    params->_ret = iface->GetControllerState( params->unControllerIndex, params->pState );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_TriggerHapticPulse( void *args )
+{
+    struct ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_TriggerHapticPulse_params *params = (struct ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_TriggerHapticPulse_params *)args;
+    struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *iface = (struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *)params->u_iface;
+    iface->TriggerHapticPulse( params->unControllerIndex, params->eTargetPad, params->usDurationMicroSec );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_TriggerHapticPulse( void *args )
+{
+    struct wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_TriggerHapticPulse_params *params = (struct wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_TriggerHapticPulse_params *)args;
+    struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *iface = (struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *)params->u_iface;
+    iface->TriggerHapticPulse( params->unControllerIndex, params->eTargetPad, params->usDurationMicroSec );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_SetOverrideMode( void *args )
+{
+    struct ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_SetOverrideMode_params *params = (struct ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_SetOverrideMode_params *)args;
+    struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *iface = (struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *)params->u_iface;
+    iface->SetOverrideMode( params->pchMode );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_SetOverrideMode( void *args )
+{
+    struct wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_SetOverrideMode_params *params = (struct wow64_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION_SetOverrideMode_params *)args;
+    struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *iface = (struct u_ISteamController_STEAMCONTROLLER_INTERFACE_VERSION *)params->u_iface;
+    iface->SetOverrideMode( params->pchMode );
+    return 0;
+}
+#endif
+

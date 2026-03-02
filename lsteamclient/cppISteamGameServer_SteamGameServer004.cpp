@@ -1,87 +1,259 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_100/steam_api.h"
-#include "steamworks_sdk_100/isteamgameserver.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_100
-#include "struct_converters.h"
-#include "cppISteamGameServer_SteamGameServer004.h"
-void cppISteamGameServer_SteamGameServer004_LogOn(void *linux_side)
+
+NTSTATUS ISteamGameServer_SteamGameServer004_LogOn( void *args )
 {
-    ((ISteamGameServer*)linux_side)->LogOn();
+    struct ISteamGameServer_SteamGameServer004_LogOn_params *params = (struct ISteamGameServer_SteamGameServer004_LogOn_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->LogOn(  );
+    return 0;
 }
 
-void cppISteamGameServer_SteamGameServer004_LogOff(void *linux_side)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_LogOn( void *args )
 {
-    ((ISteamGameServer*)linux_side)->LogOff();
-}
-
-bool cppISteamGameServer_SteamGameServer004_BLoggedOn(void *linux_side)
-{
-    return ((ISteamGameServer*)linux_side)->BLoggedOn();
-}
-
-bool cppISteamGameServer_SteamGameServer004_BSecure(void *linux_side)
-{
-    return ((ISteamGameServer*)linux_side)->BSecure();
-}
-
-CSteamID cppISteamGameServer_SteamGameServer004_GetSteamID(void *linux_side)
-{
-    return ((ISteamGameServer*)linux_side)->GetSteamID();
-}
-
-void cppISteamGameServer_SteamGameServer004_SendUserConnectAndAuthenticate(void *linux_side, CSteamID steamIDUser, uint32 unIPClient, void * pvAuthBlob, uint32 cubAuthBlobSize)
-{
-    ((ISteamGameServer*)linux_side)->SendUserConnectAndAuthenticate((CSteamID)steamIDUser, (uint32)unIPClient, (void *)pvAuthBlob, (uint32)cubAuthBlobSize);
-}
-
-CSteamID cppISteamGameServer_SteamGameServer004_CreateUnauthenticatedUserConnection(void *linux_side)
-{
-    return ((ISteamGameServer*)linux_side)->CreateUnauthenticatedUserConnection();
-}
-
-void cppISteamGameServer_SteamGameServer004_SendUserDisconnect(void *linux_side, CSteamID steamIDUser)
-{
-    ((ISteamGameServer*)linux_side)->SendUserDisconnect((CSteamID)steamIDUser);
-}
-
-bool cppISteamGameServer_SteamGameServer004_BUpdateUserData(void *linux_side, CSteamID steamIDUser, const char * pchPlayerName, uint32 uScore)
-{
-    return ((ISteamGameServer*)linux_side)->BUpdateUserData((CSteamID)steamIDUser, (const char *)pchPlayerName, (uint32)uScore);
-}
-
-bool cppISteamGameServer_SteamGameServer004_BSetServerType(void *linux_side, int32 nGameAppId, uint32 unServerFlags, uint32 unGameIP, uint16 unGamePort, uint16 unSpectatorPort, uint16 usQueryPort, const char * pchGameDir, const char * pchVersion, bool bLANMode)
-{
-    return ((ISteamGameServer*)linux_side)->BSetServerType((int32)nGameAppId, (uint32)unServerFlags, (uint32)unGameIP, (uint16)unGamePort, (uint16)unSpectatorPort, (uint16)usQueryPort, (const char *)pchGameDir, (const char *)pchVersion, (bool)bLANMode);
-}
-
-void cppISteamGameServer_SteamGameServer004_UpdateServerStatus(void *linux_side, int cPlayers, int cPlayersMax, int cBotPlayers, const char * pchServerName, const char * pSpectatorServerName, const char * pchMapName)
-{
-    ((ISteamGameServer*)linux_side)->UpdateServerStatus((int)cPlayers, (int)cPlayersMax, (int)cBotPlayers, (const char *)pchServerName, (const char *)pSpectatorServerName, (const char *)pchMapName);
-}
-
-void cppISteamGameServer_SteamGameServer004_UpdateSpectatorPort(void *linux_side, uint16 unSpectatorPort)
-{
-    ((ISteamGameServer*)linux_side)->UpdateSpectatorPort((uint16)unSpectatorPort);
-}
-
-void cppISteamGameServer_SteamGameServer004_SetGameType(void *linux_side, const char * pchGameType)
-{
-    ((ISteamGameServer*)linux_side)->SetGameType((const char *)pchGameType);
-}
-
-bool cppISteamGameServer_SteamGameServer004_BGetUserAchievementStatus(void *linux_side, CSteamID steamID, const char * pchAchievementName)
-{
-    return ((ISteamGameServer*)linux_side)->BGetUserAchievementStatus((CSteamID)steamID, (const char *)pchAchievementName);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamGameServer_SteamGameServer004_LogOn_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_LogOn_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->LogOn(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamGameServer_SteamGameServer004_LogOff( void *args )
+{
+    struct ISteamGameServer_SteamGameServer004_LogOff_params *params = (struct ISteamGameServer_SteamGameServer004_LogOff_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->LogOff(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_LogOff( void *args )
+{
+    struct wow64_ISteamGameServer_SteamGameServer004_LogOff_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_LogOff_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->LogOff(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameServer_SteamGameServer004_BLoggedOn( void *args )
+{
+    struct ISteamGameServer_SteamGameServer004_BLoggedOn_params *params = (struct ISteamGameServer_SteamGameServer004_BLoggedOn_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    params->_ret = iface->BLoggedOn(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_BLoggedOn( void *args )
+{
+    struct wow64_ISteamGameServer_SteamGameServer004_BLoggedOn_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_BLoggedOn_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    params->_ret = iface->BLoggedOn(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameServer_SteamGameServer004_BSecure( void *args )
+{
+    struct ISteamGameServer_SteamGameServer004_BSecure_params *params = (struct ISteamGameServer_SteamGameServer004_BSecure_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    params->_ret = iface->BSecure(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_BSecure( void *args )
+{
+    struct wow64_ISteamGameServer_SteamGameServer004_BSecure_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_BSecure_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    params->_ret = iface->BSecure(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameServer_SteamGameServer004_GetSteamID( void *args )
+{
+    struct ISteamGameServer_SteamGameServer004_GetSteamID_params *params = (struct ISteamGameServer_SteamGameServer004_GetSteamID_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    *params->_ret = iface->GetSteamID(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_GetSteamID( void *args )
+{
+    struct wow64_ISteamGameServer_SteamGameServer004_GetSteamID_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_GetSteamID_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    *params->_ret = iface->GetSteamID(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameServer_SteamGameServer004_SendUserConnectAndAuthenticate( void *args )
+{
+    struct ISteamGameServer_SteamGameServer004_SendUserConnectAndAuthenticate_params *params = (struct ISteamGameServer_SteamGameServer004_SendUserConnectAndAuthenticate_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->SendUserConnectAndAuthenticate( params->steamIDUser, params->unIPClient, params->pvAuthBlob, params->cubAuthBlobSize );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_SendUserConnectAndAuthenticate( void *args )
+{
+    struct wow64_ISteamGameServer_SteamGameServer004_SendUserConnectAndAuthenticate_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_SendUserConnectAndAuthenticate_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->SendUserConnectAndAuthenticate( params->steamIDUser, params->unIPClient, params->pvAuthBlob, params->cubAuthBlobSize );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameServer_SteamGameServer004_CreateUnauthenticatedUserConnection( void *args )
+{
+    struct ISteamGameServer_SteamGameServer004_CreateUnauthenticatedUserConnection_params *params = (struct ISteamGameServer_SteamGameServer004_CreateUnauthenticatedUserConnection_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    *params->_ret = iface->CreateUnauthenticatedUserConnection(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_CreateUnauthenticatedUserConnection( void *args )
+{
+    struct wow64_ISteamGameServer_SteamGameServer004_CreateUnauthenticatedUserConnection_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_CreateUnauthenticatedUserConnection_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    *params->_ret = iface->CreateUnauthenticatedUserConnection(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameServer_SteamGameServer004_SendUserDisconnect( void *args )
+{
+    struct ISteamGameServer_SteamGameServer004_SendUserDisconnect_params *params = (struct ISteamGameServer_SteamGameServer004_SendUserDisconnect_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->SendUserDisconnect( params->steamIDUser );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_SendUserDisconnect( void *args )
+{
+    struct wow64_ISteamGameServer_SteamGameServer004_SendUserDisconnect_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_SendUserDisconnect_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->SendUserDisconnect( params->steamIDUser );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameServer_SteamGameServer004_BUpdateUserData( void *args )
+{
+    struct ISteamGameServer_SteamGameServer004_BUpdateUserData_params *params = (struct ISteamGameServer_SteamGameServer004_BUpdateUserData_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    params->_ret = iface->BUpdateUserData( params->steamIDUser, params->pchPlayerName, params->uScore );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_BUpdateUserData( void *args )
+{
+    struct wow64_ISteamGameServer_SteamGameServer004_BUpdateUserData_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_BUpdateUserData_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    params->_ret = iface->BUpdateUserData( params->steamIDUser, params->pchPlayerName, params->uScore );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameServer_SteamGameServer004_BSetServerType( void *args )
+{
+    struct ISteamGameServer_SteamGameServer004_BSetServerType_params *params = (struct ISteamGameServer_SteamGameServer004_BSetServerType_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    params->_ret = iface->BSetServerType( params->nGameAppId, params->unServerFlags, params->unGameIP, params->unGamePort, params->unSpectatorPort, params->usQueryPort, params->pchGameDir, params->pchVersion, params->bLANMode );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_BSetServerType( void *args )
+{
+    struct wow64_ISteamGameServer_SteamGameServer004_BSetServerType_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_BSetServerType_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    params->_ret = iface->BSetServerType( params->nGameAppId, params->unServerFlags, params->unGameIP, params->unGamePort, params->unSpectatorPort, params->usQueryPort, params->pchGameDir, params->pchVersion, params->bLANMode );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameServer_SteamGameServer004_UpdateServerStatus( void *args )
+{
+    struct ISteamGameServer_SteamGameServer004_UpdateServerStatus_params *params = (struct ISteamGameServer_SteamGameServer004_UpdateServerStatus_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->UpdateServerStatus( params->cPlayers, params->cPlayersMax, params->cBotPlayers, params->pchServerName, params->pSpectatorServerName, params->pchMapName );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_UpdateServerStatus( void *args )
+{
+    struct wow64_ISteamGameServer_SteamGameServer004_UpdateServerStatus_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_UpdateServerStatus_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->UpdateServerStatus( params->cPlayers, params->cPlayersMax, params->cBotPlayers, params->pchServerName, params->pSpectatorServerName, params->pchMapName );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameServer_SteamGameServer004_UpdateSpectatorPort( void *args )
+{
+    struct ISteamGameServer_SteamGameServer004_UpdateSpectatorPort_params *params = (struct ISteamGameServer_SteamGameServer004_UpdateSpectatorPort_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->UpdateSpectatorPort( params->unSpectatorPort );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_UpdateSpectatorPort( void *args )
+{
+    struct wow64_ISteamGameServer_SteamGameServer004_UpdateSpectatorPort_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_UpdateSpectatorPort_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->UpdateSpectatorPort( params->unSpectatorPort );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameServer_SteamGameServer004_SetGameType( void *args )
+{
+    struct ISteamGameServer_SteamGameServer004_SetGameType_params *params = (struct ISteamGameServer_SteamGameServer004_SetGameType_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->SetGameType( params->pchGameType );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_SetGameType( void *args )
+{
+    struct wow64_ISteamGameServer_SteamGameServer004_SetGameType_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_SetGameType_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    iface->SetGameType( params->pchGameType );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameServer_SteamGameServer004_BGetUserAchievementStatus( void *args )
+{
+    struct ISteamGameServer_SteamGameServer004_BGetUserAchievementStatus_params *params = (struct ISteamGameServer_SteamGameServer004_BGetUserAchievementStatus_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    params->_ret = iface->BGetUserAchievementStatus( params->steamID, params->pchAchievementName );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameServer_SteamGameServer004_BGetUserAchievementStatus( void *args )
+{
+    struct wow64_ISteamGameServer_SteamGameServer004_BGetUserAchievementStatus_params *params = (struct wow64_ISteamGameServer_SteamGameServer004_BGetUserAchievementStatus_params *)args;
+    struct u_ISteamGameServer_SteamGameServer004 *iface = (struct u_ISteamGameServer_SteamGameServer004 *)params->u_iface;
+    params->_ret = iface->BGetUserAchievementStatus( params->steamID, params->pchAchievementName );
+    return 0;
+}
+#endif
+

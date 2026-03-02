@@ -1,126 +1,403 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_099y/steam_api.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_099y
-#include "struct_converters.h"
-#include "cppISteamMatchmaking_SteamMatchMaking001.h"
-int cppISteamMatchmaking_SteamMatchMaking001_GetFavoriteGameCount(void *linux_side)
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGameCount( void *args )
 {
-    return ((ISteamMatchmaking*)linux_side)->GetFavoriteGameCount();
+    struct ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGameCount_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGameCount_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetFavoriteGameCount(  );
+    return 0;
 }
 
-bool cppISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame(void *linux_side, int iGame, uint32 * pnAppID, uint32 * pnIP, uint16 * pnConnPort, uint32 * punFlags, uint32 * pRTime32LastPlayedOnServer)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGameCount( void *args )
 {
-    return ((ISteamMatchmaking*)linux_side)->GetFavoriteGame((int)iGame, (uint32 *)pnAppID, (uint32 *)pnIP, (uint16 *)pnConnPort, (uint32 *)punFlags, (uint32 *)pRTime32LastPlayedOnServer);
-}
-
-int cppISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame(void *linux_side, uint32 nAppID, uint32 nIP, uint16 nConnPort, uint32 unFlags, uint32 rTime32LastPlayedOnServer)
-{
-    return ((ISteamMatchmaking*)linux_side)->AddFavoriteGame((uint32)nAppID, (uint32)nIP, (uint16)nConnPort, (uint32)unFlags, (uint32)rTime32LastPlayedOnServer);
-}
-
-bool cppISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame(void *linux_side, uint32 nAppID, uint32 nIP, uint16 nConnPort, uint32 unFlags)
-{
-    return ((ISteamMatchmaking*)linux_side)->RemoveFavoriteGame((uint32)nAppID, (uint32)nIP, (uint16)nConnPort, (uint32)unFlags);
-}
-
-bool cppISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame2(void *linux_side, int iGame, uint32 * pnAppID, uint32 * pnIP, uint16 * pnConnPort, uint16 * pnQueryPort, uint32 * punFlags, uint32 * pRTime32LastPlayedOnServer)
-{
-    return ((ISteamMatchmaking*)linux_side)->GetFavoriteGame2((int)iGame, (uint32 *)pnAppID, (uint32 *)pnIP, (uint16 *)pnConnPort, (uint16 *)pnQueryPort, (uint32 *)punFlags, (uint32 *)pRTime32LastPlayedOnServer);
-}
-
-int cppISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame2(void *linux_side, uint32 nAppID, uint32 nIP, uint16 nConnPort, uint16 nQueryPort, uint32 unFlags, uint32 rTime32LastPlayedOnServer)
-{
-    return ((ISteamMatchmaking*)linux_side)->AddFavoriteGame2((uint32)nAppID, (uint32)nIP, (uint16)nConnPort, (uint16)nQueryPort, (uint32)unFlags, (uint32)rTime32LastPlayedOnServer);
-}
-
-bool cppISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame2(void *linux_side, uint32 nAppID, uint32 nIP, uint16 nConnPort, uint16 nQueryPort, uint32 unFlags)
-{
-    return ((ISteamMatchmaking*)linux_side)->RemoveFavoriteGame2((uint32)nAppID, (uint32)nIP, (uint16)nConnPort, (uint16)nQueryPort, (uint32)unFlags);
-}
-
-void cppISteamMatchmaking_SteamMatchMaking001_RequestLobbyList(void *linux_side, uint64 ulGameID, MatchMakingKeyValuePair_t * pFilters, uint32 nFilters)
-{
-    ((ISteamMatchmaking*)linux_side)->RequestLobbyList((uint64)ulGameID, (MatchMakingKeyValuePair_t *)pFilters, (uint32)nFilters);
-}
-
-CSteamID cppISteamMatchmaking_SteamMatchMaking001_GetLobbyByIndex(void *linux_side, int iLobby)
-{
-    return ((ISteamMatchmaking*)linux_side)->GetLobbyByIndex((int)iLobby);
-}
-
-void cppISteamMatchmaking_SteamMatchMaking001_CreateLobby(void *linux_side, uint64 ulGameID, bool bPrivate)
-{
-    ((ISteamMatchmaking*)linux_side)->CreateLobby((uint64)ulGameID, (bool)bPrivate);
-}
-
-void cppISteamMatchmaking_SteamMatchMaking001_JoinLobby(void *linux_side, CSteamID steamIDLobby)
-{
-    ((ISteamMatchmaking*)linux_side)->JoinLobby((CSteamID)steamIDLobby);
-}
-
-void cppISteamMatchmaking_SteamMatchMaking001_LeaveLobby(void *linux_side, CSteamID steamIDLobby)
-{
-    ((ISteamMatchmaking*)linux_side)->LeaveLobby((CSteamID)steamIDLobby);
-}
-
-bool cppISteamMatchmaking_SteamMatchMaking001_InviteUserToLobby(void *linux_side, CSteamID steamIDLobby, CSteamID steamIDInvitee)
-{
-    return ((ISteamMatchmaking*)linux_side)->InviteUserToLobby((CSteamID)steamIDLobby, (CSteamID)steamIDInvitee);
-}
-
-int cppISteamMatchmaking_SteamMatchMaking001_GetNumLobbyMembers(void *linux_side, CSteamID steamIDLobby)
-{
-    return ((ISteamMatchmaking*)linux_side)->GetNumLobbyMembers((CSteamID)steamIDLobby);
-}
-
-CSteamID cppISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberByIndex(void *linux_side, CSteamID steamIDLobby, int iMember)
-{
-    return ((ISteamMatchmaking*)linux_side)->GetLobbyMemberByIndex((CSteamID)steamIDLobby, (int)iMember);
-}
-
-const char * cppISteamMatchmaking_SteamMatchMaking001_GetLobbyData(void *linux_side, CSteamID SteamIDLobby, const char * pchKey)
-{
-    return ((ISteamMatchmaking*)linux_side)->GetLobbyData((CSteamID)SteamIDLobby, (const char *)pchKey);
-}
-
-bool cppISteamMatchmaking_SteamMatchMaking001_SetLobbyData(void *linux_side, CSteamID steamIDLobby, const char * pchKey, const char * pchValue)
-{
-    return ((ISteamMatchmaking*)linux_side)->SetLobbyData((CSteamID)steamIDLobby, (const char *)pchKey, (const char *)pchValue);
-}
-
-const char * cppISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberData(void *linux_side, CSteamID steamIDLobby, CSteamID steamIDUser, const char * pchKey)
-{
-    return ((ISteamMatchmaking*)linux_side)->GetLobbyMemberData((CSteamID)steamIDLobby, (CSteamID)steamIDUser, (const char *)pchKey);
-}
-
-bool cppISteamMatchmaking_SteamMatchMaking001_SetLobbyMemberData(void *linux_side, CSteamID steamIDLobby, const char * pchKey, const char * pchValue)
-{
-    return ((ISteamMatchmaking*)linux_side)->SetLobbyMemberData((CSteamID)steamIDLobby, (const char *)pchKey, (const char *)pchValue);
-}
-
-bool cppISteamMatchmaking_SteamMatchMaking001_SendLobbyChatMsg(void *linux_side, CSteamID steamIDLobby, const void * pvMsgBody, int cubMsgBody)
-{
-    return ((ISteamMatchmaking*)linux_side)->SendLobbyChatMsg((CSteamID)steamIDLobby, (const void *)pvMsgBody, (int)cubMsgBody);
-}
-
-int cppISteamMatchmaking_SteamMatchMaking001_GetLobbyChatEntry(void *linux_side, CSteamID steamIDLobby, int iChatID, CSteamID * pSteamIDUser, void * pvData, int cubData, EChatEntryType * peChatEntryType)
-{
-    return ((ISteamMatchmaking*)linux_side)->GetLobbyChatEntry((CSteamID)steamIDLobby, (int)iChatID, (CSteamID *)pSteamIDUser, (void *)pvData, (int)cubData, (EChatEntryType *)peChatEntryType);
-}
-
-bool cppISteamMatchmaking_SteamMatchMaking001_RequestLobbyData(void *linux_side, CSteamID steamIDLobby)
-{
-    return ((ISteamMatchmaking*)linux_side)->RequestLobbyData((CSteamID)steamIDLobby);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGameCount_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGameCount_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetFavoriteGameCount(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetFavoriteGame( params->iGame, params->pnAppID, params->pnIP, params->pnConnPort, params->punFlags, params->pRTime32LastPlayedOnServer );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetFavoriteGame( params->iGame, params->pnAppID, params->pnIP, params->pnConnPort, params->punFlags, params->pRTime32LastPlayedOnServer );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->AddFavoriteGame( params->nAppID, params->nIP, params->nConnPort, params->unFlags, params->rTime32LastPlayedOnServer );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->AddFavoriteGame( params->nAppID, params->nIP, params->nConnPort, params->unFlags, params->rTime32LastPlayedOnServer );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->RemoveFavoriteGame( params->nAppID, params->nIP, params->nConnPort, params->unFlags );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->RemoveFavoriteGame( params->nAppID, params->nIP, params->nConnPort, params->unFlags );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame2( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame2_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame2_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetFavoriteGame2( params->iGame, params->pnAppID, params->pnIP, params->pnConnPort, params->pnQueryPort, params->punFlags, params->pRTime32LastPlayedOnServer );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame2( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame2_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetFavoriteGame2_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetFavoriteGame2( params->iGame, params->pnAppID, params->pnIP, params->pnConnPort, params->pnQueryPort, params->punFlags, params->pRTime32LastPlayedOnServer );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame2( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame2_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame2_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->AddFavoriteGame2( params->nAppID, params->nIP, params->nConnPort, params->nQueryPort, params->unFlags, params->rTime32LastPlayedOnServer );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame2( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame2_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_AddFavoriteGame2_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->AddFavoriteGame2( params->nAppID, params->nIP, params->nConnPort, params->nQueryPort, params->unFlags, params->rTime32LastPlayedOnServer );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame2( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame2_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame2_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->RemoveFavoriteGame2( params->nAppID, params->nIP, params->nConnPort, params->nQueryPort, params->unFlags );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame2( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame2_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_RemoveFavoriteGame2_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->RemoveFavoriteGame2( params->nAppID, params->nIP, params->nConnPort, params->nQueryPort, params->unFlags );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_RequestLobbyList( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_RequestLobbyList_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_RequestLobbyList_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    iface->RequestLobbyList( params->ulGameID, params->pFilters, params->nFilters );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_RequestLobbyList( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_RequestLobbyList_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_RequestLobbyList_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    iface->RequestLobbyList( params->ulGameID, params->pFilters, params->nFilters );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_GetLobbyByIndex( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_GetLobbyByIndex_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_GetLobbyByIndex_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    *params->_ret = iface->GetLobbyByIndex( params->iLobby );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyByIndex( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyByIndex_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyByIndex_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    *params->_ret = iface->GetLobbyByIndex( params->iLobby );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_CreateLobby( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_CreateLobby_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_CreateLobby_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    iface->CreateLobby( params->ulGameID, params->bPrivate );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_CreateLobby( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_CreateLobby_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_CreateLobby_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    iface->CreateLobby( params->ulGameID, params->bPrivate );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_JoinLobby( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_JoinLobby_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_JoinLobby_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    iface->JoinLobby( params->steamIDLobby );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_JoinLobby( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_JoinLobby_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_JoinLobby_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    iface->JoinLobby( params->steamIDLobby );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_LeaveLobby( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_LeaveLobby_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_LeaveLobby_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    iface->LeaveLobby( params->steamIDLobby );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_LeaveLobby( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_LeaveLobby_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_LeaveLobby_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    iface->LeaveLobby( params->steamIDLobby );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_InviteUserToLobby( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_InviteUserToLobby_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_InviteUserToLobby_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->InviteUserToLobby( params->steamIDLobby, params->steamIDInvitee );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_InviteUserToLobby( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_InviteUserToLobby_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_InviteUserToLobby_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->InviteUserToLobby( params->steamIDLobby, params->steamIDInvitee );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_GetNumLobbyMembers( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_GetNumLobbyMembers_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_GetNumLobbyMembers_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetNumLobbyMembers( params->steamIDLobby );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_GetNumLobbyMembers( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetNumLobbyMembers_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetNumLobbyMembers_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetNumLobbyMembers( params->steamIDLobby );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberByIndex( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberByIndex_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberByIndex_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    *params->_ret = iface->GetLobbyMemberByIndex( params->steamIDLobby, params->iMember );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberByIndex( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberByIndex_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberByIndex_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    *params->_ret = iface->GetLobbyMemberByIndex( params->steamIDLobby, params->iMember );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_GetLobbyData( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_GetLobbyData_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_GetLobbyData_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetLobbyData( params->SteamIDLobby, params->pchKey );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyData( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyData_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyData_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetLobbyData( params->SteamIDLobby, params->pchKey );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_SetLobbyData( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_SetLobbyData_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_SetLobbyData_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->SetLobbyData( params->steamIDLobby, params->pchKey, params->pchValue );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_SetLobbyData( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_SetLobbyData_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_SetLobbyData_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->SetLobbyData( params->steamIDLobby, params->pchKey, params->pchValue );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberData( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberData_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberData_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetLobbyMemberData( params->steamIDLobby, params->steamIDUser, params->pchKey );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberData( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberData_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyMemberData_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetLobbyMemberData( params->steamIDLobby, params->steamIDUser, params->pchKey );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_SetLobbyMemberData( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_SetLobbyMemberData_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_SetLobbyMemberData_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->SetLobbyMemberData( params->steamIDLobby, params->pchKey, params->pchValue );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_SetLobbyMemberData( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_SetLobbyMemberData_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_SetLobbyMemberData_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->SetLobbyMemberData( params->steamIDLobby, params->pchKey, params->pchValue );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_SendLobbyChatMsg( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_SendLobbyChatMsg_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_SendLobbyChatMsg_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->SendLobbyChatMsg( params->steamIDLobby, params->pvMsgBody, params->cubMsgBody );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_SendLobbyChatMsg( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_SendLobbyChatMsg_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_SendLobbyChatMsg_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->SendLobbyChatMsg( params->steamIDLobby, params->pvMsgBody, params->cubMsgBody );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_GetLobbyChatEntry( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_GetLobbyChatEntry_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_GetLobbyChatEntry_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetLobbyChatEntry( params->steamIDLobby, params->iChatID, params->pSteamIDUser, params->pvData, params->cubData, params->peChatEntryType );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyChatEntry( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyChatEntry_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_GetLobbyChatEntry_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->GetLobbyChatEntry( params->steamIDLobby, params->iChatID, params->pSteamIDUser, params->pvData, params->cubData, params->peChatEntryType );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMatchmaking_SteamMatchMaking001_RequestLobbyData( void *args )
+{
+    struct ISteamMatchmaking_SteamMatchMaking001_RequestLobbyData_params *params = (struct ISteamMatchmaking_SteamMatchMaking001_RequestLobbyData_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->RequestLobbyData( params->steamIDLobby );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMatchmaking_SteamMatchMaking001_RequestLobbyData( void *args )
+{
+    struct wow64_ISteamMatchmaking_SteamMatchMaking001_RequestLobbyData_params *params = (struct wow64_ISteamMatchmaking_SteamMatchMaking001_RequestLobbyData_params *)args;
+    struct u_ISteamMatchmaking_SteamMatchMaking001 *iface = (struct u_ISteamMatchmaking_SteamMatchMaking001 *)params->u_iface;
+    params->_ret = iface->RequestLobbyData( params->steamIDLobby );
+    return 0;
+}
+#endif
+

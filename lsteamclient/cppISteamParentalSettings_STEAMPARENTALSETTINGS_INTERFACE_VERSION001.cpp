@@ -1,48 +1,115 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_158/steam_api.h"
-#include "steamworks_sdk_158/steamnetworkingtypes.h"
-#include "steamworks_sdk_158/isteamparentalsettings.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_158
-#include "struct_converters.h"
-#include "cppISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001.h"
-bool cppISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockEnabled(void *linux_side)
+
+NTSTATUS ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockEnabled( void *args )
 {
-    return ((ISteamParentalSettings*)linux_side)->BIsParentalLockEnabled();
+    struct ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockEnabled_params *params = (struct ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockEnabled_params *)args;
+    struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *iface = (struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsParentalLockEnabled(  );
+    return 0;
 }
 
-bool cppISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockLocked(void *linux_side)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockEnabled( void *args )
 {
-    return ((ISteamParentalSettings*)linux_side)->BIsParentalLockLocked();
-}
-
-bool cppISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppBlocked(void *linux_side, AppId_t nAppID)
-{
-    return ((ISteamParentalSettings*)linux_side)->BIsAppBlocked((AppId_t)nAppID);
-}
-
-bool cppISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppInBlockList(void *linux_side, AppId_t nAppID)
-{
-    return ((ISteamParentalSettings*)linux_side)->BIsAppInBlockList((AppId_t)nAppID);
-}
-
-bool cppISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureBlocked(void *linux_side, EParentalFeature eFeature)
-{
-    return ((ISteamParentalSettings*)linux_side)->BIsFeatureBlocked((EParentalFeature)eFeature);
-}
-
-bool cppISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureInBlockList(void *linux_side, EParentalFeature eFeature)
-{
-    return ((ISteamParentalSettings*)linux_side)->BIsFeatureInBlockList((EParentalFeature)eFeature);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockEnabled_params *params = (struct wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockEnabled_params *)args;
+    struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *iface = (struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsParentalLockEnabled(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockLocked( void *args )
+{
+    struct ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockLocked_params *params = (struct ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockLocked_params *)args;
+    struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *iface = (struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsParentalLockLocked(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockLocked( void *args )
+{
+    struct wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockLocked_params *params = (struct wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsParentalLockLocked_params *)args;
+    struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *iface = (struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsParentalLockLocked(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppBlocked( void *args )
+{
+    struct ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppBlocked_params *params = (struct ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppBlocked_params *)args;
+    struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *iface = (struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsAppBlocked( params->nAppID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppBlocked( void *args )
+{
+    struct wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppBlocked_params *params = (struct wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppBlocked_params *)args;
+    struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *iface = (struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsAppBlocked( params->nAppID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppInBlockList( void *args )
+{
+    struct ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppInBlockList_params *params = (struct ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppInBlockList_params *)args;
+    struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *iface = (struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsAppInBlockList( params->nAppID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppInBlockList( void *args )
+{
+    struct wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppInBlockList_params *params = (struct wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsAppInBlockList_params *)args;
+    struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *iface = (struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsAppInBlockList( params->nAppID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureBlocked( void *args )
+{
+    struct ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureBlocked_params *params = (struct ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureBlocked_params *)args;
+    struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *iface = (struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsFeatureBlocked( params->eFeature );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureBlocked( void *args )
+{
+    struct wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureBlocked_params *params = (struct wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureBlocked_params *)args;
+    struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *iface = (struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsFeatureBlocked( params->eFeature );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureInBlockList( void *args )
+{
+    struct ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureInBlockList_params *params = (struct ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureInBlockList_params *)args;
+    struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *iface = (struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsFeatureInBlockList( params->eFeature );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureInBlockList( void *args )
+{
+    struct wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureInBlockList_params *params = (struct wow64_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001_BIsFeatureInBlockList_params *)args;
+    struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *iface = (struct u_ISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsFeatureInBlockList( params->eFeature );
+    return 0;
+}
+#endif
+

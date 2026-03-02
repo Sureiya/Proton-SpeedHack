@@ -1,86 +1,241 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_103/steam_api.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_103
-#include "struct_converters.h"
-#include "cppISteamUtils_SteamUtils002.h"
-uint32 cppISteamUtils_SteamUtils002_GetSecondsSinceAppActive(void *linux_side)
+
+NTSTATUS ISteamUtils_SteamUtils002_GetSecondsSinceAppActive( void *args )
 {
-    return ((ISteamUtils*)linux_side)->GetSecondsSinceAppActive();
+    struct ISteamUtils_SteamUtils002_GetSecondsSinceAppActive_params *params = (struct ISteamUtils_SteamUtils002_GetSecondsSinceAppActive_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetSecondsSinceAppActive(  );
+    return 0;
 }
 
-uint32 cppISteamUtils_SteamUtils002_GetSecondsSinceComputerActive(void *linux_side)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUtils_SteamUtils002_GetSecondsSinceAppActive( void *args )
 {
-    return ((ISteamUtils*)linux_side)->GetSecondsSinceComputerActive();
-}
-
-EUniverse cppISteamUtils_SteamUtils002_GetConnectedUniverse(void *linux_side)
-{
-    return ((ISteamUtils*)linux_side)->GetConnectedUniverse();
-}
-
-uint32 cppISteamUtils_SteamUtils002_GetServerRealTime(void *linux_side)
-{
-    return ((ISteamUtils*)linux_side)->GetServerRealTime();
-}
-
-const char * cppISteamUtils_SteamUtils002_GetIPCountry(void *linux_side)
-{
-    return ((ISteamUtils*)linux_side)->GetIPCountry();
-}
-
-bool cppISteamUtils_SteamUtils002_GetImageSize(void *linux_side, int iImage, uint32 * pnWidth, uint32 * pnHeight)
-{
-    return ((ISteamUtils*)linux_side)->GetImageSize((int)iImage, (uint32 *)pnWidth, (uint32 *)pnHeight);
-}
-
-bool cppISteamUtils_SteamUtils002_GetImageRGBA(void *linux_side, int iImage, uint8 * pubDest, int nDestBufferSize)
-{
-    return ((ISteamUtils*)linux_side)->GetImageRGBA((int)iImage, (uint8 *)pubDest, (int)nDestBufferSize);
-}
-
-bool cppISteamUtils_SteamUtils002_GetCSERIPPort(void *linux_side, uint32 * unIP, uint16 * usPort)
-{
-    return ((ISteamUtils*)linux_side)->GetCSERIPPort((uint32 *)unIP, (uint16 *)usPort);
-}
-
-uint8 cppISteamUtils_SteamUtils002_GetCurrentBatteryPower(void *linux_side)
-{
-    return ((ISteamUtils*)linux_side)->GetCurrentBatteryPower();
-}
-
-uint32 cppISteamUtils_SteamUtils002_GetAppID(void *linux_side)
-{
-    return ((ISteamUtils*)linux_side)->GetAppID();
-}
-
-void cppISteamUtils_SteamUtils002_SetOverlayNotificationPosition(void *linux_side, ENotificationPosition eNotificationPosition)
-{
-    ((ISteamUtils*)linux_side)->SetOverlayNotificationPosition((ENotificationPosition)eNotificationPosition);
-}
-
-bool cppISteamUtils_SteamUtils002_IsAPICallCompleted(void *linux_side, SteamAPICall_t hSteamAPICall, bool * pbFailed)
-{
-    return ((ISteamUtils*)linux_side)->IsAPICallCompleted((SteamAPICall_t)hSteamAPICall, (bool *)pbFailed);
-}
-
-ESteamAPICallFailure cppISteamUtils_SteamUtils002_GetAPICallFailureReason(void *linux_side, SteamAPICall_t hSteamAPICall)
-{
-    return ((ISteamUtils*)linux_side)->GetAPICallFailureReason((SteamAPICall_t)hSteamAPICall);
-}
-
-bool cppISteamUtils_SteamUtils002_GetAPICallResult(void *linux_side, SteamAPICall_t hSteamAPICall, void * pCallback, int cubCallback, int iCallbackExpected, bool * pbFailed)
-{
-    return ((ISteamUtils*)linux_side)->GetAPICallResult((SteamAPICall_t)hSteamAPICall, (void *)pCallback, (int)cubCallback, (int)iCallbackExpected, (bool *)pbFailed);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamUtils_SteamUtils002_GetSecondsSinceAppActive_params *params = (struct wow64_ISteamUtils_SteamUtils002_GetSecondsSinceAppActive_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetSecondsSinceAppActive(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamUtils_SteamUtils002_GetSecondsSinceComputerActive( void *args )
+{
+    struct ISteamUtils_SteamUtils002_GetSecondsSinceComputerActive_params *params = (struct ISteamUtils_SteamUtils002_GetSecondsSinceComputerActive_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetSecondsSinceComputerActive(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUtils_SteamUtils002_GetSecondsSinceComputerActive( void *args )
+{
+    struct wow64_ISteamUtils_SteamUtils002_GetSecondsSinceComputerActive_params *params = (struct wow64_ISteamUtils_SteamUtils002_GetSecondsSinceComputerActive_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetSecondsSinceComputerActive(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUtils_SteamUtils002_GetConnectedUniverse( void *args )
+{
+    struct ISteamUtils_SteamUtils002_GetConnectedUniverse_params *params = (struct ISteamUtils_SteamUtils002_GetConnectedUniverse_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetConnectedUniverse(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUtils_SteamUtils002_GetConnectedUniverse( void *args )
+{
+    struct wow64_ISteamUtils_SteamUtils002_GetConnectedUniverse_params *params = (struct wow64_ISteamUtils_SteamUtils002_GetConnectedUniverse_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetConnectedUniverse(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUtils_SteamUtils002_GetServerRealTime( void *args )
+{
+    struct ISteamUtils_SteamUtils002_GetServerRealTime_params *params = (struct ISteamUtils_SteamUtils002_GetServerRealTime_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetServerRealTime(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUtils_SteamUtils002_GetServerRealTime( void *args )
+{
+    struct wow64_ISteamUtils_SteamUtils002_GetServerRealTime_params *params = (struct wow64_ISteamUtils_SteamUtils002_GetServerRealTime_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetServerRealTime(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUtils_SteamUtils002_GetIPCountry( void *args )
+{
+    struct ISteamUtils_SteamUtils002_GetIPCountry_params *params = (struct ISteamUtils_SteamUtils002_GetIPCountry_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetIPCountry(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUtils_SteamUtils002_GetIPCountry( void *args )
+{
+    struct wow64_ISteamUtils_SteamUtils002_GetIPCountry_params *params = (struct wow64_ISteamUtils_SteamUtils002_GetIPCountry_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetIPCountry(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUtils_SteamUtils002_GetImageSize( void *args )
+{
+    struct ISteamUtils_SteamUtils002_GetImageSize_params *params = (struct ISteamUtils_SteamUtils002_GetImageSize_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetImageSize( params->iImage, params->pnWidth, params->pnHeight );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUtils_SteamUtils002_GetImageSize( void *args )
+{
+    struct wow64_ISteamUtils_SteamUtils002_GetImageSize_params *params = (struct wow64_ISteamUtils_SteamUtils002_GetImageSize_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetImageSize( params->iImage, params->pnWidth, params->pnHeight );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUtils_SteamUtils002_GetImageRGBA( void *args )
+{
+    struct ISteamUtils_SteamUtils002_GetImageRGBA_params *params = (struct ISteamUtils_SteamUtils002_GetImageRGBA_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetImageRGBA( params->iImage, params->pubDest, params->nDestBufferSize );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUtils_SteamUtils002_GetImageRGBA( void *args )
+{
+    struct wow64_ISteamUtils_SteamUtils002_GetImageRGBA_params *params = (struct wow64_ISteamUtils_SteamUtils002_GetImageRGBA_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetImageRGBA( params->iImage, params->pubDest, params->nDestBufferSize );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUtils_SteamUtils002_GetCSERIPPort( void *args )
+{
+    struct ISteamUtils_SteamUtils002_GetCSERIPPort_params *params = (struct ISteamUtils_SteamUtils002_GetCSERIPPort_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetCSERIPPort( params->unIP, params->usPort );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUtils_SteamUtils002_GetCSERIPPort( void *args )
+{
+    struct wow64_ISteamUtils_SteamUtils002_GetCSERIPPort_params *params = (struct wow64_ISteamUtils_SteamUtils002_GetCSERIPPort_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetCSERIPPort( params->unIP, params->usPort );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUtils_SteamUtils002_GetCurrentBatteryPower( void *args )
+{
+    struct ISteamUtils_SteamUtils002_GetCurrentBatteryPower_params *params = (struct ISteamUtils_SteamUtils002_GetCurrentBatteryPower_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetCurrentBatteryPower(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUtils_SteamUtils002_GetCurrentBatteryPower( void *args )
+{
+    struct wow64_ISteamUtils_SteamUtils002_GetCurrentBatteryPower_params *params = (struct wow64_ISteamUtils_SteamUtils002_GetCurrentBatteryPower_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetCurrentBatteryPower(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUtils_SteamUtils002_GetAppID( void *args )
+{
+    struct ISteamUtils_SteamUtils002_GetAppID_params *params = (struct ISteamUtils_SteamUtils002_GetAppID_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetAppID(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUtils_SteamUtils002_GetAppID( void *args )
+{
+    struct wow64_ISteamUtils_SteamUtils002_GetAppID_params *params = (struct wow64_ISteamUtils_SteamUtils002_GetAppID_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetAppID(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUtils_SteamUtils002_SetOverlayNotificationPosition( void *args )
+{
+    struct ISteamUtils_SteamUtils002_SetOverlayNotificationPosition_params *params = (struct ISteamUtils_SteamUtils002_SetOverlayNotificationPosition_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    iface->SetOverlayNotificationPosition( params->eNotificationPosition );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUtils_SteamUtils002_SetOverlayNotificationPosition( void *args )
+{
+    struct wow64_ISteamUtils_SteamUtils002_SetOverlayNotificationPosition_params *params = (struct wow64_ISteamUtils_SteamUtils002_SetOverlayNotificationPosition_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    iface->SetOverlayNotificationPosition( params->eNotificationPosition );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUtils_SteamUtils002_IsAPICallCompleted( void *args )
+{
+    struct ISteamUtils_SteamUtils002_IsAPICallCompleted_params *params = (struct ISteamUtils_SteamUtils002_IsAPICallCompleted_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->IsAPICallCompleted( params->hSteamAPICall, params->pbFailed );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUtils_SteamUtils002_IsAPICallCompleted( void *args )
+{
+    struct wow64_ISteamUtils_SteamUtils002_IsAPICallCompleted_params *params = (struct wow64_ISteamUtils_SteamUtils002_IsAPICallCompleted_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->IsAPICallCompleted( params->hSteamAPICall, params->pbFailed );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUtils_SteamUtils002_GetAPICallFailureReason( void *args )
+{
+    struct ISteamUtils_SteamUtils002_GetAPICallFailureReason_params *params = (struct ISteamUtils_SteamUtils002_GetAPICallFailureReason_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetAPICallFailureReason( params->hSteamAPICall );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUtils_SteamUtils002_GetAPICallFailureReason( void *args )
+{
+    struct wow64_ISteamUtils_SteamUtils002_GetAPICallFailureReason_params *params = (struct wow64_ISteamUtils_SteamUtils002_GetAPICallFailureReason_params *)args;
+    struct u_ISteamUtils_SteamUtils002 *iface = (struct u_ISteamUtils_SteamUtils002 *)params->u_iface;
+    params->_ret = iface->GetAPICallFailureReason( params->hSteamAPICall );
+    return 0;
+}
+#endif
+

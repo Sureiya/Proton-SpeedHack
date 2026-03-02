@@ -1,37 +1,79 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_158/steam_api.h"
-#include "steamworks_sdk_158/steamnetworkingtypes.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_158
-#include "struct_converters.h"
-#include "cppISteamVideo_STEAMVIDEO_INTERFACE_V002.h"
-void cppISteamVideo_STEAMVIDEO_INTERFACE_V002_GetVideoURL(void *linux_side, AppId_t unVideoAppID)
+
+NTSTATUS ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetVideoURL( void *args )
 {
-    ((ISteamVideo*)linux_side)->GetVideoURL((AppId_t)unVideoAppID);
+    struct ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetVideoURL_params *params = (struct ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetVideoURL_params *)args;
+    struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *iface = (struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *)params->u_iface;
+    iface->GetVideoURL( params->unVideoAppID );
+    return 0;
 }
 
-bool cppISteamVideo_STEAMVIDEO_INTERFACE_V002_IsBroadcasting(void *linux_side, int * pnNumViewers)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetVideoURL( void *args )
 {
-    return ((ISteamVideo*)linux_side)->IsBroadcasting((int *)pnNumViewers);
-}
-
-void cppISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFSettings(void *linux_side, AppId_t unVideoAppID)
-{
-    ((ISteamVideo*)linux_side)->GetOPFSettings((AppId_t)unVideoAppID);
-}
-
-bool cppISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFStringForApp(void *linux_side, AppId_t unVideoAppID, char * pchBuffer, int32 * pnBufferSize)
-{
-    return ((ISteamVideo*)linux_side)->GetOPFStringForApp((AppId_t)unVideoAppID, (char *)pchBuffer, (int32 *)pnBufferSize);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetVideoURL_params *params = (struct wow64_ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetVideoURL_params *)args;
+    struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *iface = (struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *)params->u_iface;
+    iface->GetVideoURL( params->unVideoAppID );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamVideo_STEAMVIDEO_INTERFACE_V002_IsBroadcasting( void *args )
+{
+    struct ISteamVideo_STEAMVIDEO_INTERFACE_V002_IsBroadcasting_params *params = (struct ISteamVideo_STEAMVIDEO_INTERFACE_V002_IsBroadcasting_params *)args;
+    struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *iface = (struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *)params->u_iface;
+    params->_ret = iface->IsBroadcasting( params->pnNumViewers );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamVideo_STEAMVIDEO_INTERFACE_V002_IsBroadcasting( void *args )
+{
+    struct wow64_ISteamVideo_STEAMVIDEO_INTERFACE_V002_IsBroadcasting_params *params = (struct wow64_ISteamVideo_STEAMVIDEO_INTERFACE_V002_IsBroadcasting_params *)args;
+    struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *iface = (struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *)params->u_iface;
+    params->_ret = iface->IsBroadcasting( params->pnNumViewers );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFSettings( void *args )
+{
+    struct ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFSettings_params *params = (struct ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFSettings_params *)args;
+    struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *iface = (struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *)params->u_iface;
+    iface->GetOPFSettings( params->unVideoAppID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFSettings( void *args )
+{
+    struct wow64_ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFSettings_params *params = (struct wow64_ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFSettings_params *)args;
+    struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *iface = (struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *)params->u_iface;
+    iface->GetOPFSettings( params->unVideoAppID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFStringForApp( void *args )
+{
+    struct ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFStringForApp_params *params = (struct ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFStringForApp_params *)args;
+    struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *iface = (struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *)params->u_iface;
+    params->_ret = iface->GetOPFStringForApp( params->unVideoAppID, params->pchBuffer, params->pnBufferSize );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFStringForApp( void *args )
+{
+    struct wow64_ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFStringForApp_params *params = (struct wow64_ISteamVideo_STEAMVIDEO_INTERFACE_V002_GetOPFStringForApp_params *)args;
+    struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *iface = (struct u_ISteamVideo_STEAMVIDEO_INTERFACE_V002 *)params->u_iface;
+    params->_ret = iface->GetOPFStringForApp( params->unVideoAppID, params->pchBuffer, params->pnBufferSize );
+    return 0;
+}
+#endif
+

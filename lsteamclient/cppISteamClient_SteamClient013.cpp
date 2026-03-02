@@ -1,167 +1,549 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_128x/steam_api.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_128x
-#include "struct_converters.h"
-#include "cppISteamClient_SteamClient013.h"
-HSteamPipe cppISteamClient_SteamClient013_CreateSteamPipe(void *linux_side)
+
+NTSTATUS ISteamClient_SteamClient013_CreateSteamPipe( void *args )
 {
-    return after_steam_pipe_create(((ISteamClient*)linux_side)->CreateSteamPipe());
+    struct ISteamClient_SteamClient013_CreateSteamPipe_params *params = (struct ISteamClient_SteamClient013_CreateSteamPipe_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->CreateSteamPipe(  );
+    return 0;
 }
 
-bool cppISteamClient_SteamClient013_BReleaseSteamPipe(void *linux_side, HSteamPipe hSteamPipe)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_CreateSteamPipe( void *args )
 {
-    return ((ISteamClient*)linux_side)->BReleaseSteamPipe((HSteamPipe)hSteamPipe);
-}
-
-HSteamUser cppISteamClient_SteamClient013_ConnectToGlobalUser(void *linux_side, HSteamPipe hSteamPipe)
-{
-    return ((ISteamClient*)linux_side)->ConnectToGlobalUser((HSteamPipe)hSteamPipe);
-}
-
-HSteamUser cppISteamClient_SteamClient013_CreateLocalUser(void *linux_side, HSteamPipe * phSteamPipe, EAccountType eAccountType)
-{
-    return ((ISteamClient*)linux_side)->CreateLocalUser((HSteamPipe *)phSteamPipe, (EAccountType)eAccountType);
-}
-
-void cppISteamClient_SteamClient013_ReleaseUser(void *linux_side, HSteamPipe hSteamPipe, HSteamUser hUser)
-{
-    ((ISteamClient*)linux_side)->ReleaseUser((HSteamPipe)hSteamPipe, (HSteamUser)hUser);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamUser(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamUser((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamGameServer(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamGameServer((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void cppISteamClient_SteamClient013_SetLocalIPBinding(void *linux_side, uint32 unIP, uint16 usPort)
-{
-    ((ISteamClient*)linux_side)->SetLocalIPBinding((uint32)unIP, (uint16)usPort);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamFriends(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamFriends((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamUtils(void *linux_side, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamUtils((HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamMatchmaking(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamMatchmaking((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamMatchmakingServers(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamMatchmakingServers((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void * cppISteamClient_SteamClient013_GetISteamGenericInterface(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamGenericInterface((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamUserStats(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamUserStats((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamGameServerStats(void *linux_side, HSteamUser hSteamuser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamGameServerStats((HSteamUser)hSteamuser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamApps(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamApps((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamNetworking(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamNetworking((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamRemoteStorage(void *linux_side, HSteamUser hSteamuser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamRemoteStorage((HSteamUser)hSteamuser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamScreenshots(void *linux_side, HSteamUser hSteamuser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamScreenshots((HSteamUser)hSteamuser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void cppISteamClient_SteamClient013_RunFrame(void *linux_side)
-{
-    ((ISteamClient*)linux_side)->RunFrame();
-}
-
-uint32 cppISteamClient_SteamClient013_GetIPCCallCount(void *linux_side)
-{
-    return ((ISteamClient*)linux_side)->GetIPCCallCount();
-}
-
-void cppISteamClient_SteamClient013_SetWarningMessageHook(void *linux_side, SteamAPIWarningMessageHook_t pFunction)
-{
-    pFunction = (SteamAPIWarningMessageHook_t)manual_convert_SteamAPIWarningMessageHook_t((void*)pFunction);
-    ((ISteamClient*)linux_side)->SetWarningMessageHook((SteamAPIWarningMessageHook_t)pFunction);
-}
-
-bool cppISteamClient_SteamClient013_BShutdownIfAllPipesClosed(void *linux_side)
-{
-    return after_shutdown(((ISteamClient*)linux_side)->BShutdownIfAllPipesClosed());
-}
-
-void *cppISteamClient_SteamClient013_GetISteamHTTP(void *linux_side, HSteamUser hSteamuser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamHTTP((HSteamUser)hSteamuser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamUnifiedMessages(void *linux_side, HSteamUser hSteamuser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamUnifiedMessages((HSteamUser)hSteamuser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamController(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamController((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamUGC(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamUGC((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void * cppISteamClient_SteamClient013_GetISteamInventory(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamInventory((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void * cppISteamClient_SteamClient013_GetISteamVideo(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamVideo((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-void *cppISteamClient_SteamClient013_GetISteamAppList(void *linux_side, HSteamUser hSteamUser, HSteamPipe hSteamPipe, const char * pchVersion)
-{
-    return ((ISteamClient*)linux_side)->GetISteamAppList((HSteamUser)hSteamUser, (HSteamPipe)hSteamPipe, (const char *)pchVersion);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamClient_SteamClient013_CreateSteamPipe_params *params = (struct wow64_ISteamClient_SteamClient013_CreateSteamPipe_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->CreateSteamPipe(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamClient_SteamClient013_BReleaseSteamPipe( void *args )
+{
+    struct ISteamClient_SteamClient013_BReleaseSteamPipe_params *params = (struct ISteamClient_SteamClient013_BReleaseSteamPipe_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->BReleaseSteamPipe( params->hSteamPipe );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_BReleaseSteamPipe( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_BReleaseSteamPipe_params *params = (struct wow64_ISteamClient_SteamClient013_BReleaseSteamPipe_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->BReleaseSteamPipe( params->hSteamPipe );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_ConnectToGlobalUser( void *args )
+{
+    struct ISteamClient_SteamClient013_ConnectToGlobalUser_params *params = (struct ISteamClient_SteamClient013_ConnectToGlobalUser_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->ConnectToGlobalUser( params->hSteamPipe );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_ConnectToGlobalUser( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_ConnectToGlobalUser_params *params = (struct wow64_ISteamClient_SteamClient013_ConnectToGlobalUser_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->ConnectToGlobalUser( params->hSteamPipe );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_CreateLocalUser( void *args )
+{
+    struct ISteamClient_SteamClient013_CreateLocalUser_params *params = (struct ISteamClient_SteamClient013_CreateLocalUser_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->CreateLocalUser( params->phSteamPipe, params->eAccountType );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_CreateLocalUser( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_CreateLocalUser_params *params = (struct wow64_ISteamClient_SteamClient013_CreateLocalUser_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->CreateLocalUser( params->phSteamPipe, params->eAccountType );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_ReleaseUser( void *args )
+{
+    struct ISteamClient_SteamClient013_ReleaseUser_params *params = (struct ISteamClient_SteamClient013_ReleaseUser_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    iface->ReleaseUser( params->hSteamPipe, params->hUser );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_ReleaseUser( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_ReleaseUser_params *params = (struct wow64_ISteamClient_SteamClient013_ReleaseUser_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    iface->ReleaseUser( params->hSteamPipe, params->hUser );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamUser( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamUser_params *params = (struct ISteamClient_SteamClient013_GetISteamUser_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamUser( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamUser( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamUser_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamUser_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamUser( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamGameServer( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamGameServer_params *params = (struct ISteamClient_SteamClient013_GetISteamGameServer_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamGameServer( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamGameServer( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamGameServer_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamGameServer_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamGameServer( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_SetLocalIPBinding( void *args )
+{
+    struct ISteamClient_SteamClient013_SetLocalIPBinding_params *params = (struct ISteamClient_SteamClient013_SetLocalIPBinding_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    iface->SetLocalIPBinding( params->unIP, params->usPort );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_SetLocalIPBinding( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_SetLocalIPBinding_params *params = (struct wow64_ISteamClient_SteamClient013_SetLocalIPBinding_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    iface->SetLocalIPBinding( params->unIP, params->usPort );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamFriends( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamFriends_params *params = (struct ISteamClient_SteamClient013_GetISteamFriends_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamFriends( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamFriends( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamFriends_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamFriends_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamFriends( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamUtils( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamUtils_params *params = (struct ISteamClient_SteamClient013_GetISteamUtils_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamUtils( params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamUtils( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamUtils_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamUtils_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamUtils( params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamMatchmaking( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamMatchmaking_params *params = (struct ISteamClient_SteamClient013_GetISteamMatchmaking_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamMatchmaking( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamMatchmaking( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamMatchmaking_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamMatchmaking_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamMatchmaking( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamMatchmakingServers( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamMatchmakingServers_params *params = (struct ISteamClient_SteamClient013_GetISteamMatchmakingServers_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamMatchmakingServers( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamMatchmakingServers( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamMatchmakingServers_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamMatchmakingServers_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamMatchmakingServers( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamGenericInterface( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamGenericInterface_params *params = (struct ISteamClient_SteamClient013_GetISteamGenericInterface_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamGenericInterface( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamGenericInterface( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamGenericInterface_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamGenericInterface_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamGenericInterface( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamUserStats( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamUserStats_params *params = (struct ISteamClient_SteamClient013_GetISteamUserStats_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamUserStats( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamUserStats( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamUserStats_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamUserStats_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamUserStats( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamGameServerStats( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamGameServerStats_params *params = (struct ISteamClient_SteamClient013_GetISteamGameServerStats_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamGameServerStats( params->hSteamuser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamGameServerStats( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamGameServerStats_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamGameServerStats_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamGameServerStats( params->hSteamuser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamApps( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamApps_params *params = (struct ISteamClient_SteamClient013_GetISteamApps_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamApps( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamApps( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamApps_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamApps_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamApps( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamNetworking( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamNetworking_params *params = (struct ISteamClient_SteamClient013_GetISteamNetworking_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamNetworking( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamNetworking( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamNetworking_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamNetworking_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamNetworking( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamRemoteStorage( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamRemoteStorage_params *params = (struct ISteamClient_SteamClient013_GetISteamRemoteStorage_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamRemoteStorage( params->hSteamuser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamRemoteStorage( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamRemoteStorage_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamRemoteStorage_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamRemoteStorage( params->hSteamuser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamScreenshots( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamScreenshots_params *params = (struct ISteamClient_SteamClient013_GetISteamScreenshots_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamScreenshots( params->hSteamuser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamScreenshots( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamScreenshots_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamScreenshots_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamScreenshots( params->hSteamuser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_RunFrame( void *args )
+{
+    struct ISteamClient_SteamClient013_RunFrame_params *params = (struct ISteamClient_SteamClient013_RunFrame_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    iface->RunFrame(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_RunFrame( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_RunFrame_params *params = (struct wow64_ISteamClient_SteamClient013_RunFrame_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    iface->RunFrame(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetIPCCallCount( void *args )
+{
+    struct ISteamClient_SteamClient013_GetIPCCallCount_params *params = (struct ISteamClient_SteamClient013_GetIPCCallCount_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetIPCCallCount(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetIPCCallCount( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetIPCCallCount_params *params = (struct wow64_ISteamClient_SteamClient013_GetIPCCallCount_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetIPCCallCount(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_SetWarningMessageHook( void *args )
+{
+    struct ISteamClient_SteamClient013_SetWarningMessageHook_params *params = (struct ISteamClient_SteamClient013_SetWarningMessageHook_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    void (*U_CDECL u_pFunction)(int32_t, const char *) = manual_convert_SetWarningMessageHook_pFunction( params->pFunction );
+    iface->SetWarningMessageHook( u_pFunction );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_SetWarningMessageHook( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_SetWarningMessageHook_params *params = (struct wow64_ISteamClient_SteamClient013_SetWarningMessageHook_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    void (*U_CDECL u_pFunction)(int32_t, const char *) = manual_convert_SetWarningMessageHook_pFunction( params->pFunction );
+    iface->SetWarningMessageHook( u_pFunction );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_BShutdownIfAllPipesClosed( void *args )
+{
+    struct ISteamClient_SteamClient013_BShutdownIfAllPipesClosed_params *params = (struct ISteamClient_SteamClient013_BShutdownIfAllPipesClosed_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->BShutdownIfAllPipesClosed(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_BShutdownIfAllPipesClosed( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_BShutdownIfAllPipesClosed_params *params = (struct wow64_ISteamClient_SteamClient013_BShutdownIfAllPipesClosed_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->BShutdownIfAllPipesClosed(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamHTTP( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamHTTP_params *params = (struct ISteamClient_SteamClient013_GetISteamHTTP_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamHTTP( params->hSteamuser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamHTTP( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamHTTP_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamHTTP_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamHTTP( params->hSteamuser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamUnifiedMessages( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamUnifiedMessages_params *params = (struct ISteamClient_SteamClient013_GetISteamUnifiedMessages_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamUnifiedMessages( params->hSteamuser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamUnifiedMessages( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamUnifiedMessages_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamUnifiedMessages_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamUnifiedMessages( params->hSteamuser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamController( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamController_params *params = (struct ISteamClient_SteamClient013_GetISteamController_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamController( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamController( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamController_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamController_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamController( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamUGC( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamUGC_params *params = (struct ISteamClient_SteamClient013_GetISteamUGC_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamUGC( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamUGC( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamUGC_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamUGC_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamUGC( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamInventory( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamInventory_params *params = (struct ISteamClient_SteamClient013_GetISteamInventory_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamInventory( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamInventory( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamInventory_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamInventory_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamInventory( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamVideo( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamVideo_params *params = (struct ISteamClient_SteamClient013_GetISteamVideo_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamVideo( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamVideo( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamVideo_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamVideo_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamVideo( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamClient_SteamClient013_GetISteamAppList( void *args )
+{
+    struct ISteamClient_SteamClient013_GetISteamAppList_params *params = (struct ISteamClient_SteamClient013_GetISteamAppList_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamAppList( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamClient_SteamClient013_GetISteamAppList( void *args )
+{
+    struct wow64_ISteamClient_SteamClient013_GetISteamAppList_params *params = (struct wow64_ISteamClient_SteamClient013_GetISteamAppList_params *)args;
+    struct u_ISteamClient_SteamClient013 *iface = (struct u_ISteamClient_SteamClient013 *)params->u_iface;
+    params->_ret = iface->GetISteamAppList( params->hSteamUser, params->hSteamPipe, params->pchVersion );
+    return 0;
+}
+#endif
+

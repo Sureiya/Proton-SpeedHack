@@ -1,178 +1,595 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_130x/steam_api.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_130x
-#include "struct_converters.h"
-#include "cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001.h"
-bool cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Init(void *linux_side)
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Init( void *args )
 {
-    return ((ISteamHTMLSurface*)linux_side)->Init();
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Init_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Init_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    params->_ret = iface->Init(  );
+    return 0;
 }
 
-bool cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Shutdown(void *linux_side)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Init( void *args )
 {
-    return ((ISteamHTMLSurface*)linux_side)->Shutdown();
-}
-
-SteamAPICall_t cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CreateBrowser(void *linux_side, const char * pchUserAgent, const char * pchUserCSS)
-{
-    return ((ISteamHTMLSurface*)linux_side)->CreateBrowser((const char *)pchUserAgent, (const char *)pchUserCSS);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_RemoveBrowser(void *linux_side, HHTMLBrowser unBrowserHandle)
-{
-    ((ISteamHTMLSurface*)linux_side)->RemoveBrowser((HHTMLBrowser)unBrowserHandle);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_LoadURL(void *linux_side, HHTMLBrowser unBrowserHandle, const char * pchURL, const char * pchPostData)
-{
-    ((ISteamHTMLSurface*)linux_side)->LoadURL((HHTMLBrowser)unBrowserHandle, (const char *)pchURL, (const char *)pchPostData);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetSize(void *linux_side, HHTMLBrowser unBrowserHandle, uint32 unWidth, uint32 unHeight)
-{
-    ((ISteamHTMLSurface*)linux_side)->SetSize((HHTMLBrowser)unBrowserHandle, (uint32)unWidth, (uint32)unHeight);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopLoad(void *linux_side, HHTMLBrowser unBrowserHandle)
-{
-    ((ISteamHTMLSurface*)linux_side)->StopLoad((HHTMLBrowser)unBrowserHandle);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Reload(void *linux_side, HHTMLBrowser unBrowserHandle)
-{
-    ((ISteamHTMLSurface*)linux_side)->Reload((HHTMLBrowser)unBrowserHandle);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoBack(void *linux_side, HHTMLBrowser unBrowserHandle)
-{
-    ((ISteamHTMLSurface*)linux_side)->GoBack((HHTMLBrowser)unBrowserHandle);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoForward(void *linux_side, HHTMLBrowser unBrowserHandle)
-{
-    ((ISteamHTMLSurface*)linux_side)->GoForward((HHTMLBrowser)unBrowserHandle);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AddHeader(void *linux_side, HHTMLBrowser unBrowserHandle, const char * pchKey, const char * pchValue)
-{
-    ((ISteamHTMLSurface*)linux_side)->AddHeader((HHTMLBrowser)unBrowserHandle, (const char *)pchKey, (const char *)pchValue);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ExecuteJavascript(void *linux_side, HHTMLBrowser unBrowserHandle, const char * pchScript)
-{
-    ((ISteamHTMLSurface*)linux_side)->ExecuteJavascript((HHTMLBrowser)unBrowserHandle, (const char *)pchScript);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseUp(void *linux_side, HHTMLBrowser unBrowserHandle, EHTMLMouseButton eMouseButton)
-{
-    ((ISteamHTMLSurface*)linux_side)->MouseUp((HHTMLBrowser)unBrowserHandle, (ISteamHTMLSurface::EHTMLMouseButton)eMouseButton);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDown(void *linux_side, HHTMLBrowser unBrowserHandle, EHTMLMouseButton eMouseButton)
-{
-    ((ISteamHTMLSurface*)linux_side)->MouseDown((HHTMLBrowser)unBrowserHandle, (ISteamHTMLSurface::EHTMLMouseButton)eMouseButton);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDoubleClick(void *linux_side, HHTMLBrowser unBrowserHandle, EHTMLMouseButton eMouseButton)
-{
-    ((ISteamHTMLSurface*)linux_side)->MouseDoubleClick((HHTMLBrowser)unBrowserHandle, (ISteamHTMLSurface::EHTMLMouseButton)eMouseButton);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseMove(void *linux_side, HHTMLBrowser unBrowserHandle, int x, int y)
-{
-    ((ISteamHTMLSurface*)linux_side)->MouseMove((HHTMLBrowser)unBrowserHandle, (int)x, (int)y);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseWheel(void *linux_side, HHTMLBrowser unBrowserHandle, int32 nDelta)
-{
-    ((ISteamHTMLSurface*)linux_side)->MouseWheel((HHTMLBrowser)unBrowserHandle, (int32)nDelta);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyDown(void *linux_side, HHTMLBrowser unBrowserHandle, uint32 nNativeKeyCode, EHTMLKeyModifiers eHTMLKeyModifiers)
-{
-    nNativeKeyCode = manual_convert_nNativeKeyCode(nNativeKeyCode);
-    ((ISteamHTMLSurface*)linux_side)->KeyDown((HHTMLBrowser)unBrowserHandle, (uint32)nNativeKeyCode, (ISteamHTMLSurface::EHTMLKeyModifiers)eHTMLKeyModifiers);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyUp(void *linux_side, HHTMLBrowser unBrowserHandle, uint32 nNativeKeyCode, EHTMLKeyModifiers eHTMLKeyModifiers)
-{
-    nNativeKeyCode = manual_convert_nNativeKeyCode(nNativeKeyCode);
-    ((ISteamHTMLSurface*)linux_side)->KeyUp((HHTMLBrowser)unBrowserHandle, (uint32)nNativeKeyCode, (ISteamHTMLSurface::EHTMLKeyModifiers)eHTMLKeyModifiers);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyChar(void *linux_side, HHTMLBrowser unBrowserHandle, uint32 cUnicodeChar, EHTMLKeyModifiers eHTMLKeyModifiers)
-{
-    ((ISteamHTMLSurface*)linux_side)->KeyChar((HHTMLBrowser)unBrowserHandle, (uint32)cUnicodeChar, (ISteamHTMLSurface::EHTMLKeyModifiers)eHTMLKeyModifiers);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetHorizontalScroll(void *linux_side, HHTMLBrowser unBrowserHandle, uint32 nAbsolutePixelScroll)
-{
-    ((ISteamHTMLSurface*)linux_side)->SetHorizontalScroll((HHTMLBrowser)unBrowserHandle, (uint32)nAbsolutePixelScroll);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetVerticalScroll(void *linux_side, HHTMLBrowser unBrowserHandle, uint32 nAbsolutePixelScroll)
-{
-    ((ISteamHTMLSurface*)linux_side)->SetVerticalScroll((HHTMLBrowser)unBrowserHandle, (uint32)nAbsolutePixelScroll);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetKeyFocus(void *linux_side, HHTMLBrowser unBrowserHandle, bool bHasKeyFocus)
-{
-    ((ISteamHTMLSurface*)linux_side)->SetKeyFocus((HHTMLBrowser)unBrowserHandle, (bool)bHasKeyFocus);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ViewSource(void *linux_side, HHTMLBrowser unBrowserHandle)
-{
-    ((ISteamHTMLSurface*)linux_side)->ViewSource((HHTMLBrowser)unBrowserHandle);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CopyToClipboard(void *linux_side, HHTMLBrowser unBrowserHandle)
-{
-    ((ISteamHTMLSurface*)linux_side)->CopyToClipboard((HHTMLBrowser)unBrowserHandle);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_PasteFromClipboard(void *linux_side, HHTMLBrowser unBrowserHandle)
-{
-    ((ISteamHTMLSurface*)linux_side)->PasteFromClipboard((HHTMLBrowser)unBrowserHandle);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Find(void *linux_side, HHTMLBrowser unBrowserHandle, const char * pchSearchStr, bool bCurrentlyInFind, bool bReverse)
-{
-    ((ISteamHTMLSurface*)linux_side)->Find((HHTMLBrowser)unBrowserHandle, (const char *)pchSearchStr, (bool)bCurrentlyInFind, (bool)bReverse);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopFind(void *linux_side, HHTMLBrowser unBrowserHandle)
-{
-    ((ISteamHTMLSurface*)linux_side)->StopFind((HHTMLBrowser)unBrowserHandle);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GetLinkAtPosition(void *linux_side, HHTMLBrowser unBrowserHandle, int x, int y)
-{
-    ((ISteamHTMLSurface*)linux_side)->GetLinkAtPosition((HHTMLBrowser)unBrowserHandle, (int)x, (int)y);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AllowStartRequest(void *linux_side, HHTMLBrowser unBrowserHandle, bool bAllowed)
-{
-    ((ISteamHTMLSurface*)linux_side)->AllowStartRequest((HHTMLBrowser)unBrowserHandle, (bool)bAllowed);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_JSDialogResponse(void *linux_side, HHTMLBrowser unBrowserHandle, bool bResult)
-{
-    ((ISteamHTMLSurface*)linux_side)->JSDialogResponse((HHTMLBrowser)unBrowserHandle, (bool)bResult);
-}
-
-void cppISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_FileLoadDialogResponse(void *linux_side, HHTMLBrowser unBrowserHandle, const char ** pchSelectedFiles)
-{
-    ((ISteamHTMLSurface*)linux_side)->FileLoadDialogResponse((HHTMLBrowser)unBrowserHandle, (const char **)pchSelectedFiles);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Init_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Init_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    params->_ret = iface->Init(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Shutdown( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Shutdown_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Shutdown_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    params->_ret = iface->Shutdown(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Shutdown( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Shutdown_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Shutdown_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    params->_ret = iface->Shutdown(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CreateBrowser( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CreateBrowser_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CreateBrowser_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    params->_ret = iface->CreateBrowser( params->pchUserAgent, params->pchUserCSS );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CreateBrowser( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CreateBrowser_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CreateBrowser_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    params->_ret = iface->CreateBrowser( params->pchUserAgent, params->pchUserCSS );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_RemoveBrowser( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_RemoveBrowser_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_RemoveBrowser_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->RemoveBrowser( params->unBrowserHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_RemoveBrowser( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_RemoveBrowser_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_RemoveBrowser_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->RemoveBrowser( params->unBrowserHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_LoadURL( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_LoadURL_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_LoadURL_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    char *u_pchURL = steamclient_dos_to_unix_path( params->pchURL, 1 );
+    iface->LoadURL( params->unBrowserHandle, u_pchURL, params->pchPostData );
+    steamclient_free_path( u_pchURL );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_LoadURL( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_LoadURL_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_LoadURL_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    char *u_pchURL = steamclient_dos_to_unix_path( params->pchURL, 1 );
+    iface->LoadURL( params->unBrowserHandle, u_pchURL, params->pchPostData );
+    steamclient_free_path( u_pchURL );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetSize( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetSize_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetSize_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->SetSize( params->unBrowserHandle, params->unWidth, params->unHeight );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetSize( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetSize_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetSize_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->SetSize( params->unBrowserHandle, params->unWidth, params->unHeight );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopLoad( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopLoad_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopLoad_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->StopLoad( params->unBrowserHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopLoad( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopLoad_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopLoad_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->StopLoad( params->unBrowserHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Reload( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Reload_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Reload_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->Reload( params->unBrowserHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Reload( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Reload_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Reload_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->Reload( params->unBrowserHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoBack( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoBack_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoBack_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->GoBack( params->unBrowserHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoBack( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoBack_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoBack_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->GoBack( params->unBrowserHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoForward( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoForward_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoForward_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->GoForward( params->unBrowserHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoForward( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoForward_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GoForward_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->GoForward( params->unBrowserHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AddHeader( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AddHeader_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AddHeader_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->AddHeader( params->unBrowserHandle, params->pchKey, params->pchValue );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AddHeader( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AddHeader_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AddHeader_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->AddHeader( params->unBrowserHandle, params->pchKey, params->pchValue );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ExecuteJavascript( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ExecuteJavascript_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ExecuteJavascript_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->ExecuteJavascript( params->unBrowserHandle, params->pchScript );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ExecuteJavascript( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ExecuteJavascript_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ExecuteJavascript_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->ExecuteJavascript( params->unBrowserHandle, params->pchScript );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseUp( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseUp_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseUp_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->MouseUp( params->unBrowserHandle, params->eMouseButton );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseUp( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseUp_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseUp_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->MouseUp( params->unBrowserHandle, params->eMouseButton );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDown( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDown_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDown_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->MouseDown( params->unBrowserHandle, params->eMouseButton );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDown( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDown_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDown_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->MouseDown( params->unBrowserHandle, params->eMouseButton );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDoubleClick( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDoubleClick_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDoubleClick_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->MouseDoubleClick( params->unBrowserHandle, params->eMouseButton );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDoubleClick( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDoubleClick_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseDoubleClick_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->MouseDoubleClick( params->unBrowserHandle, params->eMouseButton );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseMove( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseMove_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseMove_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->MouseMove( params->unBrowserHandle, params->x, params->y );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseMove( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseMove_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseMove_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->MouseMove( params->unBrowserHandle, params->x, params->y );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseWheel( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseWheel_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseWheel_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->MouseWheel( params->unBrowserHandle, params->nDelta );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseWheel( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseWheel_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_MouseWheel_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->MouseWheel( params->unBrowserHandle, params->nDelta );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyDown( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyDown_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyDown_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    uint32_t u_nNativeKeyCode = manual_convert_nNativeKeyCode( params->nNativeKeyCode );
+    iface->KeyDown( params->unBrowserHandle, u_nNativeKeyCode, params->eHTMLKeyModifiers );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyDown( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyDown_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyDown_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    uint32_t u_nNativeKeyCode = manual_convert_nNativeKeyCode( params->nNativeKeyCode );
+    iface->KeyDown( params->unBrowserHandle, u_nNativeKeyCode, params->eHTMLKeyModifiers );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyUp( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyUp_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyUp_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    uint32_t u_nNativeKeyCode = manual_convert_nNativeKeyCode( params->nNativeKeyCode );
+    iface->KeyUp( params->unBrowserHandle, u_nNativeKeyCode, params->eHTMLKeyModifiers );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyUp( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyUp_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyUp_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    uint32_t u_nNativeKeyCode = manual_convert_nNativeKeyCode( params->nNativeKeyCode );
+    iface->KeyUp( params->unBrowserHandle, u_nNativeKeyCode, params->eHTMLKeyModifiers );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyChar( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyChar_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyChar_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->KeyChar( params->unBrowserHandle, params->cUnicodeChar, params->eHTMLKeyModifiers );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyChar( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyChar_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_KeyChar_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->KeyChar( params->unBrowserHandle, params->cUnicodeChar, params->eHTMLKeyModifiers );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetHorizontalScroll( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetHorizontalScroll_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetHorizontalScroll_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->SetHorizontalScroll( params->unBrowserHandle, params->nAbsolutePixelScroll );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetHorizontalScroll( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetHorizontalScroll_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetHorizontalScroll_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->SetHorizontalScroll( params->unBrowserHandle, params->nAbsolutePixelScroll );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetVerticalScroll( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetVerticalScroll_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetVerticalScroll_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->SetVerticalScroll( params->unBrowserHandle, params->nAbsolutePixelScroll );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetVerticalScroll( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetVerticalScroll_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetVerticalScroll_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->SetVerticalScroll( params->unBrowserHandle, params->nAbsolutePixelScroll );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetKeyFocus( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetKeyFocus_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetKeyFocus_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->SetKeyFocus( params->unBrowserHandle, params->bHasKeyFocus );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetKeyFocus( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetKeyFocus_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_SetKeyFocus_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->SetKeyFocus( params->unBrowserHandle, params->bHasKeyFocus );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ViewSource( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ViewSource_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ViewSource_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->ViewSource( params->unBrowserHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ViewSource( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ViewSource_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_ViewSource_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->ViewSource( params->unBrowserHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CopyToClipboard( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CopyToClipboard_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CopyToClipboard_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->CopyToClipboard( params->unBrowserHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CopyToClipboard( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CopyToClipboard_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_CopyToClipboard_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->CopyToClipboard( params->unBrowserHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_PasteFromClipboard( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_PasteFromClipboard_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_PasteFromClipboard_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->PasteFromClipboard( params->unBrowserHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_PasteFromClipboard( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_PasteFromClipboard_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_PasteFromClipboard_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->PasteFromClipboard( params->unBrowserHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Find( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Find_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Find_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->Find( params->unBrowserHandle, params->pchSearchStr, params->bCurrentlyInFind, params->bReverse );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Find( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Find_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_Find_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->Find( params->unBrowserHandle, params->pchSearchStr, params->bCurrentlyInFind, params->bReverse );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopFind( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopFind_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopFind_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->StopFind( params->unBrowserHandle );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopFind( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopFind_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_StopFind_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->StopFind( params->unBrowserHandle );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GetLinkAtPosition( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GetLinkAtPosition_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GetLinkAtPosition_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->GetLinkAtPosition( params->unBrowserHandle, params->x, params->y );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GetLinkAtPosition( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GetLinkAtPosition_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_GetLinkAtPosition_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->GetLinkAtPosition( params->unBrowserHandle, params->x, params->y );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AllowStartRequest( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AllowStartRequest_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AllowStartRequest_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->AllowStartRequest( params->unBrowserHandle, params->bAllowed );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AllowStartRequest( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AllowStartRequest_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_AllowStartRequest_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->AllowStartRequest( params->unBrowserHandle, params->bAllowed );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_JSDialogResponse( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_JSDialogResponse_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_JSDialogResponse_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->JSDialogResponse( params->unBrowserHandle, params->bResult );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_JSDialogResponse( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_JSDialogResponse_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_JSDialogResponse_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    iface->JSDialogResponse( params->unBrowserHandle, params->bResult );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_FileLoadDialogResponse( void *args )
+{
+    struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_FileLoadDialogResponse_params *params = (struct ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_FileLoadDialogResponse_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    const char **u_pchSelectedFiles = steamclient_dos_to_unix_path_array( params->pchSelectedFiles );
+    iface->FileLoadDialogResponse( params->unBrowserHandle, u_pchSelectedFiles );
+    steamclient_free_path_array( u_pchSelectedFiles );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_FileLoadDialogResponse( void *args )
+{
+    struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_FileLoadDialogResponse_params *params = (struct wow64_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001_FileLoadDialogResponse_params *)args;
+    struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *iface = (struct u_ISteamHTMLSurface_STEAMHTMLSURFACE_INTERFACE_VERSION_001 *)params->u_iface;
+    const char **u_pchSelectedFiles = wow64_steamclient_dos_to_unix_path_array( params->pchSelectedFiles );
+    iface->FileLoadDialogResponse( params->unBrowserHandle, u_pchSelectedFiles );
+    steamclient_free_path_array( u_pchSelectedFiles );
+    return 0;
+}
+#endif
+

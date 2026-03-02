@@ -1,57 +1,151 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_158/steam_api.h"
-#include "steamworks_sdk_158/steamnetworkingtypes.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_158
-#include "struct_converters.h"
-#include "cppISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002.h"
-uint32 cppISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionCount(void *linux_side)
+
+NTSTATUS ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionCount( void *args )
 {
-    return ((ISteamRemotePlay*)linux_side)->GetSessionCount();
+    struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionCount_params *params = (struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionCount_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->GetSessionCount(  );
+    return 0;
 }
 
-RemotePlaySessionID_t cppISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionID(void *linux_side, int iSessionIndex)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionCount( void *args )
 {
-    return ((ISteamRemotePlay*)linux_side)->GetSessionID((int)iSessionIndex);
-}
-
-CSteamID cppISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionSteamID(void *linux_side, RemotePlaySessionID_t unSessionID)
-{
-    return ((ISteamRemotePlay*)linux_side)->GetSessionSteamID((RemotePlaySessionID_t)unSessionID);
-}
-
-const char * cppISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientName(void *linux_side, RemotePlaySessionID_t unSessionID)
-{
-    return ((ISteamRemotePlay*)linux_side)->GetSessionClientName((RemotePlaySessionID_t)unSessionID);
-}
-
-ESteamDeviceFormFactor cppISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientFormFactor(void *linux_side, RemotePlaySessionID_t unSessionID)
-{
-    return ((ISteamRemotePlay*)linux_side)->GetSessionClientFormFactor((RemotePlaySessionID_t)unSessionID);
-}
-
-bool cppISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BGetSessionClientResolution(void *linux_side, RemotePlaySessionID_t unSessionID, int * pnResolutionX, int * pnResolutionY)
-{
-    return ((ISteamRemotePlay*)linux_side)->BGetSessionClientResolution((RemotePlaySessionID_t)unSessionID, (int *)pnResolutionX, (int *)pnResolutionY);
-}
-
-bool cppISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BStartRemotePlayTogether(void *linux_side, bool bShowOverlay)
-{
-    return ((ISteamRemotePlay*)linux_side)->BStartRemotePlayTogether((bool)bShowOverlay);
-}
-
-bool cppISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BSendRemotePlayTogetherInvite(void *linux_side, CSteamID steamIDFriend)
-{
-    return ((ISteamRemotePlay*)linux_side)->BSendRemotePlayTogetherInvite((CSteamID)steamIDFriend);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionCount_params *params = (struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionCount_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->GetSessionCount(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionID( void *args )
+{
+    struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionID_params *params = (struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionID_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->GetSessionID( params->iSessionIndex );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionID( void *args )
+{
+    struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionID_params *params = (struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionID_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->GetSessionID( params->iSessionIndex );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionSteamID( void *args )
+{
+    struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionSteamID_params *params = (struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionSteamID_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    *params->_ret = iface->GetSessionSteamID( params->unSessionID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionSteamID( void *args )
+{
+    struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionSteamID_params *params = (struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionSteamID_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    *params->_ret = iface->GetSessionSteamID( params->unSessionID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientName( void *args )
+{
+    struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientName_params *params = (struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientName_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->GetSessionClientName( params->unSessionID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientName( void *args )
+{
+    struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientName_params *params = (struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientName_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->GetSessionClientName( params->unSessionID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientFormFactor( void *args )
+{
+    struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientFormFactor_params *params = (struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientFormFactor_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->GetSessionClientFormFactor( params->unSessionID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientFormFactor( void *args )
+{
+    struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientFormFactor_params *params = (struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_GetSessionClientFormFactor_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->GetSessionClientFormFactor( params->unSessionID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BGetSessionClientResolution( void *args )
+{
+    struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BGetSessionClientResolution_params *params = (struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BGetSessionClientResolution_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BGetSessionClientResolution( params->unSessionID, params->pnResolutionX, params->pnResolutionY );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BGetSessionClientResolution( void *args )
+{
+    struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BGetSessionClientResolution_params *params = (struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BGetSessionClientResolution_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BGetSessionClientResolution( params->unSessionID, params->pnResolutionX, params->pnResolutionY );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BStartRemotePlayTogether( void *args )
+{
+    struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BStartRemotePlayTogether_params *params = (struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BStartRemotePlayTogether_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BStartRemotePlayTogether( params->bShowOverlay );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BStartRemotePlayTogether( void *args )
+{
+    struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BStartRemotePlayTogether_params *params = (struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BStartRemotePlayTogether_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BStartRemotePlayTogether( params->bShowOverlay );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BSendRemotePlayTogetherInvite( void *args )
+{
+    struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BSendRemotePlayTogetherInvite_params *params = (struct ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BSendRemotePlayTogetherInvite_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BSendRemotePlayTogetherInvite( params->steamIDFriend );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BSendRemotePlayTogetherInvite( void *args )
+{
+    struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BSendRemotePlayTogetherInvite_params *params = (struct wow64_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002_BSendRemotePlayTogetherInvite_params *)args;
+    struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *iface = (struct u_ISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002 *)params->u_iface;
+    params->_ret = iface->BSendRemotePlayTogetherInvite( params->steamIDFriend );
+    return 0;
+}
+#endif
+

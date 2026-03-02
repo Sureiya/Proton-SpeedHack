@@ -1,82 +1,241 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_117/steam_api.h"
-#include "steamworks_sdk_117/isteamgamestats.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_117
-#include "struct_converters.h"
-#include "cppISteamGameStats_SteamGameStats001.h"
-SteamAPICall_t cppISteamGameStats_SteamGameStats001_GetNewSession(void *linux_side, int8 nAccountType, uint64 ulAccountID, int32 nAppID, RTime32 rtTimeStarted)
+
+NTSTATUS ISteamGameStats_SteamGameStats001_GetNewSession( void *args )
 {
-    return ((ISteamGameStats*)linux_side)->GetNewSession((int8)nAccountType, (uint64)ulAccountID, (int32)nAppID, (RTime32)rtTimeStarted);
+    struct ISteamGameStats_SteamGameStats001_GetNewSession_params *params = (struct ISteamGameStats_SteamGameStats001_GetNewSession_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->GetNewSession( params->nAccountType, params->ulAccountID, params->nAppID, params->rtTimeStarted );
+    return 0;
 }
 
-SteamAPICall_t cppISteamGameStats_SteamGameStats001_EndSession(void *linux_side, uint64 ulSessionID, RTime32 rtTimeEnded, int nReasonCode)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameStats_SteamGameStats001_GetNewSession( void *args )
 {
-    return ((ISteamGameStats*)linux_side)->EndSession((uint64)ulSessionID, (RTime32)rtTimeEnded, (int)nReasonCode);
-}
-
-EResult cppISteamGameStats_SteamGameStats001_AddSessionAttributeInt(void *linux_side, uint64 ulSessionID, const char * pstrName, int32 nData)
-{
-    return ((ISteamGameStats*)linux_side)->AddSessionAttributeInt((uint64)ulSessionID, (const char *)pstrName, (int32)nData);
-}
-
-EResult cppISteamGameStats_SteamGameStats001_AddSessionAttributeString(void *linux_side, uint64 ulSessionID, const char * pstrName, const char * pstrData)
-{
-    return ((ISteamGameStats*)linux_side)->AddSessionAttributeString((uint64)ulSessionID, (const char *)pstrName, (const char *)pstrData);
-}
-
-EResult cppISteamGameStats_SteamGameStats001_AddSessionAttributeFloat(void *linux_side, uint64 ulSessionID, const char * pstrName, float fData)
-{
-    return ((ISteamGameStats*)linux_side)->AddSessionAttributeFloat((uint64)ulSessionID, (const char *)pstrName, (float)fData);
-}
-
-EResult cppISteamGameStats_SteamGameStats001_AddNewRow(void *linux_side, uint64 * pulRowID, uint64 ulSessionID, const char * pstrTableName)
-{
-    return ((ISteamGameStats*)linux_side)->AddNewRow((uint64 *)pulRowID, (uint64)ulSessionID, (const char *)pstrTableName);
-}
-
-EResult cppISteamGameStats_SteamGameStats001_CommitRow(void *linux_side, uint64 ulRowID)
-{
-    return ((ISteamGameStats*)linux_side)->CommitRow((uint64)ulRowID);
-}
-
-EResult cppISteamGameStats_SteamGameStats001_CommitOutstandingRows(void *linux_side, uint64 ulSessionID)
-{
-    return ((ISteamGameStats*)linux_side)->CommitOutstandingRows((uint64)ulSessionID);
-}
-
-EResult cppISteamGameStats_SteamGameStats001_AddRowAttributeInt(void *linux_side, uint64 ulRowID, const char * pstrName, int32 nData)
-{
-    return ((ISteamGameStats*)linux_side)->AddRowAttributeInt((uint64)ulRowID, (const char *)pstrName, (int32)nData);
-}
-
-EResult cppISteamGameStats_SteamGameStats001_AddRowAtributeString(void *linux_side, uint64 ulRowID, const char * pstrName, const char * pstrData)
-{
-    return ((ISteamGameStats*)linux_side)->AddRowAtributeString((uint64)ulRowID, (const char *)pstrName, (const char *)pstrData);
-}
-
-EResult cppISteamGameStats_SteamGameStats001_AddRowAttributeFloat(void *linux_side, uint64 ulRowID, const char * pstrName, float fData)
-{
-    return ((ISteamGameStats*)linux_side)->AddRowAttributeFloat((uint64)ulRowID, (const char *)pstrName, (float)fData);
-}
-
-EResult cppISteamGameStats_SteamGameStats001_AddSessionAttributeInt64(void *linux_side, uint64 ulSessionID, const char * pstrName, int64 llData)
-{
-    return ((ISteamGameStats*)linux_side)->AddSessionAttributeInt64((uint64)ulSessionID, (const char *)pstrName, (int64)llData);
-}
-
-EResult cppISteamGameStats_SteamGameStats001_AddRowAttributeInt64(void *linux_side, uint64 ulRowID, const char * pstrName, int64 llData)
-{
-    return ((ISteamGameStats*)linux_side)->AddRowAttributeInt64((uint64)ulRowID, (const char *)pstrName, (int64)llData);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamGameStats_SteamGameStats001_GetNewSession_params *params = (struct wow64_ISteamGameStats_SteamGameStats001_GetNewSession_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->GetNewSession( params->nAccountType, params->ulAccountID, params->nAppID, params->rtTimeStarted );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamGameStats_SteamGameStats001_EndSession( void *args )
+{
+    struct ISteamGameStats_SteamGameStats001_EndSession_params *params = (struct ISteamGameStats_SteamGameStats001_EndSession_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->EndSession( params->ulSessionID, params->rtTimeEnded, params->nReasonCode );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameStats_SteamGameStats001_EndSession( void *args )
+{
+    struct wow64_ISteamGameStats_SteamGameStats001_EndSession_params *params = (struct wow64_ISteamGameStats_SteamGameStats001_EndSession_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->EndSession( params->ulSessionID, params->rtTimeEnded, params->nReasonCode );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameStats_SteamGameStats001_AddSessionAttributeInt( void *args )
+{
+    struct ISteamGameStats_SteamGameStats001_AddSessionAttributeInt_params *params = (struct ISteamGameStats_SteamGameStats001_AddSessionAttributeInt_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddSessionAttributeInt( params->ulSessionID, params->pstrName, params->nData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameStats_SteamGameStats001_AddSessionAttributeInt( void *args )
+{
+    struct wow64_ISteamGameStats_SteamGameStats001_AddSessionAttributeInt_params *params = (struct wow64_ISteamGameStats_SteamGameStats001_AddSessionAttributeInt_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddSessionAttributeInt( params->ulSessionID, params->pstrName, params->nData );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameStats_SteamGameStats001_AddSessionAttributeString( void *args )
+{
+    struct ISteamGameStats_SteamGameStats001_AddSessionAttributeString_params *params = (struct ISteamGameStats_SteamGameStats001_AddSessionAttributeString_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddSessionAttributeString( params->ulSessionID, params->pstrName, params->pstrData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameStats_SteamGameStats001_AddSessionAttributeString( void *args )
+{
+    struct wow64_ISteamGameStats_SteamGameStats001_AddSessionAttributeString_params *params = (struct wow64_ISteamGameStats_SteamGameStats001_AddSessionAttributeString_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddSessionAttributeString( params->ulSessionID, params->pstrName, params->pstrData );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameStats_SteamGameStats001_AddSessionAttributeFloat( void *args )
+{
+    struct ISteamGameStats_SteamGameStats001_AddSessionAttributeFloat_params *params = (struct ISteamGameStats_SteamGameStats001_AddSessionAttributeFloat_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddSessionAttributeFloat( params->ulSessionID, params->pstrName, params->fData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameStats_SteamGameStats001_AddSessionAttributeFloat( void *args )
+{
+    struct wow64_ISteamGameStats_SteamGameStats001_AddSessionAttributeFloat_params *params = (struct wow64_ISteamGameStats_SteamGameStats001_AddSessionAttributeFloat_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddSessionAttributeFloat( params->ulSessionID, params->pstrName, params->fData );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameStats_SteamGameStats001_AddNewRow( void *args )
+{
+    struct ISteamGameStats_SteamGameStats001_AddNewRow_params *params = (struct ISteamGameStats_SteamGameStats001_AddNewRow_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddNewRow( params->pulRowID, params->ulSessionID, params->pstrTableName );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameStats_SteamGameStats001_AddNewRow( void *args )
+{
+    struct wow64_ISteamGameStats_SteamGameStats001_AddNewRow_params *params = (struct wow64_ISteamGameStats_SteamGameStats001_AddNewRow_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddNewRow( params->pulRowID, params->ulSessionID, params->pstrTableName );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameStats_SteamGameStats001_CommitRow( void *args )
+{
+    struct ISteamGameStats_SteamGameStats001_CommitRow_params *params = (struct ISteamGameStats_SteamGameStats001_CommitRow_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->CommitRow( params->ulRowID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameStats_SteamGameStats001_CommitRow( void *args )
+{
+    struct wow64_ISteamGameStats_SteamGameStats001_CommitRow_params *params = (struct wow64_ISteamGameStats_SteamGameStats001_CommitRow_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->CommitRow( params->ulRowID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameStats_SteamGameStats001_CommitOutstandingRows( void *args )
+{
+    struct ISteamGameStats_SteamGameStats001_CommitOutstandingRows_params *params = (struct ISteamGameStats_SteamGameStats001_CommitOutstandingRows_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->CommitOutstandingRows( params->ulSessionID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameStats_SteamGameStats001_CommitOutstandingRows( void *args )
+{
+    struct wow64_ISteamGameStats_SteamGameStats001_CommitOutstandingRows_params *params = (struct wow64_ISteamGameStats_SteamGameStats001_CommitOutstandingRows_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->CommitOutstandingRows( params->ulSessionID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameStats_SteamGameStats001_AddRowAttributeInt( void *args )
+{
+    struct ISteamGameStats_SteamGameStats001_AddRowAttributeInt_params *params = (struct ISteamGameStats_SteamGameStats001_AddRowAttributeInt_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddRowAttributeInt( params->ulRowID, params->pstrName, params->nData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameStats_SteamGameStats001_AddRowAttributeInt( void *args )
+{
+    struct wow64_ISteamGameStats_SteamGameStats001_AddRowAttributeInt_params *params = (struct wow64_ISteamGameStats_SteamGameStats001_AddRowAttributeInt_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddRowAttributeInt( params->ulRowID, params->pstrName, params->nData );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameStats_SteamGameStats001_AddRowAtributeString( void *args )
+{
+    struct ISteamGameStats_SteamGameStats001_AddRowAtributeString_params *params = (struct ISteamGameStats_SteamGameStats001_AddRowAtributeString_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddRowAtributeString( params->ulRowID, params->pstrName, params->pstrData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameStats_SteamGameStats001_AddRowAtributeString( void *args )
+{
+    struct wow64_ISteamGameStats_SteamGameStats001_AddRowAtributeString_params *params = (struct wow64_ISteamGameStats_SteamGameStats001_AddRowAtributeString_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddRowAtributeString( params->ulRowID, params->pstrName, params->pstrData );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameStats_SteamGameStats001_AddRowAttributeFloat( void *args )
+{
+    struct ISteamGameStats_SteamGameStats001_AddRowAttributeFloat_params *params = (struct ISteamGameStats_SteamGameStats001_AddRowAttributeFloat_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddRowAttributeFloat( params->ulRowID, params->pstrName, params->fData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameStats_SteamGameStats001_AddRowAttributeFloat( void *args )
+{
+    struct wow64_ISteamGameStats_SteamGameStats001_AddRowAttributeFloat_params *params = (struct wow64_ISteamGameStats_SteamGameStats001_AddRowAttributeFloat_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddRowAttributeFloat( params->ulRowID, params->pstrName, params->fData );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameStats_SteamGameStats001_AddSessionAttributeInt64( void *args )
+{
+    struct ISteamGameStats_SteamGameStats001_AddSessionAttributeInt64_params *params = (struct ISteamGameStats_SteamGameStats001_AddSessionAttributeInt64_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddSessionAttributeInt64( params->ulSessionID, params->pstrName, params->llData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameStats_SteamGameStats001_AddSessionAttributeInt64( void *args )
+{
+    struct wow64_ISteamGameStats_SteamGameStats001_AddSessionAttributeInt64_params *params = (struct wow64_ISteamGameStats_SteamGameStats001_AddSessionAttributeInt64_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddSessionAttributeInt64( params->ulSessionID, params->pstrName, params->llData );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamGameStats_SteamGameStats001_AddRowAttributeInt64( void *args )
+{
+    struct ISteamGameStats_SteamGameStats001_AddRowAttributeInt64_params *params = (struct ISteamGameStats_SteamGameStats001_AddRowAttributeInt64_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddRowAttributeInt64( params->ulRowID, params->pstrName, params->llData );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamGameStats_SteamGameStats001_AddRowAttributeInt64( void *args )
+{
+    struct wow64_ISteamGameStats_SteamGameStats001_AddRowAttributeInt64_params *params = (struct wow64_ISteamGameStats_SteamGameStats001_AddRowAttributeInt64_params *)args;
+    struct u_ISteamGameStats_SteamGameStats001 *iface = (struct u_ISteamGameStats_SteamGameStats001 *)params->u_iface;
+    params->_ret = iface->AddRowAttributeInt64( params->ulRowID, params->pstrName, params->llData );
+    return 0;
+}
+#endif
+

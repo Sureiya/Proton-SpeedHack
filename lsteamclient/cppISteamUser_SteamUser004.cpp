@@ -1,146 +1,475 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_099u/steam_api.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_099u
-#include "struct_converters.h"
-#include "cppISteamUser_SteamUser004.h"
-HSteamUser cppISteamUser_SteamUser004_GetHSteamUser(void *linux_side)
+
+NTSTATUS ISteamUser_SteamUser004_GetHSteamUser( void *args )
 {
-    return ((ISteamUser*)linux_side)->GetHSteamUser();
+    struct ISteamUser_SteamUser004_GetHSteamUser_params *params = (struct ISteamUser_SteamUser004_GetHSteamUser_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->GetHSteamUser(  );
+    return 0;
 }
 
-void cppISteamUser_SteamUser004_LogOn(void *linux_side, CSteamID steamID)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_GetHSteamUser( void *args )
 {
-    ((ISteamUser*)linux_side)->LogOn((CSteamID)steamID);
-}
-
-void cppISteamUser_SteamUser004_LogOff(void *linux_side)
-{
-    ((ISteamUser*)linux_side)->LogOff();
-}
-
-bool cppISteamUser_SteamUser004_BLoggedOn(void *linux_side)
-{
-    return ((ISteamUser*)linux_side)->BLoggedOn();
-}
-
-ELogonState cppISteamUser_SteamUser004_GetLogonState(void *linux_side)
-{
-    return ((ISteamUser*)linux_side)->GetLogonState();
-}
-
-bool cppISteamUser_SteamUser004_BConnected(void *linux_side)
-{
-    return ((ISteamUser*)linux_side)->BConnected();
-}
-
-CSteamID cppISteamUser_SteamUser004_GetSteamID(void *linux_side)
-{
-    return ((ISteamUser*)linux_side)->GetSteamID();
-}
-
-bool cppISteamUser_SteamUser004_IsVACBanned(void *linux_side, int nGameID)
-{
-    return ((ISteamUser*)linux_side)->IsVACBanned((int)nGameID);
-}
-
-bool cppISteamUser_SteamUser004_RequireShowVACBannedMessage(void *linux_side, int nGameID)
-{
-    return ((ISteamUser*)linux_side)->RequireShowVACBannedMessage((int)nGameID);
-}
-
-void cppISteamUser_SteamUser004_AcknowledgeVACBanning(void *linux_side, int nGameID)
-{
-    ((ISteamUser*)linux_side)->AcknowledgeVACBanning((int)nGameID);
-}
-
-int cppISteamUser_SteamUser004_NClientGameIDAdd(void *linux_side, int nGameID)
-{
-    return ((ISteamUser*)linux_side)->NClientGameIDAdd((int)nGameID);
-}
-
-void cppISteamUser_SteamUser004_RemoveClientGame(void *linux_side, int nClientGameID)
-{
-    ((ISteamUser*)linux_side)->RemoveClientGame((int)nClientGameID);
-}
-
-void cppISteamUser_SteamUser004_SetClientGameServer(void *linux_side, int nClientGameID, uint32 unIPServer, uint16 usPortServer)
-{
-    ((ISteamUser*)linux_side)->SetClientGameServer((int)nClientGameID, (uint32)unIPServer, (uint16)usPortServer);
-}
-
-void cppISteamUser_SteamUser004_SetSteam2Ticket(void *linux_side, uint8 * pubTicket, int cubTicket)
-{
-    ((ISteamUser*)linux_side)->SetSteam2Ticket((uint8 *)pubTicket, (int)cubTicket);
-}
-
-void cppISteamUser_SteamUser004_AddServerNetAddress(void *linux_side, uint32 unIP, uint16 unPort)
-{
-    ((ISteamUser*)linux_side)->AddServerNetAddress((uint32)unIP, (uint16)unPort);
-}
-
-bool cppISteamUser_SteamUser004_SetEmail(void *linux_side, const char * pchEmail)
-{
-    return ((ISteamUser*)linux_side)->SetEmail((const char *)pchEmail);
-}
-
-int cppISteamUser_SteamUser004_GetSteamGameConnectToken(void *linux_side, void * pBlob, int cbMaxBlob)
-{
-    return ((ISteamUser*)linux_side)->GetSteamGameConnectToken((void *)pBlob, (int)cbMaxBlob);
-}
-
-bool cppISteamUser_SteamUser004_SetRegistryString(void *linux_side, EConfigSubTree eRegistrySubTree, const char * pchKey, const char * pchValue)
-{
-    return ((ISteamUser*)linux_side)->SetRegistryString((EConfigSubTree)eRegistrySubTree, (const char *)pchKey, (const char *)pchValue);
-}
-
-bool cppISteamUser_SteamUser004_GetRegistryString(void *linux_side, EConfigSubTree eRegistrySubTree, const char * pchKey, char * pchValue, int cbValue)
-{
-    return ((ISteamUser*)linux_side)->GetRegistryString((EConfigSubTree)eRegistrySubTree, (const char *)pchKey, (char *)pchValue, (int)cbValue);
-}
-
-bool cppISteamUser_SteamUser004_SetRegistryInt(void *linux_side, EConfigSubTree eRegistrySubTree, const char * pchKey, int iValue)
-{
-    return ((ISteamUser*)linux_side)->SetRegistryInt((EConfigSubTree)eRegistrySubTree, (const char *)pchKey, (int)iValue);
-}
-
-bool cppISteamUser_SteamUser004_GetRegistryInt(void *linux_side, EConfigSubTree eRegistrySubTree, const char * pchKey, int * piValue)
-{
-    return ((ISteamUser*)linux_side)->GetRegistryInt((EConfigSubTree)eRegistrySubTree, (const char *)pchKey, (int *)piValue);
-}
-
-int cppISteamUser_SteamUser004_InitiateGameConnection(void *linux_side, void * pBlob, int cbMaxBlob, CSteamID steamID, int nGameAppID, uint32 unIPServer, uint16 usPortServer, bool bSecure)
-{
-    return ((ISteamUser*)linux_side)->InitiateGameConnection((void *)pBlob, (int)cbMaxBlob, (CSteamID)steamID, (int)nGameAppID, (uint32)unIPServer, (uint16)usPortServer, (bool)bSecure);
-}
-
-void cppISteamUser_SteamUser004_TerminateGameConnection(void *linux_side, uint32 unIPServer, uint16 usPortServer)
-{
-    ((ISteamUser*)linux_side)->TerminateGameConnection((uint32)unIPServer, (uint16)usPortServer);
-}
-
-void cppISteamUser_SteamUser004_SetSelfAsPrimaryChatDestination(void *linux_side)
-{
-    ((ISteamUser*)linux_side)->SetSelfAsPrimaryChatDestination();
-}
-
-bool cppISteamUser_SteamUser004_IsPrimaryChatDestination(void *linux_side)
-{
-    return ((ISteamUser*)linux_side)->IsPrimaryChatDestination();
-}
-
-void cppISteamUser_SteamUser004_RequestLegacyCDKey(void *linux_side, uint32 iAppID)
-{
-    ((ISteamUser*)linux_side)->RequestLegacyCDKey((uint32)iAppID);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamUser_SteamUser004_GetHSteamUser_params *params = (struct wow64_ISteamUser_SteamUser004_GetHSteamUser_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->GetHSteamUser(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamUser_SteamUser004_LogOn( void *args )
+{
+    struct ISteamUser_SteamUser004_LogOn_params *params = (struct ISteamUser_SteamUser004_LogOn_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->LogOn( params->steamID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_LogOn( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_LogOn_params *params = (struct wow64_ISteamUser_SteamUser004_LogOn_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->LogOn( params->steamID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_LogOff( void *args )
+{
+    struct ISteamUser_SteamUser004_LogOff_params *params = (struct ISteamUser_SteamUser004_LogOff_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->LogOff(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_LogOff( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_LogOff_params *params = (struct wow64_ISteamUser_SteamUser004_LogOff_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->LogOff(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_BLoggedOn( void *args )
+{
+    struct ISteamUser_SteamUser004_BLoggedOn_params *params = (struct ISteamUser_SteamUser004_BLoggedOn_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->BLoggedOn(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_BLoggedOn( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_BLoggedOn_params *params = (struct wow64_ISteamUser_SteamUser004_BLoggedOn_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->BLoggedOn(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_GetLogonState( void *args )
+{
+    struct ISteamUser_SteamUser004_GetLogonState_params *params = (struct ISteamUser_SteamUser004_GetLogonState_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->GetLogonState(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_GetLogonState( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_GetLogonState_params *params = (struct wow64_ISteamUser_SteamUser004_GetLogonState_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->GetLogonState(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_BConnected( void *args )
+{
+    struct ISteamUser_SteamUser004_BConnected_params *params = (struct ISteamUser_SteamUser004_BConnected_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->BConnected(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_BConnected( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_BConnected_params *params = (struct wow64_ISteamUser_SteamUser004_BConnected_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->BConnected(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_GetSteamID( void *args )
+{
+    struct ISteamUser_SteamUser004_GetSteamID_params *params = (struct ISteamUser_SteamUser004_GetSteamID_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    *params->_ret = iface->GetSteamID(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_GetSteamID( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_GetSteamID_params *params = (struct wow64_ISteamUser_SteamUser004_GetSteamID_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    *params->_ret = iface->GetSteamID(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_IsVACBanned( void *args )
+{
+    struct ISteamUser_SteamUser004_IsVACBanned_params *params = (struct ISteamUser_SteamUser004_IsVACBanned_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->IsVACBanned( params->nGameID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_IsVACBanned( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_IsVACBanned_params *params = (struct wow64_ISteamUser_SteamUser004_IsVACBanned_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->IsVACBanned( params->nGameID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_RequireShowVACBannedMessage( void *args )
+{
+    struct ISteamUser_SteamUser004_RequireShowVACBannedMessage_params *params = (struct ISteamUser_SteamUser004_RequireShowVACBannedMessage_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->RequireShowVACBannedMessage( params->nGameID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_RequireShowVACBannedMessage( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_RequireShowVACBannedMessage_params *params = (struct wow64_ISteamUser_SteamUser004_RequireShowVACBannedMessage_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->RequireShowVACBannedMessage( params->nGameID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_AcknowledgeVACBanning( void *args )
+{
+    struct ISteamUser_SteamUser004_AcknowledgeVACBanning_params *params = (struct ISteamUser_SteamUser004_AcknowledgeVACBanning_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->AcknowledgeVACBanning( params->nGameID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_AcknowledgeVACBanning( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_AcknowledgeVACBanning_params *params = (struct wow64_ISteamUser_SteamUser004_AcknowledgeVACBanning_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->AcknowledgeVACBanning( params->nGameID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_NClientGameIDAdd( void *args )
+{
+    struct ISteamUser_SteamUser004_NClientGameIDAdd_params *params = (struct ISteamUser_SteamUser004_NClientGameIDAdd_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->NClientGameIDAdd( params->nGameID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_NClientGameIDAdd( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_NClientGameIDAdd_params *params = (struct wow64_ISteamUser_SteamUser004_NClientGameIDAdd_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->NClientGameIDAdd( params->nGameID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_RemoveClientGame( void *args )
+{
+    struct ISteamUser_SteamUser004_RemoveClientGame_params *params = (struct ISteamUser_SteamUser004_RemoveClientGame_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->RemoveClientGame( params->nClientGameID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_RemoveClientGame( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_RemoveClientGame_params *params = (struct wow64_ISteamUser_SteamUser004_RemoveClientGame_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->RemoveClientGame( params->nClientGameID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_SetClientGameServer( void *args )
+{
+    struct ISteamUser_SteamUser004_SetClientGameServer_params *params = (struct ISteamUser_SteamUser004_SetClientGameServer_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->SetClientGameServer( params->nClientGameID, params->unIPServer, params->usPortServer );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_SetClientGameServer( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_SetClientGameServer_params *params = (struct wow64_ISteamUser_SteamUser004_SetClientGameServer_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->SetClientGameServer( params->nClientGameID, params->unIPServer, params->usPortServer );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_SetSteam2Ticket( void *args )
+{
+    struct ISteamUser_SteamUser004_SetSteam2Ticket_params *params = (struct ISteamUser_SteamUser004_SetSteam2Ticket_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->SetSteam2Ticket( params->pubTicket, params->cubTicket );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_SetSteam2Ticket( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_SetSteam2Ticket_params *params = (struct wow64_ISteamUser_SteamUser004_SetSteam2Ticket_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->SetSteam2Ticket( params->pubTicket, params->cubTicket );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_AddServerNetAddress( void *args )
+{
+    struct ISteamUser_SteamUser004_AddServerNetAddress_params *params = (struct ISteamUser_SteamUser004_AddServerNetAddress_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->AddServerNetAddress( params->unIP, params->unPort );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_AddServerNetAddress( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_AddServerNetAddress_params *params = (struct wow64_ISteamUser_SteamUser004_AddServerNetAddress_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->AddServerNetAddress( params->unIP, params->unPort );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_SetEmail( void *args )
+{
+    struct ISteamUser_SteamUser004_SetEmail_params *params = (struct ISteamUser_SteamUser004_SetEmail_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->SetEmail( params->pchEmail );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_SetEmail( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_SetEmail_params *params = (struct wow64_ISteamUser_SteamUser004_SetEmail_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->SetEmail( params->pchEmail );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_GetSteamGameConnectToken( void *args )
+{
+    struct ISteamUser_SteamUser004_GetSteamGameConnectToken_params *params = (struct ISteamUser_SteamUser004_GetSteamGameConnectToken_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->GetSteamGameConnectToken( params->pBlob, params->cbMaxBlob );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_GetSteamGameConnectToken( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_GetSteamGameConnectToken_params *params = (struct wow64_ISteamUser_SteamUser004_GetSteamGameConnectToken_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->GetSteamGameConnectToken( params->pBlob, params->cbMaxBlob );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_SetRegistryString( void *args )
+{
+    struct ISteamUser_SteamUser004_SetRegistryString_params *params = (struct ISteamUser_SteamUser004_SetRegistryString_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->SetRegistryString( params->eRegistrySubTree, params->pchKey, params->pchValue );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_SetRegistryString( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_SetRegistryString_params *params = (struct wow64_ISteamUser_SteamUser004_SetRegistryString_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->SetRegistryString( params->eRegistrySubTree, params->pchKey, params->pchValue );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_GetRegistryString( void *args )
+{
+    struct ISteamUser_SteamUser004_GetRegistryString_params *params = (struct ISteamUser_SteamUser004_GetRegistryString_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->GetRegistryString( params->eRegistrySubTree, params->pchKey, params->pchValue, params->cbValue );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_GetRegistryString( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_GetRegistryString_params *params = (struct wow64_ISteamUser_SteamUser004_GetRegistryString_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->GetRegistryString( params->eRegistrySubTree, params->pchKey, params->pchValue, params->cbValue );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_SetRegistryInt( void *args )
+{
+    struct ISteamUser_SteamUser004_SetRegistryInt_params *params = (struct ISteamUser_SteamUser004_SetRegistryInt_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->SetRegistryInt( params->eRegistrySubTree, params->pchKey, params->iValue );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_SetRegistryInt( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_SetRegistryInt_params *params = (struct wow64_ISteamUser_SteamUser004_SetRegistryInt_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->SetRegistryInt( params->eRegistrySubTree, params->pchKey, params->iValue );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_GetRegistryInt( void *args )
+{
+    struct ISteamUser_SteamUser004_GetRegistryInt_params *params = (struct ISteamUser_SteamUser004_GetRegistryInt_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->GetRegistryInt( params->eRegistrySubTree, params->pchKey, params->piValue );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_GetRegistryInt( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_GetRegistryInt_params *params = (struct wow64_ISteamUser_SteamUser004_GetRegistryInt_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->GetRegistryInt( params->eRegistrySubTree, params->pchKey, params->piValue );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_InitiateGameConnection( void *args )
+{
+    struct ISteamUser_SteamUser004_InitiateGameConnection_params *params = (struct ISteamUser_SteamUser004_InitiateGameConnection_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->InitiateGameConnection( params->pBlob, params->cbMaxBlob, params->steamID, params->nGameAppID, params->unIPServer, params->usPortServer, params->bSecure );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_InitiateGameConnection( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_InitiateGameConnection_params *params = (struct wow64_ISteamUser_SteamUser004_InitiateGameConnection_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->InitiateGameConnection( params->pBlob, params->cbMaxBlob, params->steamID, params->nGameAppID, params->unIPServer, params->usPortServer, params->bSecure );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_TerminateGameConnection( void *args )
+{
+    struct ISteamUser_SteamUser004_TerminateGameConnection_params *params = (struct ISteamUser_SteamUser004_TerminateGameConnection_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->TerminateGameConnection( params->unIPServer, params->usPortServer );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_TerminateGameConnection( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_TerminateGameConnection_params *params = (struct wow64_ISteamUser_SteamUser004_TerminateGameConnection_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->TerminateGameConnection( params->unIPServer, params->usPortServer );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_SetSelfAsPrimaryChatDestination( void *args )
+{
+    struct ISteamUser_SteamUser004_SetSelfAsPrimaryChatDestination_params *params = (struct ISteamUser_SteamUser004_SetSelfAsPrimaryChatDestination_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->SetSelfAsPrimaryChatDestination(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_SetSelfAsPrimaryChatDestination( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_SetSelfAsPrimaryChatDestination_params *params = (struct wow64_ISteamUser_SteamUser004_SetSelfAsPrimaryChatDestination_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->SetSelfAsPrimaryChatDestination(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_IsPrimaryChatDestination( void *args )
+{
+    struct ISteamUser_SteamUser004_IsPrimaryChatDestination_params *params = (struct ISteamUser_SteamUser004_IsPrimaryChatDestination_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->IsPrimaryChatDestination(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_IsPrimaryChatDestination( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_IsPrimaryChatDestination_params *params = (struct wow64_ISteamUser_SteamUser004_IsPrimaryChatDestination_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    params->_ret = iface->IsPrimaryChatDestination(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamUser_SteamUser004_RequestLegacyCDKey( void *args )
+{
+    struct ISteamUser_SteamUser004_RequestLegacyCDKey_params *params = (struct ISteamUser_SteamUser004_RequestLegacyCDKey_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->RequestLegacyCDKey( params->iAppID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamUser_SteamUser004_RequestLegacyCDKey( void *args )
+{
+    struct wow64_ISteamUser_SteamUser004_RequestLegacyCDKey_params *params = (struct wow64_ISteamUser_SteamUser004_RequestLegacyCDKey_params *)args;
+    struct u_ISteamUser_SteamUser004 *iface = (struct u_ISteamUser_SteamUser004 *)params->u_iface;
+    iface->RequestLegacyCDKey( params->iAppID );
+    return 0;
+}
+#endif
+

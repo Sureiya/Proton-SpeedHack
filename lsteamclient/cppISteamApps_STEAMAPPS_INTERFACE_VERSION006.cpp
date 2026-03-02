@@ -1,126 +1,405 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_131/steam_api.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_131
-#include "struct_converters.h"
-#include "cppISteamApps_STEAMAPPS_INTERFACE_VERSION006.h"
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribed(void *linux_side)
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribed( void *args )
 {
-    return ((ISteamApps*)linux_side)->BIsSubscribed();
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribed_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribed_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsSubscribed(  );
+    return 0;
 }
 
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsLowViolence(void *linux_side)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribed( void *args )
 {
-    return ((ISteamApps*)linux_side)->BIsLowViolence();
-}
-
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsCybercafe(void *linux_side)
-{
-    return ((ISteamApps*)linux_side)->BIsCybercafe();
-}
-
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsVACBanned(void *linux_side)
-{
-    return ((ISteamApps*)linux_side)->BIsVACBanned();
-}
-
-const char * cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentGameLanguage(void *linux_side)
-{
-    return ((ISteamApps*)linux_side)->GetCurrentGameLanguage();
-}
-
-const char * cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAvailableGameLanguages(void *linux_side)
-{
-    return ((ISteamApps*)linux_side)->GetAvailableGameLanguages();
-}
-
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedApp(void *linux_side, AppId_t appID)
-{
-    return ((ISteamApps*)linux_side)->BIsSubscribedApp((AppId_t)appID);
-}
-
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsDlcInstalled(void *linux_side, AppId_t appID)
-{
-    return ((ISteamApps*)linux_side)->BIsDlcInstalled((AppId_t)appID);
-}
-
-uint32 cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetEarliestPurchaseUnixTime(void *linux_side, AppId_t nAppID)
-{
-    return ((ISteamApps*)linux_side)->GetEarliestPurchaseUnixTime((AppId_t)nAppID);
-}
-
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedFromFreeWeekend(void *linux_side)
-{
-    return ((ISteamApps*)linux_side)->BIsSubscribedFromFreeWeekend();
-}
-
-int cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetDLCCount(void *linux_side)
-{
-    return ((ISteamApps*)linux_side)->GetDLCCount();
-}
-
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_BGetDLCDataByIndex(void *linux_side, int iDLC, AppId_t * pAppID, bool * pbAvailable, char * pchName, int cchNameBufferSize)
-{
-    return ((ISteamApps*)linux_side)->BGetDLCDataByIndex((int)iDLC, (AppId_t *)pAppID, (bool *)pbAvailable, (char *)pchName, (int)cchNameBufferSize);
-}
-
-void cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_InstallDLC(void *linux_side, AppId_t nAppID)
-{
-    ((ISteamApps*)linux_side)->InstallDLC((AppId_t)nAppID);
-}
-
-void cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_UninstallDLC(void *linux_side, AppId_t nAppID)
-{
-    ((ISteamApps*)linux_side)->UninstallDLC((AppId_t)nAppID);
-}
-
-void cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_RequestAppProofOfPurchaseKey(void *linux_side, AppId_t nAppID)
-{
-    ((ISteamApps*)linux_side)->RequestAppProofOfPurchaseKey((AppId_t)nAppID);
-}
-
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentBetaName(void *linux_side, char * pchName, int cchNameBufferSize)
-{
-    return ((ISteamApps*)linux_side)->GetCurrentBetaName((char *)pchName, (int)cchNameBufferSize);
-}
-
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_MarkContentCorrupt(void *linux_side, bool bMissingFilesOnly)
-{
-    return ((ISteamApps*)linux_side)->MarkContentCorrupt((bool)bMissingFilesOnly);
-}
-
-uint32 cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetInstalledDepots(void *linux_side, AppId_t appID, DepotId_t * pvecDepots, uint32 cMaxDepots)
-{
-    return ((ISteamApps*)linux_side)->GetInstalledDepots((AppId_t)appID, (DepotId_t *)pvecDepots, (uint32)cMaxDepots);
-}
-
-uint32 cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppInstallDir(void *linux_side, AppId_t appID, char * pchFolder, uint32 cchFolderBufferSize)
-{
-    return ((ISteamApps*)linux_side)->GetAppInstallDir((AppId_t)appID, (char *)pchFolder, (uint32)cchFolderBufferSize);
-}
-
-bool cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsAppInstalled(void *linux_side, AppId_t appID)
-{
-    return ((ISteamApps*)linux_side)->BIsAppInstalled((AppId_t)appID);
-}
-
-CSteamID cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppOwner(void *linux_side)
-{
-    return ((ISteamApps*)linux_side)->GetAppOwner();
-}
-
-const char * cppISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetLaunchQueryParam(void *linux_side, const char * pchKey)
-{
-    return ((ISteamApps*)linux_side)->GetLaunchQueryParam((const char *)pchKey);
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribed_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribed_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsSubscribed(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsLowViolence( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsLowViolence_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsLowViolence_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsLowViolence(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsLowViolence( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsLowViolence_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsLowViolence_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsLowViolence(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsCybercafe( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsCybercafe_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsCybercafe_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsCybercafe(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsCybercafe( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsCybercafe_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsCybercafe_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsCybercafe(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsVACBanned( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsVACBanned_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsVACBanned_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsVACBanned(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsVACBanned( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsVACBanned_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsVACBanned_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsVACBanned(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentGameLanguage( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentGameLanguage_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentGameLanguage_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetCurrentGameLanguage(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentGameLanguage( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentGameLanguage_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentGameLanguage_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetCurrentGameLanguage(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAvailableGameLanguages( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAvailableGameLanguages_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAvailableGameLanguages_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetAvailableGameLanguages(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAvailableGameLanguages( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAvailableGameLanguages_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAvailableGameLanguages_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetAvailableGameLanguages(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedApp( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedApp_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedApp_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsSubscribedApp( params->appID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedApp( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedApp_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedApp_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsSubscribedApp( params->appID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsDlcInstalled( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsDlcInstalled_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsDlcInstalled_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsDlcInstalled( params->appID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsDlcInstalled( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsDlcInstalled_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsDlcInstalled_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsDlcInstalled( params->appID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetEarliestPurchaseUnixTime( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetEarliestPurchaseUnixTime_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetEarliestPurchaseUnixTime_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetEarliestPurchaseUnixTime( params->nAppID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetEarliestPurchaseUnixTime( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetEarliestPurchaseUnixTime_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetEarliestPurchaseUnixTime_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetEarliestPurchaseUnixTime( params->nAppID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedFromFreeWeekend( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedFromFreeWeekend_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedFromFreeWeekend_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsSubscribedFromFreeWeekend(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedFromFreeWeekend( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedFromFreeWeekend_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsSubscribedFromFreeWeekend_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsSubscribedFromFreeWeekend(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetDLCCount( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetDLCCount_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetDLCCount_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetDLCCount(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetDLCCount( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetDLCCount_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetDLCCount_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetDLCCount(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BGetDLCDataByIndex( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BGetDLCDataByIndex_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BGetDLCDataByIndex_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BGetDLCDataByIndex( params->iDLC, params->pAppID, params->pbAvailable, params->pchName, params->cchNameBufferSize );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BGetDLCDataByIndex( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BGetDLCDataByIndex_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BGetDLCDataByIndex_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BGetDLCDataByIndex( params->iDLC, params->pAppID, params->pbAvailable, params->pchName, params->cchNameBufferSize );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_InstallDLC( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_InstallDLC_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_InstallDLC_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    iface->InstallDLC( params->nAppID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_InstallDLC( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_InstallDLC_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_InstallDLC_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    iface->InstallDLC( params->nAppID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_UninstallDLC( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_UninstallDLC_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_UninstallDLC_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    iface->UninstallDLC( params->nAppID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_UninstallDLC( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_UninstallDLC_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_UninstallDLC_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    iface->UninstallDLC( params->nAppID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_RequestAppProofOfPurchaseKey( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_RequestAppProofOfPurchaseKey_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_RequestAppProofOfPurchaseKey_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    iface->RequestAppProofOfPurchaseKey( params->nAppID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_RequestAppProofOfPurchaseKey( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_RequestAppProofOfPurchaseKey_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_RequestAppProofOfPurchaseKey_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    iface->RequestAppProofOfPurchaseKey( params->nAppID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentBetaName( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentBetaName_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentBetaName_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetCurrentBetaName( params->pchName, params->cchNameBufferSize );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentBetaName( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentBetaName_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetCurrentBetaName_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetCurrentBetaName( params->pchName, params->cchNameBufferSize );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_MarkContentCorrupt( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_MarkContentCorrupt_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_MarkContentCorrupt_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->MarkContentCorrupt( params->bMissingFilesOnly );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_MarkContentCorrupt( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_MarkContentCorrupt_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_MarkContentCorrupt_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->MarkContentCorrupt( params->bMissingFilesOnly );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetInstalledDepots( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetInstalledDepots_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetInstalledDepots_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetInstalledDepots( params->appID, params->pvecDepots, params->cMaxDepots );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetInstalledDepots( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetInstalledDepots_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetInstalledDepots_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetInstalledDepots( params->appID, params->pvecDepots, params->cMaxDepots );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppInstallDir( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppInstallDir_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppInstallDir_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetAppInstallDir( params->appID, params->pchFolder, params->cchFolderBufferSize );
+    params->_ret = steamclient_unix_path_to_dos_path( params->_ret, params->pchFolder, params->pchFolder, params->cchFolderBufferSize, 0 );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppInstallDir( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppInstallDir_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppInstallDir_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetAppInstallDir( params->appID, params->pchFolder, params->cchFolderBufferSize );
+    params->_ret = steamclient_unix_path_to_dos_path( params->_ret, params->pchFolder, params->pchFolder, params->cchFolderBufferSize, 0 );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsAppInstalled( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsAppInstalled_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsAppInstalled_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsAppInstalled( params->appID );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsAppInstalled( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsAppInstalled_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_BIsAppInstalled_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->BIsAppInstalled( params->appID );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppOwner( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppOwner_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppOwner_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    *params->_ret = iface->GetAppOwner(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppOwner( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppOwner_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetAppOwner_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    *params->_ret = iface->GetAppOwner(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetLaunchQueryParam( void *args )
+{
+    struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetLaunchQueryParam_params *params = (struct ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetLaunchQueryParam_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetLaunchQueryParam( params->pchKey );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetLaunchQueryParam( void *args )
+{
+    struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetLaunchQueryParam_params *params = (struct wow64_ISteamApps_STEAMAPPS_INTERFACE_VERSION006_GetLaunchQueryParam_params *)args;
+    struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *iface = (struct u_ISteamApps_STEAMAPPS_INTERFACE_VERSION006 *)params->u_iface;
+    params->_ret = iface->GetLaunchQueryParam( params->pchKey );
+    return 0;
+}
+#endif
+

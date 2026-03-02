@@ -1,62 +1,169 @@
-#include "steam_defs.h"
-#pragma push_macro("__cdecl")
-#undef __cdecl
-#define __cdecl
-#include "steamworks_sdk_158/steam_api.h"
-#include "steamworks_sdk_158/steamnetworkingtypes.h"
-#pragma pop_macro("__cdecl")
-#include "steamclient_private.h"
-#ifdef __cplusplus
-extern "C" {
+/* This file is auto-generated, do not edit. */
+#include "unix_private.h"
+
+#if 0
+#pragma makedep unix
 #endif
-#define SDKVER_158
-#include "struct_converters.h"
-#include "cppISteamMusic_STEAMMUSIC_INTERFACE_VERSION001.h"
-bool cppISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsEnabled(void *linux_side)
+
+NTSTATUS ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsEnabled( void *args )
 {
-    return ((ISteamMusic*)linux_side)->BIsEnabled();
+    struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsEnabled_params *params = (struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsEnabled_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsEnabled(  );
+    return 0;
 }
 
-bool cppISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsPlaying(void *linux_side)
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsEnabled( void *args )
 {
-    return ((ISteamMusic*)linux_side)->BIsPlaying();
-}
-
-AudioPlayback_Status cppISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetPlaybackStatus(void *linux_side)
-{
-    return ((ISteamMusic*)linux_side)->GetPlaybackStatus();
-}
-
-void cppISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Play(void *linux_side)
-{
-    ((ISteamMusic*)linux_side)->Play();
-}
-
-void cppISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Pause(void *linux_side)
-{
-    ((ISteamMusic*)linux_side)->Pause();
-}
-
-void cppISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayPrevious(void *linux_side)
-{
-    ((ISteamMusic*)linux_side)->PlayPrevious();
-}
-
-void cppISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayNext(void *linux_side)
-{
-    ((ISteamMusic*)linux_side)->PlayNext();
-}
-
-void cppISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_SetVolume(void *linux_side, float flVolume)
-{
-    ((ISteamMusic*)linux_side)->SetVolume((float)flVolume);
-}
-
-float cppISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetVolume(void *linux_side)
-{
-    return ((ISteamMusic*)linux_side)->GetVolume();
-}
-
-#ifdef __cplusplus
+    struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsEnabled_params *params = (struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsEnabled_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsEnabled(  );
+    return 0;
 }
 #endif
+
+NTSTATUS ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsPlaying( void *args )
+{
+    struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsPlaying_params *params = (struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsPlaying_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsPlaying(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsPlaying( void *args )
+{
+    struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsPlaying_params *params = (struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_BIsPlaying_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->BIsPlaying(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetPlaybackStatus( void *args )
+{
+    struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetPlaybackStatus_params *params = (struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetPlaybackStatus_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetPlaybackStatus(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetPlaybackStatus( void *args )
+{
+    struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetPlaybackStatus_params *params = (struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetPlaybackStatus_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetPlaybackStatus(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Play( void *args )
+{
+    struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Play_params *params = (struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Play_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    iface->Play(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Play( void *args )
+{
+    struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Play_params *params = (struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Play_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    iface->Play(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Pause( void *args )
+{
+    struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Pause_params *params = (struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Pause_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    iface->Pause(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Pause( void *args )
+{
+    struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Pause_params *params = (struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_Pause_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    iface->Pause(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayPrevious( void *args )
+{
+    struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayPrevious_params *params = (struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayPrevious_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    iface->PlayPrevious(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayPrevious( void *args )
+{
+    struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayPrevious_params *params = (struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayPrevious_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    iface->PlayPrevious(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayNext( void *args )
+{
+    struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayNext_params *params = (struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayNext_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    iface->PlayNext(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayNext( void *args )
+{
+    struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayNext_params *params = (struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_PlayNext_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    iface->PlayNext(  );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_SetVolume( void *args )
+{
+    struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_SetVolume_params *params = (struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_SetVolume_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    iface->SetVolume( params->flVolume );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_SetVolume( void *args )
+{
+    struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_SetVolume_params *params = (struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_SetVolume_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    iface->SetVolume( params->flVolume );
+    return 0;
+}
+#endif
+
+NTSTATUS ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetVolume( void *args )
+{
+    struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetVolume_params *params = (struct ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetVolume_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetVolume(  );
+    return 0;
+}
+
+#if defined(__x86_64__) || defined(__aarch64__)
+NTSTATUS wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetVolume( void *args )
+{
+    struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetVolume_params *params = (struct wow64_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001_GetVolume_params *)args;
+    struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *iface = (struct u_ISteamMusic_STEAMMUSIC_INTERFACE_VERSION001 *)params->u_iface;
+    params->_ret = iface->GetVolume(  );
+    return 0;
+}
+#endif
+
