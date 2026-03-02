@@ -74,6 +74,9 @@ $(DST_DIR):
 	mkdir -p $@
 
 ifeq ($(CONTAINER),1) # inside the container
+# Force /bin/bash regardless of any SHELL= passed via MAKEFLAGS from the host
+# (e.g. a Nix store path that doesn't exist inside the container).
+override SHELL := /bin/bash
 ARCHS := i386-unix x86_64-unix i386-windows x86_64-windows
 
 HOST_ARCH := $(shell uname -m)
